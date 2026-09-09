@@ -5,7 +5,6 @@ on:
 permissions:
   contents: read
 
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -14,13 +13,13 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
-    - name: Checkout
-      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v4
-      with:
-        fetch-depth: 0
-    - name: Run pre-commit guard checks
-      uses: pre-commit/action@2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd
-      with:
-        extra_args: --hook-stage pre-commit --config .pre-commit-config.yaml --show-diff-on-failure
+      - name: Checkout
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v4
+        with:
+          fetch-depth: 0
+      - name: Run pre-commit guard checks
+        uses: pre-commit/action@2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd
+        with:
+          extra_args: --hook-stage pre-commit --config .pre-commit-config.yaml --show-diff-on-failure
     permissions:
       contents: read
