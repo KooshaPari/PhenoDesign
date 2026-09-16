@@ -1,0 +1,31 @@
+{
+  "name": "@kooshapari/phenotype-interaction-patterns",
+  "version": "0.1.0",
+  "description": "Reusable interaction patterns for Phenotype projects: perspective tilt, scroll reveal, lightbox, counter animation, and parallax depth",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./perspective-tilt": { "types": "./dist/perspective-tilt.d.ts", "import": "./dist/perspective-tilt.js" },
+    "./scroll-reveal": { "types": "./dist/scroll-reveal.d.ts", "import": "./dist/scroll-reveal.js" },
+    "./lightbox": { "types": "./dist/lightbox.d.ts", "import": "./dist/lightbox.js" },
+    "./counter-animate": { "types": "./dist/counter-animate.d.ts", "import": "./dist/counter-animate.js" },
+    "./parallax-depth": { "types": "./dist/parallax-depth.d.ts", "import": "./dist/parallax-depth.js" }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KooshaPari/phenoDesign",
+    "directory": "packages/interaction-patterns"
+  },
+  "publishConfig": { "access": "public" },
+  "devDependencies": {
+    "typescript": "latest"
+  },
+  "license": "MIT"
+}
