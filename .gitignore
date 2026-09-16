@@ -57,3 +57,4 @@ pnpm-debug.log*
 Thumbs.db
 yarn-debug.log*
 yarn-error.log*
+tests/visual/results/

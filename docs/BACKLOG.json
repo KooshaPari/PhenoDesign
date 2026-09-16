@@ -1,7 +1,7 @@
 {
   "project": "phenoDesign",
   "version": "1.0.0",
-  "lastUpdated": "2026-09-16T10:13:00Z",
+  "lastUpdated": "2026-09-16T10:15:00Z",
   "tasks": [
     {
       "id": "PDV-001",
@@ -60,18 +60,19 @@
       "effort": "2h",
       "dependencies": ["PDV-002"],
       "category": "tooling",
-      "notes": "Built: token autocomplete (70+ completions), 9 component snippets, 8 CSS snippets. Builds clean with esbuild."
+      "notes": "Built: token autocomplete (70+ completions), 9 component snippets, 8 CSS snippets."
     },
     {
       "id": "PDV-006",
       "title": "Visual regression baseline",
       "priority": "medium",
-      "status": "pending",
+      "status": "completed",
       "gate": "G4",
       "description": "Set up Playwright screenshot tests for all component recipes.",
       "effort": "1h",
       "dependencies": ["PDV-003"],
-      "category": "quality"
+      "category": "quality",
+      "notes": "6 visual tests: badges, artifact card, metric callout, lightbox, glass panel. Baselines generated."
     },
     {
       "id": "PDV-007",
@@ -136,7 +137,7 @@
     "high": 3,
     "medium": 5,
     "low": 2,
-    "completed": 7,
+    "completed": 8,
     "inProgress": 0,
     "blocked": 0
   }
