@@ -1,0 +1,138 @@
+{
+  "project": "phenoDesign",
+  "version": "1.0.0",
+  "lastUpdated": "2026-09-16T09:04:00Z",
+  "tasks": [
+    {
+      "id": "PDV-001",
+      "title": "Agentora component map rebuild",
+      "priority": "critical",
+      "status": "pending",
+      "gate": "G3",
+      "description": "Audit and rebuild Agentora component inventory. Current state unknown.",
+      "effort": "2h",
+      "dependencies": [],
+      "category": "consolidation"
+    },
+    {
+      "id": "PDV-002",
+      "title": "Package build tooling",
+      "priority": "high",
+      "status": "pending",
+      "gate": "G3",
+      "description": "Add tsup/rollup build config to all 5 packages for ESM+CJS output",
+      "effort": "30m",
+      "dependencies": [],
+      "category": "packaging"
+    },
+    {
+      "id": "PDV-003",
+      "title": "Package test suites",
+      "priority": "high",
+      "status": "pending",
+      "gate": "G3",
+      "description": "Add vitest to each package with unit tests for core functions",
+      "effort": "1h",
+      "dependencies": ["PDV-002"],
+      "category": "quality"
+    },
+    {
+      "id": "PDV-004",
+      "title": "OMLX migration",
+      "priority": "medium",
+      "status": "pending",
+      "gate": "G2",
+      "description": "Migrate OMLX-specific components to phenoDesign equivalents",
+      "effort": "1h",
+      "dependencies": ["PDV-001"],
+      "category": "migration"
+    },
+    {
+      "id": "PDV-005",
+      "title": "VS Code extension foundation",
+      "priority": "medium",
+      "status": "pending",
+      "gate": "G1",
+      "description": "Basic extension scaffolding with token autocomplete and recipe snippets",
+      "effort": "2h",
+      "dependencies": ["PDV-002"],
+      "category": "tooling"
+    },
+    {
+      "id": "PDV-006",
+      "title": "Visual regression baseline",
+      "priority": "medium",
+      "status": "pending",
+      "gate": "G4",
+      "description": "Set up Playwright screenshot tests for all component recipes",
+      "effort": "1h",
+      "dependencies": ["PDV-003"],
+      "category": "quality"
+    },
+    {
+      "id": "PDV-007",
+      "title": "Storybook integration",
+      "priority": "low",
+      "status": "pending",
+      "gate": "G5",
+      "description": "Add Storybook for visual component development and documentation",
+      "effort": "2h",
+      "dependencies": ["PDV-002", "PDV-003"],
+      "category": "documentation"
+    },
+    {
+      "id": "PDV-008",
+      "title": "Cross-repo integration validation",
+      "priority": "high",
+      "status": "pending",
+      "gate": "G6",
+      "description": "Verify phenoDesign packages work in koosha-phenotype and other repos",
+      "effort": "1h",
+      "dependencies": ["PDV-002"],
+      "category": "integration"
+    },
+    {
+      "id": "PDV-009",
+      "title": "Portfolio polish pass",
+      "priority": "medium",
+      "status": "pending",
+      "gate": "G4",
+      "description": "Final visual critique and mobile QA on deployed kooshapari.com",
+      "effort": "30m",
+      "dependencies": [],
+      "category": "polish"
+    },
+    {
+      "id": "PDV-010",
+      "title": "Performance audit",
+      "priority": "medium",
+      "status": "pending",
+      "gate": "G4",
+      "description": "Lighthouse audit on kooshapari.com, fix any regressions from 3D/animation additions",
+      "effort": "30m",
+      "dependencies": ["PDV-009"],
+      "category": "quality"
+    },
+    {
+      "id": "PDV-011",
+      "title": "npm publish prep",
+      "priority": "low",
+      "status": "pending",
+      "gate": "G5",
+      "description": "Add publishConfig, access, and registry settings to all package.json files",
+      "effort": "30m",
+      "dependencies": ["PDV-002", "PDV-003"],
+      "category": "packaging"
+    }
+  ],
+  "summary": {
+    "total": 11,
+    "critical": 1,
+    "high": 3,
+    "medium": 5,
+    "low": 2,
+    "completed": 0,
+    "inProgress": 0,
+    "blocked": 0
+  }
+}
