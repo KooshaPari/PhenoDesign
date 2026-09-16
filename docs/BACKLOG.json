@@ -1,7 +1,7 @@
 {
   "project": "phenoDesign",
   "version": "1.0.0",
-  "lastUpdated": "2026-09-16T10:09:00Z",
+  "lastUpdated": "2026-09-16T10:11:00Z",
   "tasks": [
     {
       "id": "PDV-001",
@@ -48,7 +48,7 @@
       "effort": "1h",
       "dependencies": ["PDV-001"],
       "category": "migration",
-      "notes": "Audit complete: 80 components across 3 surfaces. 21 direct matches, 10 token migrations, 2 new recipes needed."
+      "notes": "Audit complete: 80 components across 3 surfaces. Migration guide documented."
     },
     {
       "id": "PDV-005",
@@ -120,12 +120,13 @@
       "id": "PDV-011",
       "title": "npm publish prep",
       "priority": "low",
-      "status": "pending",
+      "status": "completed",
       "gate": "G5",
       "description": "Add publishConfig to all package.json files.",
       "effort": "30m",
       "dependencies": ["PDV-002", "PDV-003"],
-      "category": "packaging"
+      "category": "packaging",
+      "notes": "Already done: all 6 packages have publishConfig, files, repository, license, and proper entry points."
     }
   ],
   "summary": {
@@ -134,7 +135,7 @@
     "high": 3,
     "medium": 5,
     "low": 2,
-    "completed": 5,
+    "completed": 6,
     "inProgress": 0,
     "blocked": 0
   }
