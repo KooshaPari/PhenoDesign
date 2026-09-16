@@ -6,25 +6,52 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
-    "./artifact-card": { "types": "./dist/artifact-card.d.ts", "import": "./dist/artifact-card.js" },
-    "./system-diagram": { "types": "./dist/system-diagram.d.ts", "import": "./dist/system-diagram.js" },
-    "./experiment-sheet": { "types": "./dist/experiment-sheet.d.ts", "import": "./dist/experiment-sheet.js" },
-    "./physical-plate": { "types": "./dist/physical-plate.d.ts", "import": "./dist/physical-plate.js" },
-    "./evidence": { "types": "./dist/evidence.d.ts", "import": "./dist/evidence.js" },
-    "./badge": { "types": "./dist/badge.d.ts", "import": "./dist/badge.js" }
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./artifact-card": {
+      "types": "./dist/artifact-card.d.ts",
+      "import": "./dist/artifact-card.js"
+    },
+    "./system-diagram": {
+      "types": "./dist/system-diagram.d.ts",
+      "import": "./dist/system-diagram.js"
+    },
+    "./experiment-sheet": {
+      "types": "./dist/experiment-sheet.d.ts",
+      "import": "./dist/experiment-sheet.js"
+    },
+    "./physical-plate": {
+      "types": "./dist/physical-plate.d.ts",
+      "import": "./dist/physical-plate.js"
+    },
+    "./evidence": {
+      "types": "./dist/evidence.d.ts",
+      "import": "./dist/evidence.js"
+    },
+    "./badge": {
+      "types": "./dist/badge.d.ts",
+      "import": "./dist/badge.js"
+    }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/KooshaPari/phenoDesign",
     "directory": "packages/component-recipes"
   },
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "typescript": "latest"
   },

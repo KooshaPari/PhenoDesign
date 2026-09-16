@@ -6,21 +6,36 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
-    "./glb-viewer": { "types": "./dist/glb-viewer.d.ts", "import": "./dist/glb-viewer.js" },
-    "./lighting-presets": { "types": "./dist/lighting-presets.d.ts", "import": "./dist/lighting-presets.js" }
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./glb-viewer": {
+      "types": "./dist/glb-viewer.d.ts",
+      "import": "./dist/glb-viewer.js"
+    },
+    "./lighting-presets": {
+      "types": "./dist/lighting-presets.d.ts",
+      "import": "./dist/lighting-presets.js"
+    }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/KooshaPari/phenoDesign",
     "directory": "packages/3d-viewers"
   },
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "three": ">=0.160.0"
   },

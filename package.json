@@ -46,6 +46,7 @@
   "dependencies": {},
   "devDependencies": {
     "@vitest/coverage-v8": "^4.1.2",
+    "happy-dom": "^20.14.5",
     "oxlint": "latest",
     "tsup": "^8.0.0",
     "typescript": "latest",

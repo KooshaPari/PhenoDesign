@@ -1,7 +1,7 @@
 {
   "project": "phenoDesign",
   "version": "1.0.0",
-  "lastUpdated": "2026-09-16T09:04:00Z",
+  "lastUpdated": "2026-09-16T10:03:00Z",
   "tasks": [
     {
       "id": "PDV-001",
@@ -30,14 +30,15 @@
       "id": "PDV-003",
       "title": "Package test suites",
       "priority": "high",
-      "status": "pending",
+      "status": "completed",
       "gate": "G3",
       "description": "Add vitest to each package with unit tests for core functions",
       "effort": "1h",
       "dependencies": [
         "PDV-002"
       ],
-      "category": "quality"
+      "category": "quality",
+      "notes": "86 tests across 5 packages: design-utils (60), component-recipes (8), design-tokens (8), interaction-patterns (7), 3d-viewers (3)."
     },
     {
       "id": "PDV-004",
@@ -151,7 +152,7 @@
     "high": 3,
     "medium": 5,
     "low": 2,
-    "completed": 0,
+    "completed": 3,
     "inProgress": 0,
     "blocked": 0
   }
