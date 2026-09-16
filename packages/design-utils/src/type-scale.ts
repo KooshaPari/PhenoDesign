@@ -70,7 +70,6 @@ export function clampFluid(
 ): string {
   const slope = (maxRem - minRem) / (maxViewport / 16 - minViewport / 16);
   const intercept = minRem - slope * (minViewport / 16);
-  const preferred = (intercept / minRem) * 100;
   return `clamp(${minRem}rem, ${intercept.toFixed(2)}rem + ${slope.toFixed(2)}vw, ${maxRem}rem)`;
 }
 
@@ -89,8 +88,6 @@ export function generateTypeScale(
 ): Record<string, TypeStep> {
   const result: Record<string, TypeStep> = {};
   for (const [name, { minRem, maxRem }] of Object.entries(steps)) {
-    const slope = (maxRem - minRem) / (maxViewport / 16 - minViewport / 16);
-    const intercept = minRem - slope * (minViewport / 16);
     result[name] = {
       clamp: clampFluid(minRem, maxRem, minViewport, maxViewport),
       minRem,
@@ -120,7 +117,7 @@ function buildTypeScale(
 ): TypeScale {
   const scale = {} as TypeScale;
   for (const [key, { minRem, maxRem }] of Object.entries(configs)) {
-    (scale as Record<string, TypeStep>)[key] = {
+    (scale as unknown as Record<string, TypeStep>)[key] = {
       clamp: clampFluid(minRem, maxRem),
       minRem,
       maxRem,

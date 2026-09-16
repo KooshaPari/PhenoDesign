@@ -144,7 +144,8 @@ export const LIGHTING_PRESETS: Record<string, LightingPreset> = {
 export function applyLighting(scene: Scene, preset: LightingPreset): Light[] {
   // Dynamic import of three to avoid hard dependency
   // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const THREE = globalThis.THREE ?? (() => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const THREE = (globalThis as any).THREE ?? (() => {
     throw new Error('Three.js must be available globally or imported before applyLighting');
   })();
 

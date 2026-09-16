@@ -167,8 +167,9 @@ export function initScrollReveal(
     observedElements.add(el);
 
     // Apply stagger delay if configured
-    if (stagger > 0 && !el.dataset.revealDelay) {
-      el.dataset.revealDelay = String(index * stagger);
+    const htmlEl = el as HTMLElement;
+    if (stagger > 0 && !htmlEl.dataset.revealDelay) {
+      htmlEl.dataset.revealDelay = String(index * stagger);
     }
 
     observer.observe(el);

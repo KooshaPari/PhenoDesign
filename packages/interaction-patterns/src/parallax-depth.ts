@@ -85,7 +85,7 @@ export function initParallaxDepth(
   const {
     root = document,
     maxOffset = 20,
-    throttleMs = 16,
+    throttleMs: _throttleMs = 16,
   } = config;
 
   if (reducedMotion?.matches) {

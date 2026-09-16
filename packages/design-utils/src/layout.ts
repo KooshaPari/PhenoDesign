@@ -53,7 +53,6 @@ export const breakpoints: Record<string, Breakpoint> = {
  */
 export function minWidth(bp: string | number): string {
   const value = typeof bp === 'number' ? `${bp}px` : bp;
-  const px = typeof bp === 'number' ? bp : breakpoints[bp]?.px ?? parseInt(bp);
   return `@media (min-width: ${value})`;
 }
 
@@ -116,7 +115,7 @@ export function containerMaxWidth(maxPx: number): string {
  * @param gap - Gap between items (CSS value, default 1rem)
  * @returns CSS grid-template-columns value
  */
-export function gridCols(cols: number, gap = '1rem'): string {
+export function gridCols(cols: number, _gap = '1rem'): string {
   return `repeat(${cols}, 1fr)`;
 }
 
@@ -148,7 +147,7 @@ export function grid(
  * @param gap - Gap between items
  * @returns CSS grid-template-columns with auto-fill
  */
-export function fluidGrid(minColWidth = '200px', gap = '1rem'): string {
+export function fluidGrid(minColWidth = '200px', _gap = '1rem'): string {
   return `repeat(auto-fill, minmax(${minColWidth}, 1fr))`;
 }
 

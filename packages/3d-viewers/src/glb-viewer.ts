@@ -169,7 +169,7 @@ export async function createGlbViewer(
     camera.lookAt(new THREE.Vector3(...cameraTarget));
 
     // Controls
-    let controls: ReturnType<typeof OrbitControls> | null = null;
+    let controls: InstanceType<typeof OrbitControls> | null = null;
     if (orbit) {
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = damping;
@@ -197,7 +197,8 @@ export async function createGlbViewer(
       renderer.dispose();
       return { getScene: () => null, getRenderer: () => null, resize() {}, destroy() {} };
     }
-    scene.add((gltf as { scene: THREE.Group }).scene);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    scene.add((gltf as any).scene);
     loadingEl.remove();
 
     // Interaction hint

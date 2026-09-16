@@ -93,7 +93,7 @@ export function createExperimentSheet(config: ExperimentSheetConfig): HTMLElemen
     container.style.setProperty('--family-accent', accent);
   }
 
-  for (const [label, detail], index of rows) {
+  for (const [index, [label, detail]] of rows.entries()) {
     const row = el('div', { class: 'phenotype-experiment-row' },
       el('span', { class: 'phenotype-experiment-index' }, String(index + 1).padStart(2, '0')),
       el('div', { class: 'phenotype-experiment-content' },

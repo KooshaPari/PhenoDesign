@@ -6,30 +6,28 @@
   },
   "description": "Shared CSS and Tailwind tokens for Phenotype landing pages (canonical home: phenoDesign)",
   "type": "module",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./index.d.ts",
-      "import": "./index.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     },
     "./css": "./tokens.css",
     "./tokens.css": "./tokens.css",
     "./tailwind": "./tailwind.config.mjs",
     "./tokens": {
-      "types": "./tokens.d.ts",
-      "import": "./tokens.js"
+      "types": "./dist/tokens.d.ts",
+      "import": "./dist/tokens.js"
     }
   },
   "files": [
+    "dist",
     "tokens.css",
-    "tokens.js",
-    "tokens.d.ts",
-    "index.js",
-    "index.d.ts",
     "tailwind.config.mjs"
   ],
   "scripts": {
+    "build": "tsup",
     "typecheck": "tsc --noEmit"
   },
   "repository": {
