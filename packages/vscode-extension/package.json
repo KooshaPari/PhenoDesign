@@ -1,0 +1,68 @@
+{
+  "name": "phenoDesign",
+  "displayName": "phenoDesign",
+  "description": "Design tokens, component recipes, and interaction patterns for the Phenotype ecosystem",
+  "version": "0.1.0",
+  "publisher": "kooshapari",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Linters"
+  ],
+  "keywords": [
+    "phenotype",
+    "design-tokens",
+    "component-recipes",
+    "design-system"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KooshaPari/phenoDesign",
+    "directory": "packages/vscode-extension"
+  },
+  "main": "./dist/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "pheno-tokens",
+        "aliases": ["PhenoDesign Tokens", "pheno-tokens"],
+        "extensions": [".pheno.css"]
+      }
+    ],
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/component-recipes.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/component-recipes.json"
+      },
+      {
+        "language": "css",
+        "path": "./snippets/design-tokens.json"
+      }
+    ],
+    "completionProviders": [
+      {
+        "language": "css",
+        "pattern": "**/*.pheno.css",
+        "scheme": "file"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "esbuild src/extension.ts --bundle --outdir=dist --external:vscode --format=cjs --platform=node",
+    "watch": "esbuild src/extension.ts --bundle --outdir=dist --external:vscode --format=cjs --platform=node --watch",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "esbuild": "^0.24.0",
+    "@vscode/vsce": "^3.2.0"
+  }
+}

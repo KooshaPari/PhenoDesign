@@ -1,7 +1,7 @@
 {
   "project": "phenoDesign",
   "version": "1.0.0",
-  "lastUpdated": "2026-09-16T10:11:00Z",
+  "lastUpdated": "2026-09-16T10:13:00Z",
   "tasks": [
     {
       "id": "PDV-001",
@@ -54,12 +54,13 @@
       "id": "PDV-005",
       "title": "VS Code extension foundation",
       "priority": "medium",
-      "status": "pending",
+      "status": "completed",
       "gate": "G1",
       "description": "Basic extension scaffolding with token autocomplete and recipe snippets.",
       "effort": "2h",
       "dependencies": ["PDV-002"],
-      "category": "tooling"
+      "category": "tooling",
+      "notes": "Built: token autocomplete (70+ completions), 9 component snippets, 8 CSS snippets. Builds clean with esbuild."
     },
     {
       "id": "PDV-006",
@@ -135,7 +136,7 @@
     "high": 3,
     "medium": 5,
     "low": 2,
-    "completed": 6,
+    "completed": 7,
     "inProgress": 0,
     "blocked": 0
   }

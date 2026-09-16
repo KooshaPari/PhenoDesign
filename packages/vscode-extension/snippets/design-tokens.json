@@ -1,0 +1,66 @@
+{
+  "pheno-surface-dark": {
+    "prefix": "pd-surface-dark",
+    "body": [
+      "background: var(--pd-surface-dark);",
+      "color: var(--pd-surface-text);"
+    ],
+    "description": "phenoDesign dark surface"
+  },
+  "pheno-surface-light": {
+    "prefix": "pd-surface-light",
+    "body": [
+      "background: var(--pd-surface-light);",
+      "color: var(--pd-surface-text);"
+    ],
+    "description": "phenoDesign light surface"
+  },
+  "pheno-card": {
+    "prefix": "pd-card",
+    "body": [
+      "background: var(--pd-surface-card);",
+      "border: 1px solid var(--pd-border-default);",
+      "border-radius: var(--pd-radius-md);",
+      "padding: var(--pd-space-4);"
+    ],
+    "description": "phenoDesign card pattern"
+  },
+  "pheno-gradient-arch": {
+    "prefix": "pd-gradient-arch",
+    "body": [
+      "background: linear-gradient(135deg, var(--pd-arch-400), var(--pd-arch-600));"
+    ],
+    "description": "phenoDesign arch gradient"
+  },
+  "pheno-gradient-sky": {
+    "prefix": "pd-gradient-sky",
+    "body": [
+      "background: linear-gradient(135deg, var(--pd-sky-400), var(--pd-sky-600));"
+    ],
+    "description": "phenoDesign sky gradient"
+  },
+  "pheno-glass": {
+    "prefix": "pd-glass",
+    "body": [
+      "background: rgba(0, 0, 0, 0.6);",
+      "backdrop-filter: blur(12px);",
+      "-webkit-backdrop-filter: blur(12px);",
+      "border: 1px solid rgba(255, 255, 255, 0.1);"
+    ],
+    "description": "phenoDesign glassmorphism panel"
+  },
+  "pheno-font-sans": {
+    "prefix": "pd-font-sans",
+    "body": [
+      "font-family: var(--pd-font-sans);"
+    ],
+    "description": "phenoDesign sans-serif font"
+  },
+  "pheno-font-mono": {
+    "prefix": "pd-font-mono",
+    "body": [
+      "font-family: var(--pd-font-mono);"
+    ],
+    "description": "phenoDesign monospace font"
+  }
+}

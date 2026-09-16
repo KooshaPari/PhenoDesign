@@ -1,0 +1,106 @@
+{
+  "createBadge": {
+    "prefix": "pd-badge",
+    "body": [
+      "import { createBadge } from '@kooshapari/phenotype-component-recipes/badge';",
+      "",
+      "const badge = createBadge({",
+      "  label: '${1:Label}',",
+      "  family: '${2:omniroute}',",
+      "  familyAccent: 'var(--arch-500)',",
+      "});",
+      "${3:card.querySelector('header')?.prepend(badge);}"
+    ],
+    "description": "Create a phenoDesign badge component"
+  },
+  "createStatusBadge": {
+    "prefix": "pd-status-badge",
+    "body": [
+      "import { createStatusBadge } from '@kooshapari/phenotype-component-recipes/badge';",
+      "",
+      "const badge = createStatusBadge('${1|shipped,building,failed,researching,deploying|}');"
+    ],
+    "description": "Create a phenoDesign status badge"
+  },
+  "createTechBadge": {
+    "prefix": "pd-tech-badge",
+    "body": [
+      "import { createTechBadge } from '@kooshapari/phenotype-component-recipes/badge';",
+      "",
+      "const badge = createTechBadge('${1:TypeScript}');"
+    ],
+    "description": "Create a phenoDesign tech badge"
+  },
+  "createArtifactCard": {
+    "prefix": "pd-artifact-card",
+    "body": [
+      "import { createArtifactCard } from '@kooshapari/phenotype-component-recipes/artifact-card';",
+      "",
+      "const card = createArtifactCard({",
+      "  title: '${1:Project Name}',",
+      "  summary: '${2:A brief description}',",
+      "  type: '${3|app,dataset,library,infra,agent,skill,evaluation,standardization,migration,integration,documentation,security,discipline_otherresearch,research_otheranalysis,contract,patent,standard,standardother|}',",
+      "  family: '${4:omniroute}',",
+      "  status: '${5|shipped,building,failed,researching,deploying|}',",
+      "});"
+    ],
+    "description": "Create a phenoDesign artifact card"
+  },
+  "createMetricCallout": {
+    "prefix": "pd-metric",
+    "body": [
+      "import { createMetricCallout } from '@kooshapari/phenotype-component-recipes/evidence';",
+      "",
+      "const metric = createMetricCallout({",
+      "  value: '${1:99%}',",
+      "  label: '${2:Uptime}',",
+      "});"
+    ],
+    "description": "Create a phenoDesign metric callout"
+  },
+  "createEvidenceLabel": {
+    "prefix": "pd-evidence",
+    "body": [
+      "import { createEvidenceLabel } from '@kooshapari/phenotype-component-recipes/evidence';",
+      "",
+      "const label = createEvidenceLabel({",
+      "  text: '${1:Evidence}',",
+      "  variant: '${2|primary,secondary,tertiary|}',",
+      "});"
+    ],
+    "description": "Create a phenoDesign evidence label"
+  },
+  "initScrollReveal": {
+    "prefix": "pd-scroll-reveal",
+    "body": [
+      "import { initScrollReveal } from '@kooshapari/phenotype-interaction-patterns/scroll-reveal';",
+      "",
+      "// Add data-reveal=\"${1|up,down,left,right,fade,blur,scale|}\" to HTML elements",
+      "const reveal = initScrollReveal({",
+      "  threshold: ${2:0.1},",
+      "  rootMargin: '${3:0px}',",
+      "});"
+    ],
+    "description": "Initialize phenoDesign scroll reveal"
+  },
+  "createLightbox": {
+    "prefix": "pd-lightbox",
+    "body": [
+      "import { createLightbox } from '@kooshapari/phenotype-interaction-patterns/lightbox';",
+      "",
+      "const lightbox = createLightbox();",
+      "lightbox.open('${1:image.jpg}', '${2:Alt text}', '${3:Caption}');"
+    ],
+    "description": "Create a phenoDesign lightbox"
+  },
+  "animateCounter": {
+    "prefix": "pd-counter",
+    "body": [
+      "import { initCounterAnimate } from '@kooshapari/phenotype-interaction-patterns/counter-animate';",
+      "",
+      "// Add data-counter=\"${1:100}\" to HTML elements",
+      "const counter = initCounterAnimate();"
+    ],
+    "description": "Initialize phenoDesign counter animation"
+  }
+}
