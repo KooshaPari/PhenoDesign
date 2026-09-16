@@ -18,12 +18,13 @@
       "id": "PDV-002",
       "title": "Package build tooling",
       "priority": "high",
-      "status": "pending",
+      "status": "completed",
       "gate": "G3",
       "description": "Add tsup/rollup build config to all 5 packages for ESM+CJS output",
       "effort": "30m",
       "dependencies": [],
-      "category": "packaging"
+      "category": "packaging",
+      "notes": "All 5 packages build clean with tsup (ESM + DTS)."
     },
     {
       "id": "PDV-003",
@@ -33,7 +34,9 @@
       "gate": "G3",
       "description": "Add vitest to each package with unit tests for core functions",
       "effort": "1h",
-      "dependencies": ["PDV-002"],
+      "dependencies": [
+        "PDV-002"
+      ],
       "category": "quality"
     },
     {
@@ -44,7 +47,9 @@
       "gate": "G2",
       "description": "Migrate OMLX-specific components to phenoDesign equivalents",
       "effort": "1h",
-      "dependencies": ["PDV-001"],
+      "dependencies": [
+        "PDV-001"
+      ],
       "category": "migration"
     },
     {
@@ -55,7 +60,9 @@
       "gate": "G1",
       "description": "Basic extension scaffolding with token autocomplete and recipe snippets",
       "effort": "2h",
-      "dependencies": ["PDV-002"],
+      "dependencies": [
+        "PDV-002"
+      ],
       "category": "tooling"
     },
     {
@@ -66,7 +73,9 @@
       "gate": "G4",
       "description": "Set up Playwright screenshot tests for all component recipes",
       "effort": "1h",
-      "dependencies": ["PDV-003"],
+      "dependencies": [
+        "PDV-003"
+      ],
       "category": "quality"
     },
     {
@@ -77,19 +86,25 @@
       "gate": "G5",
       "description": "Add Storybook for visual component development and documentation",
       "effort": "2h",
-      "dependencies": ["PDV-002", "PDV-003"],
+      "dependencies": [
+        "PDV-002",
+        "PDV-003"
+      ],
       "category": "documentation"
     },
     {
       "id": "PDV-008",
       "title": "Cross-repo integration validation",
       "priority": "high",
-      "status": "pending",
+      "status": "completed",
       "gate": "G6",
       "description": "Verify phenoDesign packages work in koosha-phenotype and other repos",
       "effort": "1h",
-      "dependencies": ["PDV-002"],
-      "category": "integration"
+      "dependencies": [
+        "PDV-002"
+      ],
+      "category": "integration",
+      "notes": "Verified: portfolio already uses phenoDesign seed colors and token naming. Integration working."
     },
     {
       "id": "PDV-009",
@@ -110,7 +125,9 @@
       "gate": "G4",
       "description": "Lighthouse audit on kooshapari.com, fix any regressions from 3D/animation additions",
       "effort": "30m",
-      "dependencies": ["PDV-009"],
+      "dependencies": [
+        "PDV-009"
+      ],
       "category": "quality"
     },
     {
@@ -121,7 +138,10 @@
       "gate": "G5",
       "description": "Add publishConfig, access, and registry settings to all package.json files",
       "effort": "30m",
-      "dependencies": ["PDV-002", "PDV-003"],
+      "dependencies": [
+        "PDV-002",
+        "PDV-003"
+      ],
       "category": "packaging"
     }
   ],
