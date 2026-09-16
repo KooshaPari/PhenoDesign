@@ -1,7 +1,7 @@
 {
   "project": "phenoDesign",
   "version": "1.0.0",
-  "lastUpdated": "2026-09-16T10:15:00Z",
+  "lastUpdated": "2026-09-16T10:24:00Z",
   "tasks": [
     {
       "id": "PDV-001",
@@ -78,12 +78,13 @@
       "id": "PDV-007",
       "title": "Storybook integration",
       "priority": "low",
-      "status": "pending",
+      "status": "completed",
       "gate": "G5",
       "description": "Add Storybook for visual component development.",
       "effort": "2h",
       "dependencies": ["PDV-002", "PDV-003"],
-      "category": "documentation"
+      "category": "documentation",
+      "notes": "Storybook configured with HTML framework. Stories for Badge, Evidence, ArtifactCard. Builds clean."
     },
     {
       "id": "PDV-008",
@@ -105,7 +106,8 @@
       "description": "Final visual critique and mobile QA.",
       "effort": "30m",
       "dependencies": [],
-      "category": "polish"
+      "category": "polish",
+      "notes": "Blocked: no browser available for visual QA."
     },
     {
       "id": "PDV-010",
@@ -116,7 +118,8 @@
       "description": "Lighthouse audit on kooshapari.com.",
       "effort": "30m",
       "dependencies": ["PDV-009"],
-      "category": "quality"
+      "category": "quality",
+      "notes": "Blocked: no browser available for Lighthouse."
     },
     {
       "id": "PDV-011",
@@ -137,8 +140,8 @@
     "high": 3,
     "medium": 5,
     "low": 2,
-    "completed": 8,
+    "completed": 9,
     "inProgress": 0,
-    "blocked": 0
+    "blocked": 2
   }
 }

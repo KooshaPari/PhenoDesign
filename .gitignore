@@ -58,3 +58,5 @@ Thumbs.db
 yarn-debug.log*
 yarn-error.log*
 tests/visual/results/
+storybook-static/
+*.stories-static/
