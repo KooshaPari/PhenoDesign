@@ -24,6 +24,12 @@ html, body {
   width: 100vw; height: 100vh;
   z-index: 0;
   pointer-events: auto;
+  background: #08080f;
+}
+.canvas-wrap canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .scroll-rail {
@@ -31,6 +37,7 @@ html, body {
   height: 600vh; /* 6 beats × 100vh */
   pointer-events: none;
   z-index: 1;
+  background: transparent;
 }
 
 /* ── Progress bar ──────────────────────────────────────── */

@@ -1,0 +1,35 @@
+test_all_capabilities_have_unique_ids (test_contracts.Contracts.test_all_capabilities_have_unique_ids) ... ok
+test_all_skills_have_frontmatter_and_guide (test_contracts.Contracts.test_all_skills_have_frontmatter_and_guide) ... ok
+test_backlog_dependencies (test_contracts.Contracts.test_backlog_dependencies) ... ok
+test_duplicate_asset (test_contracts.Contracts.test_duplicate_asset) ... ok
+test_duplicate_scene (test_contracts.Contracts.test_duplicate_scene) ... ok
+test_empty_meaning (test_contracts.Contracts.test_empty_meaning) ... ok
+test_example (test_contracts.Contracts.test_example) ... ok
+test_gap (test_contracts.Contracts.test_gap) ... ok
+test_missing_end (test_contracts.Contracts.test_missing_end) ... ok
+test_missing_start (test_contracts.Contracts.test_missing_start) ... ok
+test_mixed_none (test_contracts.Contracts.test_mixed_none) ... ok
+test_nan (test_contracts.Contracts.test_nan) ... ok
+test_rest_scene (test_contracts.Contracts.test_rest_scene) ... ok
+test_reversed (test_contracts.Contracts.test_reversed) ... ok
+test_unknown_field (test_contracts.Contracts.test_unknown_field) ... ok
+test_wrong_evidence_owner (test_contracts.Contracts.test_wrong_evidence_owner) ... ok
+test_apply_creates (test_install.Installation.test_apply_creates) ... ok
+test_conflict_preflight (test_install.Installation.test_conflict_preflight) ... ok
+test_corrupt_source (test_install.Installation.test_corrupt_source) ... ok
+test_dry_run_no_write (test_install.Installation.test_dry_run_no_write) ... ok
+test_duplicate_manifest (test_install.Installation.test_duplicate_manifest) ... ok
+test_escape (test_install.Installation.test_escape) ... ok
+test_idempotent (test_install.Installation.test_idempotent) ... ok
+test_lock_cleanup (test_install.Installation.test_lock_cleanup) ... ok
+test_lock_does_not_delete_existing (test_install.Installation.test_lock_does_not_delete_existing) ... ok
+test_parent_file_refused (test_install.Installation.test_parent_file_refused) ... ok
+test_skill_activation (test_install.Installation.test_skill_activation) ... ok
+test_symlink_package (test_install.Installation.test_symlink_package) ... ok
+test_symlink_parent (test_install.Installation.test_symlink_parent) ... ok
+test_wrong_repo (test_install.Installation.test_wrong_repo) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.035s
+
+OK

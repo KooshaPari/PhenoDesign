@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Lumen: a scene-driven optical-instrument concept for PhenoDesign. Editable source and keyboard-accessible interaction."><title>Lumen Chamber · PhenoDesign scene specimen</title><style>:root{color-scheme:dark;--ink:#f6f5f5;--muted:#acc0c6;--teal:#7ebab5;--night:#0b141b;--line:#2b414a;font-family:Arial,Helvetica,sans-serif;font-synthesis:none}
+*{box-sizing:border-box}html{background:var(--night);scroll-behavior:auto}body{margin:0;color:var(--ink);background:var(--night)}button,input,select{font:inherit}button,a,select,input{touch-action:manipulation}a{color:inherit}button,select{color:var(--ink);background:#12232c;border:1px solid #3c535b;border-radius:7px;padding:10px 13px;min-height:44px}button{cursor:pointer}button[aria-pressed=true]{background:#29494d;border-color:var(--teal)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #b6e9de;outline-offset:4px}button:hover{border-color:var(--teal)}
+.skip{position:fixed;left:20px;top:-80px;z-index:100;background:var(--teal);color:#091519;padding:14px}.skip:focus{top:8px}
+header{position:sticky;top:0;z-index:40;height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px 4.2vw;background:#0b141bf2;border-bottom:1px solid #263a42}
+.brand{text-decoration:none;font-size:18px;letter-spacing:-.5px}.brand span{color:var(--muted);font-size:12px;letter-spacing:0;margin-left:12px}.head-tools{display:flex;gap:10px;align-items:center}.head-tools a{font-size:13px;text-underline-offset:4px}.head-tools select{max-width:175px;font-size:13px}.sr{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+#stage{position:relative;width:100%;height:min(72vw,740px);overflow:hidden;isolation:isolate}#art{position:absolute;inset:0}#art svg{width:100%;height:100%;display:block}.story-copy{position:absolute;left:5.2%;top:13%;width:min(450px,33%);z-index:4;pointer-events:none}.chapter-label{font-size:13px;color:var(--teal);margin:0 0 24px;letter-spacing:.01em}h1{font-size:clamp(44px,5.8vw,88px);line-height:.99;letter-spacing:-.065em;font-weight:500;margin:0 0 22px;text-wrap:balance}.lead{color:#bfd0d3;font-size:16px;line-height:1.6;max-width:310px}.hint{margin-top:26px;font-size:12px;line-height:1.5;color:#9bb5bd;max-width:270px}
+#hud{position:relative;z-index:35;padding:14px 4.2vw 18px;background:#0c1820f5;border-top:1px solid var(--line);display:flex;gap:24px;align-items:center;justify-content:space-between}.aperture{width:240px;flex:1;max-width:330px}.aperture label{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#cfdbdc;margin-bottom:12px}.aperture output{font-variant-numeric:tabular-nums;color:var(--teal)}input[type=range]{width:100%;height:24px;margin:0;accent-color:var(--teal)}.finish{display:flex;gap:6px}.finish button{font-size:12px}.action-group{display:flex;gap:7px}.action-group button{font-size:12px}.state-note{font-size:11px;color:#91a7af;max-width:125px;line-height:1.5}
+#chapters section{padding:55px 7vw;max-width:1000px}#chapters h2{font-size:32px;font-weight:500;letter-spacing:-1px;margin:0 0 12px}#chapters p{color:var(--muted);line-height:1.7;max-width:620px}.plain-note{background:#172831;padding:18px 7vw;color:#b6c9cd;font-size:14px;line-height:1.6}
+footer{position:relative;z-index:45;background:#101e26;padding:58px 7vw;border-top:1px solid #344b54}footer h2{font-size:clamp(28px,4vw,56px);letter-spacing:-.04em;font-weight:500;margin:0 0 16px}footer p{max-width:740px;line-height:1.7;color:#b6c9cd}footer a{text-underline-offset:5px}footer .tiny{font-size:12px;color:#94aeb7}.configuration{font-size:18px;color:#d2eee5}#scene-meter{position:fixed;top:75px;left:0;width:100%;height:2px;background:transparent;z-index:50;pointer-events:none}#scene-meter span{display:block;height:2px;background:var(--teal);width:0}
+body[data-enhanced=true] header{position:fixed;inset:0 0 auto}body[data-enhanced=true] #stage{position:fixed;inset:76px 0 130px;height:auto}body[data-enhanced=true] #hud{position:fixed;inset:auto 0 0;min-height:126px}body[data-enhanced=true] #chapters{height:650vh;min-height:4000px;pointer-events:none}body[data-enhanced=true] #chapters section{height:calc(650vh/6);min-height:calc(4000px/6)}body[data-enhanced=true] #chapters h2,body[data-enhanced=true] #chapters p{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}body[data-enhanced=true] .plain-note{display:none}body[data-enhanced=true] footer{margin-bottom:130px}body[data-enhanced=true] #scene-meter{display:block}
+body:not([data-enhanced=true]) #hud,body:not([data-enhanced=true]) .head-tools,body:not([data-enhanced=true]) #scene-meter{display:none}
+body[data-motion=off] .hint::after{content:' Motion off: scene changes use static cuts.';display:block;color:var(--teal);margin-top:8px}
+@media(max-width:1050px){.brand span{display:none}.story-copy{width:36%}h1{font-size:clamp(44px,6.3vw,72px)}.state-note{display:none}#hud{gap:16px}.aperture{max-width:260px}}
+@media(max-width:700px){header{height:66px;padding:9px 18px;gap:8px}.brand{font-size:17px}.head-tools{gap:6px}.head-tools a{display:none}.head-tools select{max-width:124px;min-height:42px;padding:6px;font-size:11px}.head-tools button{font-size:11px;padding:8px}.story-copy{left:7%;top:6%;width:85%;max-width:470px}h1{font-size:clamp(36px,9.2vw,52px);max-width:370px;margin-bottom:12px;letter-spacing:-.055em}.chapter-label{margin-bottom:13px;font-size:11px}.lead{font-size:12px;line-height:1.55;max-width:320px}.hint{display:none}#stage{height:700px}#hud{flex-wrap:wrap;padding:12px 18px 16px;gap:8px 12px;align-items:center}.aperture{flex:1 0 100%;max-width:none}.aperture label{margin-bottom:3px}.finish{gap:4px;flex:1}.finish button{padding:8px;min-height:42px;font-size:11px}.action-group{gap:4px}.action-group button{font-size:11px;min-height:42px;padding:8px}body[data-enhanced=true] #stage{inset:66px 0 150px}body[data-enhanced=true] #hud{min-height:150px}body[data-enhanced=true] footer{margin-bottom:150px}#scene-meter{top:65px}footer{padding:35px 7vw}#chapters section{padding:30px 7vw}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+/* Protect semantic copy during the bright macro passage, without masking controls. */
+#stage::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,#0b141b88 0%,#0b141b66 28%,#0b141b00 60%)}
+@media(max-width:700px){#stage::after{background:linear-gradient(180deg,#0b141baa 0%,#0b141b88 22%,#0b141b00 51%)}}
+@media(max-width:380px){header{padding:8px 12px}.brand{font-size:14px}.head-tools{gap:4px}.head-tools select{max-width:110px;font-size:10px}.head-tools button{font-size:10px;padding:7px}}
+</style></head>
+<body>
+<a class="skip" href="#plain">Skip to the document</a>
+<header><a class="brand" href="#plain">PhenoDesign<span>Lumen / Scene study</span></a><div class="head-tools"><label class="sr" for="chapter">Choose a scene</label><select id="chapter"><option value="arrival">1 · The room</option><option value="approach">2 · The approach</option><option value="construction">3 · The mechanism</option><option value="participate">4 · The response</option><option value="threshold">5 · The passage</option><option value="resolve">6 · The return</option></select><button id="motion" aria-pressed="false">Motion on</button><a href="#plain">Read the document</a></div></header>
+<div id="scene-meter" aria-hidden="true"><span id="meter-fill"></span></div>
+<main>
+<div id="stage"><div id="art"><svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" aria-hidden="true" focusable="false" data-renderer="svg-projection" data-scene="arrival"><defs>
+ <radialGradient id="room-glow"><stop stop-color="#315d65" stop-opacity=".40"/><stop offset="1" stop-color="#0b141a" stop-opacity="0"/></radialGradient>
+ <linearGradient id="steel" x1=".1" y1="0" x2=".88" y2="1"><stop stop-color="#f4f5f2"/><stop offset=".18" stop-color="#78878a"/><stop offset=".39" stop-color="#e4e9e8"/><stop offset=".54" stop-color="#26363b"/><stop offset=".77" stop-color="#78878a"/><stop offset="1" stop-color="#f4f5f2"/></linearGradient>
+ <linearGradient id="side"><stop stop-color="#26363b"/><stop offset=".48" stop-color="#78878a"/><stop offset="1" stop-color="#26363b"/></linearGradient>
+ <radialGradient id="lens"><stop stop-color="#f0fbef"/><stop offset=".18" stop-color="#b0e3d9"/><stop offset=".56" stop-color="#54958e"/><stop offset=".86" stop-color="#1e464d"/><stop offset="1" stop-color="#08171f"/></radialGradient>
+ <radialGradient id="beamFloor"><stop stop-color="#b8ece1" stop-opacity="0.33"/><stop offset=".4" stop-color="#7ebab5" stop-opacity=".12"/><stop offset="1" stop-color="#7ebab5" stop-opacity="0"/></radialGradient>
+ <linearGradient id="beam" x1="0" y1="0" x2=".3" y2="1"><stop stop-color="#b5ebe0" stop-opacity="0.12"/><stop offset="1" stop-color="#7ebab5" stop-opacity=".01"/></linearGradient>
+ <linearGradient id="blade"><stop stop-color="#5c7376"/><stop offset=".48" stop-color="#1c313a"/><stop offset="1" stop-color="#08151e"/></linearGradient>
+ <radialGradient id="innerLight"><stop stop-color="#f0fff2"/><stop offset=".65" stop-color="#aadbd2"/><stop offset="1" stop-color="#28616b"/></radialGradient>
+ <linearGradient id="fade"><stop stop-color="#0b141b" stop-opacity=".0"/><stop offset="1" stop-color="#0b141b" stop-opacity=".9"/></linearGradient>
+ </defs><rect width="1440" height="900" fill="#0b141b"/><ellipse cx="964.80" cy="441.00" rx="864.00" ry="675.00" fill="url(#room-glow)"/><g opacity="0.35" stroke="#5d7881" fill="none" stroke-width=".7"><path d="M 864.00 621.00 L -1195.20 900"/><path d="M 864.00 621.00 L -921.60 900"/><path d="M 864.00 621.00 L -648.00 900"/><path d="M 864.00 621.00 L -374.40 900"/><path d="M 864.00 621.00 L -100.80 900"/><path d="M 864.00 621.00 L 172.80 900"/><path d="M 864.00 621.00 L 446.40 900"/><path d="M 864.00 621.00 L 720.00 900"/><path d="M 864.00 621.00 L 993.60 900"/><path d="M 864.00 621.00 L 1267.20 900"/><path d="M 864.00 621.00 L 1540.80 900"/><path d="M 864.00 621.00 L 1814.40 900"/><path d="M 864.00 621.00 L 2088.00 900"/><path d="M 864.00 621.00 L 2361.60 900"/><path d="M 864.00 621.00 L 2635.20 900"/><path d="M 0 628.75H 1440"/><path d="M 0 652.00H 1440"/><path d="M 0 690.75H 1440"/><path d="M 0 745.00H 1440"/><path d="M 0 814.75H 1440"/><path d="M 0 900.00H 1440"/><path d="M 86.40 108.00H 1353.60V 630.00H 86.40Z"/><path d="M 158.40 162.00H 1281.60V 585.00H 158.40Z"/></g><path d="M 926.59 441.00 L 630.87 747.00 Q 964.80 891.00 1298.73 747.00 L 1003.01 441.00 Z" fill="url(#beam)"/><ellipse cx="964.80" cy="747.00" rx="434.11" ry="108.00" fill="url(#beamFloor)"/><g transform="translate(937.94 448.23) rotate(-10.31) scale(0.86 1)"><circle r="177.71" fill="#0a1920" stroke="url(#steel)" stroke-width="14.46"/><circle r="142.58" fill="url(#lens)"/><circle r="31.00" fill="none" stroke="#c9f6e4" opacity=".15" stroke-width=".6"/><circle r="40.29" fill="none" stroke="#c9f6e4" opacity=".15" stroke-width=".6"/><circle r="49.59" fill="none" stroke="#c9f6e4" opacity=".15" stroke-width=".6"/><circle r="58.89" fill="none" stroke="#c9f6e4" opacity=".15" stroke-width=".6"/><circle r="68.19" fill="none" stroke="#c9f6e4" opacity=".15" stroke-width=".6"/><circle r="77.49" fill="none" stroke="#c9f6e4" opacity=".15" stroke-width=".6"/><circle r="86.79" fill="none" stroke="#c9f6e4" opacity=".15" stroke-width=".6"/><circle r="96.09" fill="none" stroke="#c9f6e4" opacity=".15" stroke-width=".6"/><circle r="105.39" fill="none" stroke="#c9f6e4" opacity=".15" stroke-width=".6"/><circle r="114.69" fill="none" stroke="#c9f6e4" opacity=".15" stroke-width=".6"/><circle r="123.98" fill="none" stroke="#c9f6e4" opacity=".15" stroke-width=".6"/><circle r="133.28" fill="none" stroke="#c9f6e4" opacity=".15" stroke-width=".6"/></g><g transform="translate(928.84 445.34) rotate(-10.31) scale(0.86 1)"><circle r="206.64" fill="none" stroke="url(#side)" stroke-width="26.86"/></g><g transform="translate(931.32 444.72) rotate(-10.31) scale(0.86 1)"><circle r="206.64" fill="none" stroke="url(#side)" stroke-width="26.86"/></g><g transform="translate(933.80 444.10) rotate(-10.31) scale(0.86 1)"><circle r="206.64" fill="none" stroke="url(#side)" stroke-width="26.86"/></g><g transform="translate(936.28 443.48) rotate(-10.31) scale(0.86 1)"><circle r="206.64" fill="none" stroke="url(#side)" stroke-width="26.86"/></g><g transform="translate(938.76 442.86) rotate(-10.31) scale(0.86 1)"><circle r="206.64" fill="none" stroke="url(#side)" stroke-width="26.86"/></g><g transform="translate(941.24 442.24) rotate(-10.31) scale(0.86 1)"><circle r="206.64" fill="none" stroke="url(#side)" stroke-width="26.86"/></g><g transform="translate(943.72 441.62) rotate(-10.31) scale(0.86 1)"><circle r="206.64" fill="none" stroke="url(#side)" stroke-width="26.86"/></g><g transform="translate(946.20 441.00) rotate(-10.31) scale(0.86 1)"><circle r="206.64" fill="none" stroke="url(#side)" stroke-width="26.86"/></g><g transform="translate(964.80 441.00) rotate(-10.31) scale(0.86 1)"><circle r="206.64" fill="none" stroke="url(#steel)" stroke-width="18.60"/><circle r="191.14" fill="none" stroke="#f2f4ec" stroke-opacity=".32" stroke-width="2.07"/><path d="M 200.44 0.00L 211.81 0.00" stroke="#e4efe6" stroke-opacity=".5" stroke-width="1.4"/><path d="M 199.68 17.47L 211.00 18.46" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 197.40 34.81L 208.59 36.78" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 193.61 51.88L 204.59 54.82" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 188.35 68.55L 199.03 72.44" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 181.66 84.71L 191.96 89.51" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 173.59 100.22L 183.43 105.90" stroke="#e4efe6" stroke-opacity=".5" stroke-width="1.4"/><path d="M 164.19 114.97L 173.50 121.49" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 153.55 128.84L 162.25 136.15" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 141.73 141.73L 149.77 149.77" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 128.84 153.55L 136.15 162.25" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 114.97 164.19L 121.49 173.50" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 100.22 173.59L 105.90 183.43" stroke="#e4efe6" stroke-opacity=".5" stroke-width="1.4"/><path d="M 84.71 181.66L 89.51 191.96" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 68.55 188.35L 72.44 199.03" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 51.88 193.61L 54.82 204.59" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 34.81 197.40L 36.78 208.59" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 17.47 199.68L 18.46 211.00" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 0.00 200.44L 0.00 211.81" stroke="#e4efe6" stroke-opacity=".5" stroke-width="1.4"/><path d="M -17.47 199.68L -18.46 211.00" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -34.81 197.40L -36.78 208.59" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -51.88 193.61L -54.82 204.59" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -68.55 188.35L -72.44 199.03" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -84.71 181.66L -89.51 191.96" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -100.22 173.59L -105.90 183.43" stroke="#e4efe6" stroke-opacity=".5" stroke-width="1.4"/><path d="M -114.97 164.19L -121.49 173.50" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -128.84 153.55L -136.15 162.25" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -141.73 141.73L -149.77 149.77" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -153.55 128.84L -162.25 136.15" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -164.19 114.97L -173.50 121.49" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -173.59 100.22L -183.43 105.90" stroke="#e4efe6" stroke-opacity=".5" stroke-width="1.4"/><path d="M -181.66 84.71L -191.96 89.51" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -188.35 68.55L -199.03 72.44" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -193.61 51.88L -204.59 54.82" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -197.40 34.81L -208.59 36.78" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -199.68 17.47L -211.00 18.46" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -200.44 0.00L -211.81 0.00" stroke="#e4efe6" stroke-opacity=".5" stroke-width="1.4"/><path d="M -199.68 -17.47L -211.00 -18.46" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -197.40 -34.81L -208.59 -36.78" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -193.61 -51.88L -204.59 -54.82" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -188.35 -68.55L -199.03 -72.44" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -181.66 -84.71L -191.96 -89.51" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -173.59 -100.22L -183.43 -105.90" stroke="#e4efe6" stroke-opacity=".5" stroke-width="1.4"/><path d="M -164.19 -114.97L -173.50 -121.49" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -153.55 -128.84L -162.25 -136.15" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -141.73 -141.73L -149.77 -149.77" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -128.84 -153.55L -136.15 -162.25" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -114.97 -164.19L -121.49 -173.50" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -100.22 -173.59L -105.90 -183.43" stroke="#e4efe6" stroke-opacity=".5" stroke-width="1.4"/><path d="M -84.71 -181.66L -89.51 -191.96" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -68.55 -188.35L -72.44 -199.03" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -51.88 -193.61L -54.82 -204.59" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -34.81 -197.40L -36.78 -208.59" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -17.47 -199.68L -18.46 -211.00" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M -0.00 -200.44L -0.00 -211.81" stroke="#e4efe6" stroke-opacity=".5" stroke-width="1.4"/><path d="M 17.47 -199.68L 18.46 -211.00" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 34.81 -197.40L 36.78 -208.59" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 51.88 -193.61L 54.82 -204.59" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 68.55 -188.35L 72.44 -199.03" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 84.71 -181.66L 89.51 -191.96" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 100.22 -173.59L 105.90 -183.43" stroke="#e4efe6" stroke-opacity=".5" stroke-width="1.4"/><path d="M 114.97 -164.19L 121.49 -173.50" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 128.84 -153.55L 136.15 -162.25" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 141.73 -141.73L 149.77 -149.77" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 153.55 -128.84L 162.25 -136.15" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 164.19 -114.97L 173.50 -121.49" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 173.59 -100.22L 183.43 -105.90" stroke="#e4efe6" stroke-opacity=".5" stroke-width="1.4"/><path d="M 181.66 -84.71L 191.96 -89.51" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 188.35 -68.55L 199.03 -72.44" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 193.61 -51.88L 204.59 -54.82" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 197.40 -34.81L 208.59 -36.78" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/><path d="M 199.68 -17.47L 211.00 -18.46" stroke="#22363b" stroke-opacity=".5" stroke-width="0.7"/></g><g transform="translate(964.80 441.00) rotate(-10.31) scale(0.86 1)"><circle r="177.71" fill="#111f28" stroke="url(#steel)" stroke-width="11.37"/><circle r="148.78" fill="url(#blade)"/><circle r="76.42" fill="url(#innerLight)"/><path d="M 75.67 10.66 L 134.61 -63.37 L 139.99 50.37 L 45.97 61.05 Z" fill="url(#blade)" stroke="#8eabaa" stroke-opacity=".3" stroke-width=".7"/><path d="M 45.97 61.05 L 139.99 50.37 L 63.37 134.61 L -10.66 75.67 Z" fill="url(#blade)" stroke="#8eabaa" stroke-opacity=".3" stroke-width=".7"/><path d="M -10.66 75.67 L 63.37 134.61 L -50.37 139.99 L -61.05 45.97 Z" fill="url(#blade)" stroke="#8eabaa" stroke-opacity=".3" stroke-width=".7"/><path d="M -61.05 45.97 L -50.37 139.99 L -134.61 63.37 L -75.67 -10.66 Z" fill="url(#blade)" stroke="#8eabaa" stroke-opacity=".3" stroke-width=".7"/><path d="M -75.67 -10.66 L -134.61 63.37 L -139.99 -50.37 L -45.97 -61.05 Z" fill="url(#blade)" stroke="#8eabaa" stroke-opacity=".3" stroke-width=".7"/><path d="M -45.97 -61.05 L -139.99 -50.37 L -63.37 -134.61 L 10.66 -75.67 Z" fill="url(#blade)" stroke="#8eabaa" stroke-opacity=".3" stroke-width=".7"/><path d="M 10.66 -75.67 L -63.37 -134.61 L 50.37 -139.99 L 61.05 -45.97 Z" fill="url(#blade)" stroke="#8eabaa" stroke-opacity=".3" stroke-width=".7"/><path d="M 61.05 -45.97 L 50.37 -139.99 L 134.61 -63.37 L 75.67 10.66 Z" fill="url(#blade)" stroke="#8eabaa" stroke-opacity=".3" stroke-width=".7"/><circle r="165.31" fill="none" stroke="#c4dbd6" stroke-opacity=".21" stroke-width="1"/><path d="M -115.72 -123.98 A 169.44 169.44 0 0 1 115.72 -123.98" fill="none" stroke="#f5fff6" stroke-opacity=".44" stroke-width="2.48"/><rect x="-4.13" y="-174.61" width="8.27" height="8.27" rx="1" fill="#7ebab5"/></g><g fill="none" stroke="#80989d" stroke-opacity=".45"><path d="M 24 62V 24H 62M 1378 24H 1416V 62M 24 838V 876H 62M 1378 876H 1416V 838"/></g><ellipse cx="892.48" cy="366.61" rx="35.13" ry="5.17" fill="#effff5" opacity=".09" transform="rotate(-35 892.48 366.61)"/></svg></div><div class="story-copy"><p id="scene-label" class="chapter-label">Lumen / 01 — The room</p><h1 id="scene-title">A space shaped by light.</h1><p id="scene-line" class="lead">Meet Lumen. A conceptual optical instrument, suspended inside its own world.</p><p id="scene-hint" class="hint">Scroll to enter, or choose a scene.</p></div></div>
+<div id="hud" aria-label="Scene controls"><div class="aperture"><label for="aperture">Aperture <output for="aperture" id="aperture-value">62%</output></label><input id="aperture" type="range" min="0" max="100" value="62" step="1"></div><div class="finish" aria-label="Surface finish"><button data-finish="silver" aria-pressed="true">Silver</button><button data-finish="graphite" aria-pressed="false">Graphite</button><button data-finish="ceramic" aria-pressed="false">Ceramic</button></div><div class="action-group"><button id="section" aria-pressed="false">Section</button><button id="hold" aria-pressed="false">Hold scene</button><button id="reset">Reset</button></div><div class="state-note">Same object.<br>Different relationship.</div></div>
+<div class="plain-note">This page also works as a static document. The enhanced scene uses only local SVG and JavaScript; it requests no camera, microphone, sensors or external assets.</div>
+<div id="chapters">
+<section id="arrival"><h2>The room</h2><p>The suspended optical instrument has a floor, an environment and a shared axis. Scale comes from those relationships—not merely the size of the image.</p></section>
+<section id="approach"><h2>The approach</h2><p>The viewpoint approaches the same object. Finish and aperture selections remain unchanged across the scene.</p></section>
+<section id="construction"><h2>The mechanism</h2><p>The shell, iris and emitter separate along one construction axis. This is an authored conceptual assembly, not a claim about a manufactured product.</p></section>
+<section id="participate"><h2>The response</h2><p>The aperture control changes the opening, beam width and floor illumination. Keyboard arrows provide the same operation as pointer input.</p></section>
+<section id="threshold"><h2>The passage</h2><p>The lens expands beyond its apparent stage. Light becomes the environment while the chosen configuration is retained.</p></section>
+<section id="resolve"><h2>The return</h2><p>The scene resolves into useful controls and this ordinary document. The visitor may reset, revisit a chapter or leave without completing a forced sequence.</p></section>
+</div>
+<footer id="plain" tabindex="-1"><h2>Keep the meaning. Not the machinery.</h2><p>A scene-driven experience changes the relationship between visitor, object and environment. It can use live 3D, layered vector art, rendered film or a hybrid. What matters is continuity, consequence and a useful outcome.</p><p id="configuration" class="configuration">Silver finish · Aperture 62%</p><p><a href="#arrival" data-scene-link="arrival">Return to the room</a> · <a href="../index.html">Open the full specification</a></p><p class="tiny">Original conceptual instrument. This dependency-free SVG/projection specimen demonstrates staging and state, not photoreal materials, native Adobe/Blender execution, GPU rendering or deployed-product verification. Source, recipes and tests accompany it in the ZIP.</p></footer>
+</main><script>/** Original dependency-free reference state. Not a new product/verification authority. */
+const SCENES = Object.freeze([
+  {id:'arrival', title:'A space shaped by light.', line:'Meet Lumen. A conceptual optical instrument, suspended inside its own world.', hint:'Scroll to enter, or choose a scene.'},
+  {id:'approach', title:'Move closer. Notice more.', line:'A shared axis. A solid shell. A light plane. The room gives the object its scale.', hint:'The camera moves; the object remains the same.'},
+  {id:'construction', title:'Nothing here floats by accident.', line:'The housing, iris and emitter separate along one construction axis.', hint:'Toggle the section to inspect the layers.'},
+  {id:'participate', title:'Your gesture changes the room.', line:'Open the aperture. The light, the opening and the floor respond together.', hint:'Drag the aperture control. Keyboard arrows work too.'},
+  {id:'threshold', title:'The frame was only a threshold.', line:'The instrument becomes an environment. Your chosen aperture and finish travel with you.', hint:'A spatial transition, not another slide.'},
+  {id:'resolve', title:'A world. Then a useful interface.', line:'Keep the configuration. Revisit a detail. Or leave the scene and read the ordinary document.', hint:'The experience serves the task—not the other way around.'},
+]);
+const FINISHES = Object.freeze(['silver','graphite','ceramic']);
+function clamp(value, min=0, max=1) {
+  if (typeof value !== 'number' || !Number.isFinite(value)) throw new TypeError('Expected a finite number');
+  return Math.min(max,Math.max(min,value));
+}
+function smoothstep(value) { const x=clamp(value); return x*x*(3-2*x); }
+function mix(a,b,t) { return a+(b-a)*t; }
+function initialState() { return {aperture:0.62, finish:'silver', section:false, pointerX:0, pointerY:0}; }
+function reduceState(state, action) {
+  if (!action || typeof action.type !== 'string') throw new TypeError('Action requires a type');
+  switch(action.type) {
+    case 'aperture': return {...state, aperture:clamp(action.value)};
+    case 'finish': if (!FINISHES.includes(action.value)) throw new RangeError('Unknown finish'); return {...state,finish:action.value};
+    case 'section': if(typeof action.value!=='boolean')throw new TypeError('Section requires boolean');return {...state,section:action.value};
+    case 'pointer': return {...state,pointerX:clamp(action.x,-1,1),pointerY:clamp(action.y,-1,1)};
+    case 'reset': return initialState();
+    default: throw new RangeError('Unknown action: '+action.type);
+  }
+}
+function progressFromFrame(frame, duration) {
+  if (!Number.isInteger(duration) || duration < 1) throw new RangeError('Duration must be a positive integer');
+  if (!Number.isInteger(frame) || frame < 0 || frame >= duration) throw new RangeError('Frame outside composition');
+  return duration === 1 ? 0 : frame/(duration-1);
+}
+function sceneIndex(progress) {return Math.min(SCENES.length-1,Math.floor(clamp(progress)*SCENES.length));}
+const POSES = Object.freeze([
+ {scale:0.70,yaw:-0.54,pitch:-0.1,roll:-0.18,explode:0,portal:0,room:1,shift:0},
+ {scale:0.98,yaw:-0.38,pitch:0.02,roll:-0.1,explode:0,portal:0,room:0.9,shift:0},
+ {scale:0.84,yaw:-0.45,pitch:0.04,roll:-0.14,explode:1,portal:0,room:0.65,shift:-0.03},
+ {scale:1.05,yaw:-0.20,pitch:0,roll:0,explode:0.18,portal:0,room:0.6,shift:0},
+ {scale:1.04,yaw:0,pitch:0,roll:0,explode:0,portal:0,room:0.5,shift:-0.07},
+ {scale:3.65,yaw:0,pitch:0,roll:0,explode:0,portal:1,room:0.2,shift:-0.17},
+ {scale:0.98,yaw:-0.38,pitch:0,roll:-0.1,explode:0,portal:0,room:0.8,shift:0},
+]);
+function evaluateScene(progress, state=initialState(), {reducedMotion=false}={}) {
+ const p=clamp(progress), index=sceneIndex(p), local=p===1?1:p*SCENES.length-index;
+ if(!FINISHES.includes(state.finish))throw new RangeError('Unknown state finish');
+ const aperture=clamp(state.aperture);
+ // Reduced motion uses a single deliberately staged pose per chapter, not a slow camera flight.
+ const t=reducedMotion?0.80:smoothstep(clamp(local/0.80));
+ const a=POSES[index],b=POSES[index+1],pose={};
+ for(const k of Object.keys(a))pose[k]=mix(a[k],b[k],t);
+ if(state.section)pose.explode=Math.max(pose.explode,0.82);
+ return {progress:p,index,local,scene:SCENES[index],pose,aperture,finish:state.finish,section:state.section,
+  pointerX:reducedMotion?0:clamp(state.pointerX,-1,1),pointerY:reducedMotion?0:clamp(state.pointerY,-1,1),reducedMotion};
+}
+
+/** Original SVG/projected-geometry blocking renderer. No WebGL or physical-rendering claim. */
+function escapeXML(value) {return String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));}
+function renderSceneSVG(f,width=1440,height=900) {
+ if(!Number.isFinite(width)||!Number.isFinite(height)||width<1||height<1||width>16384||height>16384)throw new RangeError('Invalid dimensions');
+ const w=width,h=height,mobile=w<700, aperture=f.aperture, p=f.pose;
+ const cx=w*(mobile?0.52:0.67)+w*p.shift*(mobile?0.3:1)+f.pointerX*6;
+ const cy=h*(mobile?0.59:0.49)+f.pointerY*4;
+ const r=Math.min(w*(mobile?0.37:0.205),h*(mobile?0.29:0.34))*p.scale;
+ const aspect=Math.cos(p.yaw), roll=p.roll*180/Math.PI, sep=p.explode*r*0.76;
+ const palette={silver:['#e4e9e8','#78878a','#26363b','#f4f5f2'],graphite:['#7b898c','#233138','#0c171d','#b8c8c9'],ceramic:['#f4ead7','#a99d87','#4b4541','#fff5df']}[f.finish];
+ const o=palette;
+ const n=v=>Number(v).toFixed(2), origin=(dx,dy)=>`translate(${n(cx+dx)} ${n(cy+dy)}) rotate(${n(roll)}) scale(${n(aspect)} 1)`;
+ const inner=r*(0.19+0.29*aperture),outer=r*0.72;
+ const out=[];
+ out.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true" focusable="false" data-renderer="svg-projection" data-scene="${escapeXML(f.scene.id)}">`);
+ out.push(`<defs>
+ <radialGradient id="room-glow"><stop stop-color="#315d65" stop-opacity=".40"/><stop offset="1" stop-color="#0b141a" stop-opacity="0"/></radialGradient>
+ <linearGradient id="steel" x1=".1" y1="0" x2=".88" y2="1"><stop stop-color="${o[3]}"/><stop offset=".18" stop-color="${o[1]}"/><stop offset=".39" stop-color="${o[0]}"/><stop offset=".54" stop-color="${o[2]}"/><stop offset=".77" stop-color="${o[1]}"/><stop offset="1" stop-color="${o[3]}"/></linearGradient>
+ <linearGradient id="side"><stop stop-color="${o[2]}"/><stop offset=".48" stop-color="${o[1]}"/><stop offset="1" stop-color="${o[2]}"/></linearGradient>
+ <radialGradient id="lens"><stop stop-color="#f0fbef"/><stop offset=".18" stop-color="#b0e3d9"/><stop offset=".56" stop-color="#54958e"/><stop offset=".86" stop-color="#1e464d"/><stop offset="1" stop-color="#08171f"/></radialGradient>
+ <radialGradient id="beamFloor"><stop stop-color="#b8ece1" stop-opacity="${n(.19+aperture*.22)}"/><stop offset=".4" stop-color="#7ebab5" stop-opacity=".12"/><stop offset="1" stop-color="#7ebab5" stop-opacity="0"/></radialGradient>
+ <linearGradient id="beam" x1="0" y1="0" x2=".3" y2="1"><stop stop-color="#b5ebe0" stop-opacity="${n(.06+aperture*.10)}"/><stop offset="1" stop-color="#7ebab5" stop-opacity=".01"/></linearGradient>
+ <linearGradient id="blade"><stop stop-color="#5c7376"/><stop offset=".48" stop-color="#1c313a"/><stop offset="1" stop-color="#08151e"/></linearGradient>
+ <radialGradient id="innerLight"><stop stop-color="#f0fff2"/><stop offset=".65" stop-color="#aadbd2"/><stop offset="1" stop-color="#28616b"/></radialGradient>
+ <linearGradient id="fade"><stop stop-color="#0b141b" stop-opacity=".0"/><stop offset="1" stop-color="#0b141b" stop-opacity=".9"/></linearGradient>
+ </defs>`);
+ // Stage: architectural rails, shared floor and light cone.
+ out.push(`<rect width="${w}" height="${h}" fill="#0b141b"/><ellipse cx="${n(cx)}" cy="${n(cy)}" rx="${n(w*.6)}" ry="${n(h*.75)}" fill="url(#room-glow)"/>`);
+ const horizon=h*.69;
+ out.push(`<g opacity="${n(.28*p.room+.07)}" stroke="#5d7881" fill="none" stroke-width=".7">`);
+ for(let i=-7;i<=7;i++){const x=w*.5+i*w*.19;out.push(`<path d="M ${n(w*.60)} ${n(horizon)} L ${n(x)} ${h}"/>`);}
+ for(let j=1;j<7;j++){const y=horizon+(h-horizon)*(j/6)**2;out.push(`<path d="M 0 ${n(y)}H ${w}"/>`);}
+ out.push(`<path d="M ${n(w*.06)} ${n(h*.12)}H ${n(w*.94)}V ${n(h*.7)}H ${n(w*.06)}Z"/><path d="M ${n(w*.11)} ${n(h*.18)}H ${n(w*.89)}V ${n(h*.65)}H ${n(w*.11)}Z"/></g>`);
+ const beamWidth=r*(.5+aperture*1.8),floorY=h*.83;
+ out.push(`<path d="M ${n(cx-inner*.5)} ${n(cy)} L ${n(cx-beamWidth)} ${n(floorY)} Q ${n(cx)} ${n(floorY+h*.16)} ${n(cx+beamWidth)} ${n(floorY)} L ${n(cx+inner*.5)} ${n(cy)} Z" fill="url(#beam)"/>`);
+ out.push(`<ellipse cx="${n(cx+f.pointerX*40)}" cy="${n(floorY)}" rx="${n(beamWidth*1.3)}" ry="${n(h*.12)}" fill="url(#beamFloor)"/>`);
+ // Rear emitter, housing and front iris all share one axis.
+ const rearX=-r*.13-sep*.62,rearY=r*.035+sep*.19;
+ out.push(`<g transform="${origin(rearX,rearY)}"><circle r="${n(r*.86)}" fill="#0a1920" stroke="url(#steel)" stroke-width="${n(r*.07)}"/><circle r="${n(r*.69)}" fill="url(#lens)"/>`);
+ for(let i=0;i<12;i++)out.push(`<circle r="${n(r*(.15+i*.045))}" fill="none" stroke="#c9f6e4" opacity=".15" stroke-width=".6"/>`);
+ out.push('</g>');
+ // Depth stack/knurling on the housing.
+ for(let j=7;j>=0;j--){const dx=-r*.09-j*r*.012,dy=j*r*.003;out.push(`<g transform="${origin(dx,dy)}"><circle r="${n(r)}" fill="none" stroke="url(#side)" stroke-width="${n(r*.13)}"/></g>`);}
+ out.push(`<g transform="${origin(0,0)}"><circle r="${n(r)}" fill="none" stroke="url(#steel)" stroke-width="${n(r*.09)}"/><circle r="${n(r*.925)}" fill="none" stroke="#f2f4ec" stroke-opacity=".32" stroke-width="${n(r*.01)}"/>`);
+ for(let i=0;i<72;i++){let a=i*Math.PI*2/72;out.push(`<path d="M ${n(Math.cos(a)*r*.97)} ${n(Math.sin(a)*r*.97)}L ${n(Math.cos(a)*r*1.025)} ${n(Math.sin(a)*r*1.025)}" stroke="${i%6===0?'#e4efe6':'#22363b'}" stroke-opacity=".5" stroke-width="${i%6===0?1.4:.7}"/>`);}
+ out.push('</g>');
+ const irisX=sep*.80,irisY=-sep*.25;
+ out.push(`<g transform="${origin(irisX,irisY)}"><circle r="${n(r*.86)}" fill="#111f28" stroke="url(#steel)" stroke-width="${n(r*.055)}"/><circle r="${n(outer)}" fill="url(#blade)"/><circle r="${n(inner)}" fill="url(#innerLight)"/>`);
+ // Eight blades define a real changing opening in this stylized projection.
+ const blades=8;
+ for(let i=0;i<blades;i++){
+ const a=i*Math.PI*2/blades+.14, b=(i+1)*Math.PI*2/blades+.14;
+ const points=[[Math.cos(a)*inner,Math.sin(a)*inner],[Math.cos(a-.58)*outer,Math.sin(a-.58)*outer],[Math.cos(b-.58)*outer,Math.sin(b-.58)*outer],[Math.cos(b)*inner,Math.sin(b)*inner]];
+ out.push(`<path d="M ${points.map(v=>n(v[0])+' '+n(v[1])).join(' L ')} Z" fill="url(#blade)" stroke="#8eabaa" stroke-opacity=".3" stroke-width=".7"/>`);
+ }
+ out.push(`<circle r="${n(r*.80)}" fill="none" stroke="#c4dbd6" stroke-opacity=".21" stroke-width="1"/><path d="M ${n(-r*.56)} ${n(-r*.60)} A ${n(r*.82)} ${n(r*.82)} 0 0 1 ${n(r*.56)} ${n(-r*.60)}" fill="none" stroke="#f5fff6" stroke-opacity=".44" stroke-width="${n(r*.012)}"/>`);
+ // Marker on front housing, no baked essential information.
+ out.push(`<rect x="${n(-r*.02)}" y="${n(-r*.845)}" width="${n(r*.04)}" height="${n(r*.04)}" rx="1" fill="#7ebab5"/></g>`);
+ // Controlled foreground stage corners; conceptually a frame the portal crosses.
+ out.push(`<g fill="none" stroke="#80989d" stroke-opacity=".45"><path d="M 24 62V 24H 62M ${w-62} 24H ${w-24}V 62M 24 ${h-62}V ${h-24}H 62M ${w-62} ${h-24}H ${w-24}V ${h-62}"/></g>`);
+ if(f.index===2||f.section){out.push(`<g stroke="#7ebab5" stroke-opacity=".55" fill="none"><path d="M ${n(cx-r*.95-sep*.6)} ${n(cy+r*1.18)}H ${n(cx+r*.8+sep*.8)}" stroke-dasharray="3 5"/></g>`);}
+ // Pointer light is bounded and purely local. No sensor/network use.
+ out.push(`<ellipse cx="${n(cx-r*.35+f.pointerX*r*.30)}" cy="${n(cy-r*.36+f.pointerY*r*.22)}" rx="${n(r*.17)}" ry="${n(r*.025)}" fill="#effff5" opacity=".09" transform="rotate(-35 ${n(cx-r*.35)} ${n(cy-r*.36)})"/>`);
+ out.push('</svg>');return out.join('');
+}
+
+// Inlined by build_specimen.py from the same source tested in Node.
+(() => {
+ 'use strict';
+ const art=document.getElementById('art'),stage=document.getElementById('stage');
+ const motionQuery=matchMedia('(prefers-reduced-motion: reduce)');
+ let state=initialState(),reduced=motionQuery.matches,held=false,holdProgress=0,scheduled=false,lastFrame=null;
+ let renderCount=0,disposed=false;
+ const refs={title:document.getElementById('scene-title'),line:document.getElementById('scene-line'),hint:document.getElementById('scene-hint'),label:document.getElementById('scene-label'),chapter:document.getElementById('chapter'),aperture:document.getElementById('aperture'),value:document.getElementById('aperture-value'),motion:document.getElementById('motion'),hold:document.getElementById('hold'),section:document.getElementById('section'),summary:document.getElementById('configuration')};
+ function maxRail(){return Math.max(1,document.getElementById('chapters').offsetHeight-innerHeight);}
+ function progress(){return held?holdProgress:clamp(scrollY/maxRail());}
+ function dispatch(action){state=reduceState(state,action);requestRender();}
+ function draw(){
+  scheduled=false;if(disposed||document.hidden)return;
+  const f=evaluateScene(progress(),state,{reducedMotion:reduced});lastFrame=f;
+  const w=Math.max(1,stage.clientWidth),h=Math.max(1,stage.clientHeight);
+  art.innerHTML=renderSceneSVG(f,w,h);renderCount++;
+  refs.title.textContent=f.scene.title;refs.line.textContent=f.scene.line;refs.hint.textContent=f.scene.hint;
+  refs.label.textContent=`Lumen / ${String(f.index+1).padStart(2,'0')} — ${['The room','The approach','The mechanism','The response','The passage','The return'][f.index]}`;
+  refs.chapter.value=f.scene.id;refs.aperture.value=String(Math.round(state.aperture*100));refs.value.value=Math.round(state.aperture*100)+'%';
+  refs.section.setAttribute('aria-pressed',String(state.section));refs.hold.setAttribute('aria-pressed',String(held));refs.hold.textContent=held?'Resume scene':'Hold scene';
+  refs.motion.setAttribute('aria-pressed',String(reduced));refs.motion.textContent=reduced?'Motion off':'Motion on';
+  for(const b of document.querySelectorAll('[data-finish]'))b.setAttribute('aria-pressed',String(b.dataset.finish===state.finish));
+  refs.summary.textContent=`${state.finish[0].toUpperCase()+state.finish.slice(1)} finish · Aperture ${Math.round(state.aperture*100)}%${state.section?' · Section open':''}`;
+  document.body.dataset.scene=f.scene.id;document.body.dataset.motion=reduced?'off':'on';
+  document.getElementById('meter-fill').style.width=(clamp(scrollY/maxRail())*100)+'%';
+ }
+ function requestRender(){if(!scheduled&&!disposed&&!document.hidden){scheduled=true;requestAnimationFrame(draw);}}
+ function goScene(id){const i=SCENES.findIndex(s=>s.id===id);if(i<0)return false;held=false;window.scrollTo({top:Math.round(((i+.12)/SCENES.length)*maxRail()),behavior:'auto'});requestRender();return true;}
+ const aborter=new AbortController(),opts={signal:aborter.signal};
+ refs.aperture.addEventListener('input',()=>dispatch({type:'aperture',value:Number(refs.aperture.value)/100}),opts);
+ refs.chapter.addEventListener('change',()=>goScene(refs.chapter.value),opts);
+ for(const b of document.querySelectorAll('[data-finish]'))b.addEventListener('click',()=>dispatch({type:'finish',value:b.dataset.finish}),opts);
+ refs.section.addEventListener('click',()=>dispatch({type:'section',value:!state.section}),opts);
+ refs.hold.addEventListener('click',()=>{if(!held)holdProgress=progress();held=!held;requestRender();},opts);
+ refs.motion.addEventListener('click',()=>{reduced=!reduced;state={...state,pointerX:0,pointerY:0};requestRender();},opts);
+ document.getElementById('reset').addEventListener('click',()=>{state=initialState();held=false;requestRender();},opts);
+ stage.addEventListener('pointermove',e=>{if(reduced||held||e.pointerType==='touch')return;const box=stage.getBoundingClientRect();dispatch({type:'pointer',x:clamp((e.clientX-box.left)/box.width*2-1,-1,1),y:clamp((e.clientY-box.top)/box.height*2-1,-1,1)});},opts);
+ stage.addEventListener('pointerleave',()=>{if(!held)dispatch({type:'pointer',x:0,y:0});},opts);
+ window.addEventListener('scroll',requestRender,{...opts,passive:true});window.addEventListener('resize',requestRender,opts);
+ document.addEventListener('visibilitychange',()=>{scheduled=false;requestRender();},opts);
+ motionQuery.addEventListener('change',e=>{reduced=e.matches;state={...state,pointerX:0,pointerY:0};requestRender();},opts);
+ for(const a of document.querySelectorAll('[data-scene-link]'))a.addEventListener('click',e=>{if(goScene(a.dataset.sceneLink))e.preventDefault();},opts);
+ window.addEventListener('hashchange',()=>goScene(location.hash.slice(1)),opts);
+ // Explicitly untrusted observation/export hook; external tests still drive actual controls.
+ window.__sceneExperience={
+  snapshot:()=>({state:{...state},frame:lastFrame?JSON.parse(JSON.stringify(lastFrame)):null,held,reduced,renderCount,backend:'svg-projection',visible:!document.hidden,disposed}),
+  seek:p=>{held=true;holdProgress=clamp(p);draw();},
+  dispose:()=>{disposed=true;aborter.abort();},
+ };
+ document.body.dataset.enhanced='true';
+ if(location.hash)goScene(location.hash.slice(1));draw();
+})();
+</script></body></html>

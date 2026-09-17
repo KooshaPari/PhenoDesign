@@ -1,0 +1,113 @@
+{
+  "skills": [
+    {
+      "name": "pd-scene-direction",
+      "description": "Direct a scene-driven flagship experience rather than an animated poster.",
+      "entry": "skills/pd-scene-direction/SKILL.md",
+      "guide": "docs/DESIGN-DIRECTION.md"
+    },
+    {
+      "name": "pd-spatial-storyboarding",
+      "description": "Board scenes with camera, scale, light, state and transitions.",
+      "entry": "skills/pd-spatial-storyboarding/SKILL.md",
+      "guide": "docs/SCENE-GRAMMAR.md"
+    },
+    {
+      "name": "pd-diorama-composition",
+      "description": "Stage foreground, subject and environment as a coherent place.",
+      "entry": "skills/pd-diorama-composition/SKILL.md",
+      "guide": "docs/CHOREOGRAPHY-AND-PRIMITIVES.md"
+    },
+    {
+      "name": "pd-product-theater",
+      "description": "Turn actual product properties into an experiential narrative.",
+      "entry": "skills/pd-product-theater/SKILL.md",
+      "guide": "docs/DESIGN-DIRECTION.md"
+    },
+    {
+      "name": "pd-camera-choreography",
+      "description": "Author stable camera language for browser and film.",
+      "entry": "skills/pd-camera-choreography/SKILL.md",
+      "guide": "docs/SCENE-GRAMMAR.md"
+    },
+    {
+      "name": "pd-interactive-object-grammar",
+      "description": "Build meaningful, bounded object behaviors with input parity.",
+      "entry": "skills/pd-interactive-object-grammar/SKILL.md",
+      "guide": "docs/SCENE-GRAMMAR.md"
+    },
+    {
+      "name": "pd-diegetic-interface",
+      "description": "Integrate controls and information into scenes without losing usability.",
+      "entry": "skills/pd-diegetic-interface/SKILL.md",
+      "guide": "docs/REVIEW-AND-ACCEPTANCE.md"
+    },
+    {
+      "name": "pd-fourth-wall-interaction",
+      "description": "Stage viewer-aware responses and frame-breaking composition.",
+      "entry": "skills/pd-fourth-wall-interaction/SKILL.md",
+      "guide": "docs/CHOREOGRAPHY-AND-PRIMITIVES.md"
+    },
+    {
+      "name": "pd-material-storytelling",
+      "description": "Make materials and light communicate the subject.",
+      "entry": "skills/pd-material-storytelling/SKILL.md",
+      "guide": "docs/MEDIA-ROUTING.md"
+    },
+    {
+      "name": "pd-reveal-choreography",
+      "description": "Compose cutaways, assemblies, masking and macro reveals.",
+      "entry": "skills/pd-reveal-choreography/SKILL.md",
+      "guide": "docs/CHOREOGRAPHY-AND-PRIMITIVES.md"
+    },
+    {
+      "name": "pd-scroll-cinema",
+      "description": "Use scroll as a reversible narrative driver without trapping navigation.",
+      "entry": "skills/pd-scroll-cinema/SKILL.md",
+      "guide": "docs/SCENE-GRAMMAR.md"
+    },
+    {
+      "name": "pd-input-reactive-environments",
+      "description": "Make visitor actions affect the staged world.",
+      "entry": "skills/pd-input-reactive-environments/SKILL.md",
+      "guide": "docs/CHOREOGRAPHY-AND-PRIMITIVES.md"
+    },
+    {
+      "name": "pd-hybrid-render-routing",
+      "description": "Choose DOM, SVG, live 3D, video or hybrid per scene.",
+      "entry": "skills/pd-hybrid-render-routing/SKILL.md",
+      "guide": "docs/MEDIA-ROUTING.md"
+    },
+    {
+      "name": "pd-cross-media-scene-production",
+      "description": "Reuse authored scene state across native source, web and film.",
+      "entry": "skills/pd-cross-media-scene-production/SKILL.md",
+      "guide": "docs/E2E-AND-CROSS-MEDIA.md"
+    },
+    {
+      "name": "pd-scene-performance-renditions",
+      "description": "Budget scene quality across devices, motion preferences and resource pressure.",
+      "entry": "skills/pd-scene-performance-renditions/SKILL.md",
+      "guide": "docs/REVIEW-AND-ACCEPTANCE.md"
+    },
+    {
+      "name": "pd-scene-visual-critique",
+      "description": "Critique complete spatial experiences and revise weak scenes.",
+      "entry": "skills/pd-scene-visual-critique/SKILL.md",
+      "guide": "docs/REVIEW-AND-ACCEPTANCE.md"
+    },
+    {
+      "name": "pd-scene-journey-validation",
+      "description": "Extend existing journey capture to spatial and time-based experiences.",
+      "entry": "skills/pd-scene-journey-validation/SKILL.md",
+      "guide": "docs/E2E-AND-CROSS-MEDIA.md"
+    },
+    {
+      "name": "pd-scene-repo-integration",
+      "description": "Absorb scene capabilities into PhenoDesign without duplicate owners.",
+      "entry": "skills/pd-scene-repo-integration/SKILL.md",
+      "guide": "docs/REPO-INTEGRATION.md"
+    }
+  ],
+  "activation": "Selective task activation; do not load all skills into every context."
+}

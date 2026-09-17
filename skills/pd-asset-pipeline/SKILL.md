@@ -76,9 +76,9 @@ For Vercel deployment, assets in `/public/` are automatically served from CDN wi
 
 ```
 public/
-  images/       → kooshapari.com/images/*
-  models/       → kooshapari.com/models/*
-  fonts/        → kooshapari.com/fonts/*
+  images/       → <REDACTED>.com/images/*
+  models/       → <REDACTED>.com/models/*
+  fonts/        → <REDACTED>.com/fonts/*
 ```
 
 Add cache headers in `vercel.json`:

@@ -1,0 +1,258 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CAPABILITY MATRIX · PhenoDesign</title><link rel="stylesheet" href="../../site.css"><header><a class="brand" href="../../index.html">PhenoDesign / Scene experiences</a><p>V3 · Source-backed working library</p></header><main><h1>Capability matrix</h1>
+<p>All media families remain in scope. These rows are coverage and acceptance assignments—not a claim all adapters are installed.</p>
+<table>
+<thead>
+<tr>
+  <th>ID</th>
+  <th>Capability</th>
+  <th>Production/source</th>
+  <th>Owner</th>
+  <th>Delivered state</th>
+  <th>Acceptance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>C01</td>
+  <td>Scene direction (Narrative)</td>
+  <td>Treatment and alternative executions; Director dossier</td>
+  <td>PhenoDesign</td>
+  <td>Reference implementation</td>
+  <td>Premise survives static and interactive review</td>
+</tr>
+<tr>
+  <td>C02</td>
+  <td>Spatial storyboarding (Narrative)</td>
+  <td>Camera/prop/lighting boards; Scene document + boards</td>
+  <td>PhenoDesign</td>
+  <td>Reference implementation</td>
+  <td>All entrances/holds/exits/reverse paths described</td>
+</tr>
+<tr>
+  <td>C03</td>
+  <td>Scene continuity (Runtime)</td>
+  <td>Stable objects and variant state; Pure state evaluator</td>
+  <td>Consumer initially</td>
+  <td>Implemented reference</td>
+  <td>Direct seek, reverse, route handoff preserve configuration</td>
+</tr>
+<tr>
+  <td>C04</td>
+  <td>Camera choreography (Runtime)</td>
+  <td>World/object/macro framing; Camera waypoints</td>
+  <td>Consumer initially</td>
+  <td>Implemented reference</td>
+  <td>Framing/occlusion and mobile compositions inspected</td>
+</tr>
+<tr>
+  <td>C05</td>
+  <td>World and environment (Art)</td>
+  <td>Ground, scale, atmosphere and prop relations; Scene layers/master</td>
+  <td>Accepted asset owner</td>
+  <td>Implemented reference</td>
+  <td>Coherent spatial cues under all used views</td>
+</tr>
+<tr>
+  <td>C06</td>
+  <td>Interactive object grammar (Interaction)</td>
+  <td>Aperture, unfold, section, assemble; Bounded reducer + input bindings</td>
+  <td>Consumer initially</td>
+  <td>Implemented reference</td>
+  <td>Real input visibly changes consequence, reset and bounds</td>
+</tr>
+<tr>
+  <td>C07</td>
+  <td>Diegetic controls (Interaction)</td>
+  <td>Scene controls + semantic counterparts; DOM/SVG or native UI</td>
+  <td>PhenoDesign</td>
+  <td>Implemented reference</td>
+  <td>Keyboard/touch parity, visibility and no trapping</td>
+</tr>
+<tr>
+  <td>C08</td>
+  <td>Fourth-wall staging (Art)</td>
+  <td>Foreground overlap and viewer response; Layer/occlusion policy</td>
+  <td>PhenoDesign</td>
+  <td>Implemented reference</td>
+  <td>Decorative frame may break; controls/focus stay protected</td>
+</tr>
+<tr>
+  <td>C09</td>
+  <td>Light/material consequence (Art)</td>
+  <td>Relighting, finish, aperture; Material/light master and bindings</td>
+  <td>Accepted asset owner</td>
+  <td>Implemented stylized reference</td>
+  <td>Control changes environment and surface, not only label</td>
+</tr>
+<tr>
+  <td>C10</td>
+  <td>Vector/identity/typography (2D)</td>
+  <td>Illustrator, SVG, semantic type; AI/SVG + layer/artboard identity</td>
+  <td>Accepted asset owner</td>
+  <td>Prior guidance, not rerun</td>
+  <td>Native reopen, vector inspection, placement and semantic copy</td>
+</tr>
+<tr>
+  <td>C11</td>
+  <td>Raster/compositing (2D)</td>
+  <td>Photoshop layers/masks/material plates; PSD + color/alpha recipes</td>
+  <td>Accepted asset owner</td>
+  <td>Prior guidance, not rerun</td>
+  <td>Native reopen, missing links, alpha/crop and consumer</td>
+</tr>
+<tr>
+  <td>C12</td>
+  <td>Rigged/animated 2D (2D/time)</td>
+  <td>Stateful vector, Rive, sprites; Editable rig/state machine/atlas</td>
+  <td>Accepted asset owner</td>
+  <td>Specified</td>
+  <td>Runtime state coverage and owned authoring qualification</td>
+</tr>
+<tr>
+  <td>C13</td>
+  <td>2.5D diorama (Spatial)</td>
+  <td>Layer planes, masks, constrained camera; Editable layers + depth/camera</td>
+  <td>PhenoDesign</td>
+  <td>Implemented reference</td>
+  <td>No exposed edges, matching occlusion and reduced-motion cuts</td>
+</tr>
+<tr>
+  <td>C14</td>
+  <td>Procedural spatial source (3D)</td>
+  <td>Blender Python/Geometry Nodes; BLEND recipe + named objects</td>
+  <td>Existing render worker</td>
+  <td>Recipe; native unexecuted</td>
+  <td>Cold reopen, material/object structure, export and actual import</td>
+</tr>
+<tr>
+  <td>C15</td>
+  <td>Live 3D/shaders (3D)</td>
+  <td>Three.js/R3F or accepted graphics stack; GLB + renderer source</td>
+  <td>Existing graphics owner</td>
+  <td>Specified; GPU unqualified</td>
+  <td>Renderer pixels, context loss, materials, picking and device budget</td>
+</tr>
+<tr>
+  <td>C16</td>
+  <td>Film and motion (Time)</td>
+  <td>Remotion/AE deterministic composition; TSX/AEP + state/timing</td>
+  <td>Existing Remotion/render owner</td>
+  <td>Adapter; native runtime unexecuted</td>
+  <td>Actual render + full decode + served player and captions</td>
+</tr>
+<tr>
+  <td>C17</td>
+  <td>Pre-rendered/hybrid delivery (Hybrid)</td>
+  <td>Video plates, image windows, live overlays; Masters + transform mapping</td>
+  <td>Consumer initially</td>
+  <td>Specified</td>
+  <td>No seams; seeking, decoded-memory and fallback tests</td>
+</tr>
+<tr>
+  <td>C18</td>
+  <td>Scroll/direct navigation (Interaction)</td>
+  <td>Native scroll and scene links; Progress/scene driver</td>
+  <td>Consumer initially</td>
+  <td>Implemented reference</td>
+  <td>Fast/reverse scroll, links, resize, no wheel interception</td>
+</tr>
+<tr>
+  <td>C19</td>
+  <td>Frame-driven export (Time)</td>
+  <td>Same pure scene state, film clock; Deterministic frame mapping</td>
+  <td>Existing Remotion owner</td>
+  <td>Implemented reference</td>
+  <td>First/last/one-frame behavior; no wall-clock dependence</td>
+</tr>
+<tr>
+  <td>C20</td>
+  <td>Physics/simulation (Spatial/time)</td>
+  <td>Bounded state + fixed-step/cache; Rig/simulation recipe</td>
+  <td>Existing render worker</td>
+  <td>Specified</td>
+  <td>Seek/reset equivalence, bounds, reproducibility limits</td>
+</tr>
+<tr>
+  <td>C21</td>
+  <td>Audio/captions (Time)</td>
+  <td>Intentional sound and transcript; Audio/caption source and mix</td>
+  <td>Existing media owner</td>
+  <td>Specified; no audio in specimen</td>
+  <td>Opt-in playback, synchronization, captions and rights</td>
+</tr>
+<tr>
+  <td>C22</td>
+  <td>Data/diagrams/editorial (2D/info)</td>
+  <td>Accurate data plus spatial explanation; Data/source graph and semantic view</td>
+  <td>PhenoDesign</td>
+  <td>Prior scope retained</td>
+  <td>No fake statistics; semantic values and data provenance</td>
+</tr>
+<tr>
+  <td>C23</td>
+  <td>Print/CAD/spatial variants (Extended)</td>
+  <td>Appropriate precise/native source; Print/CAD/XR source + exports</td>
+  <td>Accepted specialist owner</td>
+  <td>Prior scope retained</td>
+  <td>Target-specific qualification; no manufacturing/XR claim from web demo</td>
+</tr>
+<tr>
+  <td>C24</td>
+  <td>Native authoring operations (Production)</td>
+  <td>Owned Adobe/Blender sessions; Probe/reopen/capture receipt</td>
+  <td>Existing worker broker</td>
+  <td>Specified; host unqualified</td>
+  <td>No focus theft; owned docs; cold reopen and independent pixels</td>
+</tr>
+<tr>
+  <td>C25</td>
+  <td>Asset sourcing and rights (Production)</td>
+  <td>Approved source/tool/model acquisition; License/source/version identity</td>
+  <td>Accepted asset owner</td>
+  <td>Specified</td>
+  <td>Per-item rights; no private upload or font redistribution</td>
+</tr>
+<tr>
+  <td>C26</td>
+  <td>Accessibility and fallback (Quality)</td>
+  <td>Semantic UI, motion-off, constrained route; Equivalent task rendition</td>
+  <td>Consumer + existing tests</td>
+  <td>Reference checks via scripts/browser_check.py</td>
+  <td>Real keyboard/no-JS/reduced-motion and protected controls</td>
+</tr>
+<tr>
+  <td>C27</td>
+  <td>Performance/resource discipline (Quality)</td>
+  <td>Bounded render/cache/worker costs; Measured budgets and device results</td>
+  <td>Existing worker + consumer</td>
+  <td>Specified; device budgets unmeasured</td>
+  <td>Actual client measurements; hidden/offscreen/dispose behavior</td>
+</tr>
+<tr>
+  <td>C28</td>
+  <td>Journey capture and review (Evidence)</td>
+  <td>Real input + state/pixel capture; Existing Journey/BundleManifest extension</td>
+  <td>Accepted journeys/tooling</td>
+  <td>Integration specified</td>
+  <td>Capture failures retained; authored film not proof</td>
+</tr>
+<tr>
+  <td>C29</td>
+  <td>Critical aesthetic iteration (Quality)</td>
+  <td>Frame/motion critique + revise; Annotated review + corrected evidence</td>
+  <td>PhenoDesign</td>
+  <td>Specified</td>
+  <td>Review weakest dimensions; no numeric score hides hard failure</td>
+</tr>
+<tr>
+  <td>C30</td>
+  <td>Multi-consumer integration (Architecture)</td>
+  <td>Reuse after demonstrated commonality; Narrow shared adapter + compatibility</td>
+  <td>PhenoDesign</td>
+  <td>Specified</td>
+  <td>Two real consumers, no duplicate source/queue/proof owner</td>
+</tr>
+</tbody>
+</table>
+<p>Machine-readable entries and paths: <code>plan/capabilities.json</code>. Existing all-forms canaries and source recipes remain in the preserved prior archives. Qualification does not propagate from one medium to another.</p>
+</main><footer><a href="../../docs/CAPABILITY-MATRIX.md">Original Markdown</a> · See <a href="../../html/evidence/VALIDATION.html">validation boundaries</a>.</footer></html>

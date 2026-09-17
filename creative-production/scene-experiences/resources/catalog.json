@@ -1,0 +1,471 @@
+[
+  {
+    "kind": "Document",
+    "title": "Formal design direction",
+    "href": "html/docs/DESIGN-DIRECTION.html",
+    "description": "The world-first brief, 24 requirements, meaningful agency, material specificity and purposeful stillness.",
+    "extra": ""
+  },
+  {
+    "kind": "Document",
+    "title": "Capability matrix",
+    "href": "html/docs/CAPABILITY-MATRIX.html",
+    "description": "30 families: creation routes, source artifacts, ownership, implementation states and acceptance.",
+    "extra": ""
+  },
+  {
+    "kind": "Document",
+    "title": "Repo integration plan",
+    "href": "html/docs/REPO-INTEGRATION.html",
+    "description": "Existing PhenoDesign, journeys and Remotion boundaries; additive locations, not a repository reorganization.",
+    "extra": ""
+  },
+  {
+    "kind": "Document",
+    "title": "Agent handoff",
+    "href": "html/AGENT-HANDOFF.html",
+    "description": "The execution instruction: reconcile, author, integrate, inspect, test and revise.",
+    "extra": ""
+  },
+  {
+    "kind": "Document",
+    "title": "Scene grammar",
+    "href": "html/docs/SCENE-GRAMMAR.html",
+    "description": "Subjects, camera, environment, light, persistent state, time and input ownership.",
+    "extra": ""
+  },
+  {
+    "kind": "Document",
+    "title": "Choreography vocabulary",
+    "href": "html/docs/CHOREOGRAPHY-AND-PRIMITIVES.html",
+    "description": "20 reusable dramatic mechanisms\u2014not a checklist of effects.",
+    "extra": ""
+  },
+  {
+    "kind": "Document",
+    "title": "Renderer routing",
+    "href": "html/docs/MEDIA-ROUTING.html",
+    "description": "Compare DOM/SVG, 2.5D, live 3D, frame sequences and hybrids per scene.",
+    "extra": ""
+  },
+  {
+    "kind": "Document",
+    "title": "Creative review and acceptance",
+    "href": "html/docs/REVIEW-AND-ACCEPTANCE.html",
+    "description": "Independent visual criticism, behavioral evidence and hard failure gates.",
+    "extra": ""
+  },
+  {
+    "kind": "Document",
+    "title": "Cross-media E2E",
+    "href": "html/docs/E2E-AND-CROSS-MEDIA.html",
+    "description": "Native editable source to real scene, film and documented consumer.",
+    "extra": ""
+  },
+  {
+    "kind": "Document",
+    "title": "Reference study",
+    "href": "html/docs/REFERENCE-STUDY.html",
+    "description": "Apple, creator case studies and discovery shelves, with inspection limits.",
+    "extra": ""
+  },
+  {
+    "kind": "Document",
+    "title": "Six-beat storyboard",
+    "href": "html/examples/STORYBOARD.html",
+    "description": "Arrival, approach, construction, participation, threshold and resolution.",
+    "extra": ""
+  },
+  {
+    "kind": "Document",
+    "title": "Execution plan",
+    "href": "html/plan/EXECUTION-PLAN.html",
+    "description": "M0\u2013M8 with dependencies and failure cases.",
+    "extra": ""
+  },
+  {
+    "kind": "Document",
+    "title": "Validation report",
+    "href": "html/evidence/VALIDATION.html",
+    "description": "47 Node tests, 30 Python tests, 41 inline browser checks; served/GPU/native limits.",
+    "extra": ""
+  },
+  {
+    "kind": "Document",
+    "title": "Installer guide",
+    "href": "html/integration/README.html",
+    "description": "Dry-run first, source hashes, no overwrite, existing policy preserved.",
+    "extra": ""
+  },
+  {
+    "kind": "Specimen",
+    "title": "Lumen Chamber",
+    "href": "specimen/index.html",
+    "description": "Six scenes; aperture changes geometry and room light; finish and section state persist. SVG spatial blocking, not photoreal GPU rendering.",
+    "extra": ""
+  },
+  {
+    "kind": "Film",
+    "title": "Authored scene study",
+    "href": "specimen/scene-study.mp4",
+    "description": "8-second deterministic presentation derivative, independently decoded. Not raw journey evidence or Remotion execution.",
+    "extra": ""
+  },
+  {
+    "kind": "Contract",
+    "title": "Experience JSON Schema",
+    "href": "contracts/experience.schema.json",
+    "description": "Authored experience boundary only; does not replace Journey or BundleManifest.",
+    "extra": ""
+  },
+  {
+    "kind": "Source",
+    "title": "Scene evaluator",
+    "href": "runtime/scene-core.mjs",
+    "description": "Pure state and frame mapping, reused by browser and the unexecuted Remotion adapter.",
+    "extra": ""
+  },
+  {
+    "kind": "Source",
+    "title": "Blender native recipe",
+    "href": "recipes/blender/build_chamber.py",
+    "description": "Named editable mechanism/environment; recipe not executed in this environment.",
+    "extra": ""
+  },
+  {
+    "kind": "Source",
+    "title": "Remotion adapter",
+    "href": "recipes/remotion/SceneFilm.tsx",
+    "description": "Frame-driven composition source; real Remotion rendering remains unexecuted.",
+    "extra": ""
+  },
+  {
+    "kind": "Agent skill",
+    "title": "pd-scene-direction",
+    "href": "html/skills/pd-scene-direction/SKILL.html",
+    "description": "Direct a scene-driven flagship experience rather than an animated poster.",
+    "extra": ""
+  },
+  {
+    "kind": "Agent skill",
+    "title": "pd-spatial-storyboarding",
+    "href": "html/skills/pd-spatial-storyboarding/SKILL.html",
+    "description": "Board scenes with camera, scale, light, state and transitions.",
+    "extra": ""
+  },
+  {
+    "kind": "Agent skill",
+    "title": "pd-diorama-composition",
+    "href": "html/skills/pd-diorama-composition/SKILL.html",
+    "description": "Stage foreground, subject and environment as a coherent place.",
+    "extra": ""
+  },
+  {
+    "kind": "Agent skill",
+    "title": "pd-product-theater",
+    "href": "html/skills/pd-product-theater/SKILL.html",
+    "description": "Turn actual product properties into an experiential narrative.",
+    "extra": ""
+  },
+  {
+    "kind": "Agent skill",
+    "title": "pd-camera-choreography",
+    "href": "html/skills/pd-camera-choreography/SKILL.html",
+    "description": "Author stable camera language for browser and film.",
+    "extra": ""
+  },
+  {
+    "kind": "Agent skill",
+    "title": "pd-interactive-object-grammar",
+    "href": "html/skills/pd-interactive-object-grammar/SKILL.html",
+    "description": "Build meaningful, bounded object behaviors with input parity.",
+    "extra": ""
+  },
+  {
+    "kind": "Agent skill",
+    "title": "pd-diegetic-interface",
+    "href": "html/skills/pd-diegetic-interface/SKILL.html",
+    "description": "Integrate controls and information into scenes without losing usability.",
+    "extra": ""
+  },
+  {
+    "kind": "Agent skill",
+    "title": "pd-fourth-wall-interaction",
+    "href": "html/skills/pd-fourth-wall-interaction/SKILL.html",
+    "description": "Stage viewer-aware responses and frame-breaking composition.",
+    "extra": ""
+  },
+  {
+    "kind": "Agent skill",
+    "title": "pd-material-storytelling",
+    "href": "html/skills/pd-material-storytelling/SKILL.html",
+    "description": "Make materials and light communicate the subject.",
+    "extra": ""
+  },
+  {
+    "kind": "Agent skill",
+    "title": "pd-reveal-choreography",
+    "href": "html/skills/pd-reveal-choreography/SKILL.html",
+    "description": "Compose cutaways, assemblies, masking and macro reveals.",
+    "extra": ""
+  },
+  {
+    "kind": "Agent skill",
+    "title": "pd-scroll-cinema",
+    "href": "html/skills/pd-scroll-cinema/SKILL.html",
+    "description": "Use scroll as a reversible narrative driver without trapping navigation.",
+    "extra": ""
+  },
+  {
+    "kind": "Agent skill",
+    "title": "pd-input-reactive-environments",
+    "href": "html/skills/pd-input-reactive-environments/SKILL.html",
+    "description": "Make visitor actions affect the staged world.",
+    "extra": ""
+  },
+  {
+    "kind": "Agent skill",
+    "title": "pd-hybrid-render-routing",
+    "href": "html/skills/pd-hybrid-render-routing/SKILL.html",
+    "description": "Choose DOM, SVG, live 3D, video or hybrid per scene.",
+    "extra": ""
+  },
+  {
+    "kind": "Agent skill",
+    "title": "pd-cross-media-scene-production",
+    "href": "html/skills/pd-cross-media-scene-production/SKILL.html",
+    "description": "Reuse authored scene state across native source, web and film.",
+    "extra": ""
+  },
+  {
+    "kind": "Agent skill",
+    "title": "pd-scene-performance-renditions",
+    "href": "html/skills/pd-scene-performance-renditions/SKILL.html",
+    "description": "Budget scene quality across devices, motion preferences and resource pressure.",
+    "extra": ""
+  },
+  {
+    "kind": "Agent skill",
+    "title": "pd-scene-visual-critique",
+    "href": "html/skills/pd-scene-visual-critique/SKILL.html",
+    "description": "Critique complete spatial experiences and revise weak scenes.",
+    "extra": ""
+  },
+  {
+    "kind": "Agent skill",
+    "title": "pd-scene-journey-validation",
+    "href": "html/skills/pd-scene-journey-validation/SKILL.html",
+    "description": "Extend existing journey capture to spatial and time-based experiences.",
+    "extra": ""
+  },
+  {
+    "kind": "Agent skill",
+    "title": "pd-scene-repo-integration",
+    "href": "html/skills/pd-scene-repo-integration/SKILL.html",
+    "description": "Absorb scene capabilities into PhenoDesign without duplicate owners.",
+    "extra": ""
+  },
+  {
+    "kind": "Reference",
+    "title": "Apple iPhone 17 Pro product narrative",
+    "href": "https://www.apple.com/il/iphone-17-pro/",
+    "description": "Study product/inside/detail progression, not asset copying.",
+    "extra": "Page text inspected; live motion/backend not instrumented"
+  },
+  {
+    "kind": "Reference",
+    "title": "Nomadic Tribe creator case study",
+    "href": "https://www.makemepulse.com/case-study/nomadic-tribe",
+    "description": "Four interactive narrative chapters; world/visitor relationship.",
+    "extra": "Text inspected"
+  },
+  {
+    "kind": "Reference",
+    "title": "Nike Reactland creator case study",
+    "href": "https://www.wk.com/work/nike-react-reactland/",
+    "description": "Tie meaningful action to product consequence.",
+    "extra": "Text inspected; physical installation, not website"
+  },
+  {
+    "kind": "Reference",
+    "title": "GSAP ScrollTrigger",
+    "href": "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+    "description": "Scroll/pin/scrub route; measure actual experience and reverse.",
+    "extra": "Documentation inspected"
+  },
+  {
+    "kind": "Reference",
+    "title": "CSS scroll-driven animations",
+    "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations",
+    "description": "Native scroll timelines; probe support and keep semantic fallback.",
+    "extra": "Documentation inspected"
+  },
+  {
+    "kind": "Reference",
+    "title": "WCAG 2.2",
+    "href": "https://www.w3.org/TR/WCAG22/",
+    "description": "Separate Level A pause requirements and AAA interaction-motion control; apply product policy explicitly.",
+    "extra": "Relevant motion criteria inspected"
+  },
+  {
+    "kind": "Reference",
+    "title": "Page Visibility API",
+    "href": "https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API",
+    "description": "Suspend hidden work; viewport intersection needs a separate check.",
+    "extra": "Documentation inspected"
+  },
+  {
+    "kind": "Reference",
+    "title": "Remotion useCurrentFrame",
+    "href": "https://www.remotion.dev/docs/use-current-frame",
+    "description": "Frame-relative time and explicit scene timing.",
+    "extra": "Documentation inspected"
+  },
+  {
+    "kind": "Reference",
+    "title": "Remotion flickering/determinism",
+    "href": "https://www.remotion.dev/docs/flickering",
+    "description": "No wall-clock-dependent authoring in frame renders.",
+    "extra": "Documentation inspected"
+  },
+  {
+    "kind": "Reference",
+    "title": "Official GSAP agent skills",
+    "href": "https://github.com/greensock/gsap-skills",
+    "description": "Acquire named task skills through approved pinned workflow; inspect licenses and changes.",
+    "extra": "Repository landing page inspected; not vendored"
+  },
+  {
+    "kind": "Reference",
+    "title": "Photoshop executeAsModal",
+    "href": "https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/executeasmodal",
+    "description": "Native host/modal ownership, cancellation and safe mutation.",
+    "extra": "Documentation inspected"
+  },
+  {
+    "kind": "Reference",
+    "title": "Active Theory",
+    "href": "https://activetheory.net/",
+    "description": "Queue camera/interaction study, no implementation assertions.",
+    "extra": "Resolved but parser insufficient; live study still needed"
+  },
+  {
+    "kind": "Reference",
+    "title": "Remotion agent skills",
+    "href": "https://www.remotion.dev/docs/ai/skills",
+    "description": "Acquire official upstream workflows separately from runtime libraries.",
+    "extra": "Documentation inspected; not vendored"
+  },
+  {
+    "kind": "Reference",
+    "title": "Three.js scene documentation",
+    "href": "https://threejs.org/docs/pages/Scene.html",
+    "description": "Meshes/lights/camera scene assembly; native source and GPU qualification remain separate.",
+    "extra": "Documentation inspected"
+  },
+  {
+    "kind": "Reference",
+    "title": "GSAP matchMedia",
+    "href": "https://gsap.com/docs/v3/GSAP/gsap.matchMedia()/",
+    "description": "Responsive/reduced-motion setup and cleanup.",
+    "extra": "Documentation inspected"
+  },
+  {
+    "kind": "Reference",
+    "title": "Blender command-line arguments",
+    "href": "https://docs.blender.org/manual/en/latest/advanced/command_line/arguments.html",
+    "description": "Verify exact installed version, background/render arguments and device.",
+    "extra": "Fetch failed in this run; reference retained for local verification"
+  },
+  {
+    "kind": "Reference",
+    "title": "Rive agent authoring",
+    "href": "https://rive.app/docs/cli/agents",
+    "description": "Qualify on-device authoring and runtime rather than assume .riv generation.",
+    "extra": "Fetch failed in this run; reference retained for local verification"
+  },
+  {
+    "kind": "Reference",
+    "title": "Three.js rendering on demand",
+    "href": "https://threejs.org/manual/en/rendering-on-demand.html",
+    "description": "Demand rendering and lifecycle; do not use this entry as a current tested implementation.",
+    "extra": "Specific page fetch failed; verify locally"
+  },
+  {
+    "kind": "Reference",
+    "title": "Dribbble discovery",
+    "href": "https://dribbble.com",
+    "description": "Composition/motion leads only; seek original live work.",
+    "extra": "Not audited"
+  },
+  {
+    "kind": "Reference",
+    "title": "Awwwards discovery",
+    "href": "https://www.awwwards.com",
+    "description": "Find creator/live examples; awards are not E2E evidence.",
+    "extra": "Not audited"
+  },
+  {
+    "kind": "Reference",
+    "title": "The FWA discovery",
+    "href": "https://thefwa.com",
+    "description": "Discover world/interaction concepts; independently inspect behaviors.",
+    "extra": "Not audited"
+  },
+  {
+    "kind": "Reference",
+    "title": "Codrops discovery",
+    "href": "https://tympanus.net/codrops/",
+    "description": "Prefer original creator technical case studies and inspect licenses.",
+    "extra": "Not audited in detail"
+  },
+  {
+    "kind": "Reference",
+    "title": "Three.js official library documentation",
+    "href": "https://threejs.org/docs/",
+    "description": "Check actual installed renderer APIs; keep WebGPU/WebGL/fallback lanes distinct.",
+    "extra": "Index inspected"
+  },
+  {
+    "kind": "Reference",
+    "title": "PhenoDesign journeys migration #87",
+    "href": "https://github.com/KooshaPari/PhenoDesign/pull/87",
+    "description": "Reconcile current migration before integration; no remote changes made.",
+    "extra": "Metadata refreshed through GitHub connector: open/unmerged"
+  },
+  {
+    "kind": "Decision record",
+    "title": "001-scene-first",
+    "href": "html/docs/adr/001-scene-first.html",
+    "description": "Scene first; preserve the design system",
+    "extra": ""
+  },
+  {
+    "kind": "Decision record",
+    "title": "002-one-state-many-renderers",
+    "href": "html/docs/adr/002-one-state-many-renderers.html",
+    "description": "One narrative state; multiple renderers",
+    "extra": ""
+  },
+  {
+    "kind": "Decision record",
+    "title": "003-agency-and-rest",
+    "href": "html/docs/adr/003-agency-and-rest.html",
+    "description": "Meaningful agency and intentional rest",
+    "extra": ""
+  },
+  {
+    "kind": "Decision record",
+    "title": "004-no-new-proof-owner",
+    "href": "html/docs/adr/004-no-new-proof-owner.html",
+    "description": "Keep evidence authority where it belongs",
+    "extra": ""
+  },
+  {
+    "kind": "Decision record",
+    "title": "005-consolidate-deliberately",
+    "href": "html/docs/adr/005-consolidate-deliberately.html",
+    "description": "Consolidate by ownership, not folder count",
+    "extra": ""
+  }
+]

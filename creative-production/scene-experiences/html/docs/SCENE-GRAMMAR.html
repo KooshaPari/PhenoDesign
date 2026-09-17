@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCENE GRAMMAR · PhenoDesign</title><link rel="stylesheet" href="../../site.css"><header><a class="brand" href="../../index.html">PhenoDesign / Scene experiences</a><p>V3 · Source-backed working library</p></header><main><h1>Scene grammar, state and time</h1>
+<h2>Minimum common contract</h2>
+<p><code>contracts/experience.schema.json</code> defines an authored document, <strong>not a replacement for
+Journey, BundleManifest, Tracera's product graph or AgilePlus's work records</strong>. It may be attached
+to those existing owners by reference. Unknown/experimental behavior stays in namespaced
+extensions rather than silently changing a downstream evidence schema.</p>
+<p>An experience has a subject, task, semantic summary, asset references, ordered scenes,
+transitions, input bindings, rendition policies and validation claims. A scene includes
+<code>purpose</code>, <code>camera</code>, <code>lighting</code>, <code>objects</code>, <code>input</code>, <code>semantic</code>, <code>continuity</code>, <code>fallback</code> and
+<code>acceptance</code>. Asset source/rights identities belong to existing asset records; reference them.
+A scene is not required to animate or accept input. It is required to have a reason to exist.</p>
+<h2>One evaluation model</h2>
+<p>Define <code>frame = evaluate(progress, interactionState, rendition)</code>. It must be pure for the same
+arguments. Renderers draw that result; they do not each invent their own version of the story.
+The included evaluator clamps finite progress, calculates scene-local progress, preserves
+material/aperture selections and disables continuous camera/pointer travel in reduced motion.</p>
+<p>Use normalized progress for a scroll rail. Scene beats have explicit boundaries. A time-based
+render maps <code>frameIndex / (durationInFrames - 1)</code> into the same progress range. Last-frame mapping,
+one-frame duration and nonfinite input are intentional edge cases, not accidental divides by zero.
+Remotion reads a frame index; wall clocks and uncontrolled CSS animations do not create
+frame-deterministic exports. [R08, R09]</p>
+<p>Separate four concepts:</p>
+<table>
+<thead>
+<tr>
+  <th>Concept</th>
+  <th>Source of authority</th>
+  <th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Narrative position</td>
+  <td>Native scroll, explicit scene link, or film clock—one active driver</td>
+  <td>The lens has separated enough to see its construction.</td>
+</tr>
+<tr>
+  <td>Persistent visitor state</td>
+  <td>Explicit bounded reducer</td>
+  <td>Selected finish and aperture survive scene navigation.</td>
+</tr>
+<tr>
+  <td>Transient response</td>
+  <td>Pointer/gesture sample with cancellation</td>
+  <td>A small spotlight follows the pointer.</td>
+</tr>
+<tr>
+  <td>Environment/capability</td>
+  <td>Observed device/runtime preferences</td>
+  <td>Reduced motion removes the camera flight.</td>
+</tr>
+</tbody>
+</table>
+<p>A selected finish is not a function of scrolling. Reverse scrolling must not erase it. A pointer
+sample is not evidence of interest, identity, emotion or consent to tracking. A viewport resize
+changes framing, not product configuration. User pause must not stop access to the task.</p>
+<h2>Transitions</h2>
+<p>Author entrance, hold, exit, seam and direct-entry states. For matching cuts, name the invariant
+(anchor, bounding ellipse, silhouette, luminance or camera axis). For literal spatial transitions,
+keep world-space positions and transform ownership. For a change of renderer, either crossfade
+at a matched state or use an intentional occluder; do not cover unknown loading latency with
+an unskippable black screen. Failed rich assets keep the semantic rendition usable.</p>
+<p>Reverse is defined even when the original narrative is linear. Seek sets the full state from
+inputs; it must not rely on every earlier animation callback having fired. Drag/physics replay
+uses a deterministic cached simulation or explicit fixed timestep with seed and boundary rules.
+Do not use a variable-step physics simulation for a random-access film export.</p>
+<h2>Three coordinate systems that must not be confused</h2>
+<p><strong>World:</strong> object/camera/light coordinates and units. <strong>Viewport:</strong> CSS pixels, scroll and safe
+areas. <strong>Source media:</strong> original pixels used for callouts/crop. Project world labels to CSS pixels,
+then apply safe-area and occlusion rules. For video/image overlays, use one fit/crop/zoom transform
+for both media and annotations. Device-pixel ratio is a renderer detail, not a second layout scale.</p>
+<h2>Hooks for the real journey harness</h2>
+<p>Expose a read-only scene snapshot and an explicit readiness condition. Tests invoke real controls,
+then inspect state plus pixels. A test-only <code>seek()</code> hook is useful for deterministic frame export,
+but does not count as user-path interaction proof. Include capability/backend, dimensions,
+progress, selected variants, loaded asset IDs and errors. Never let the app's own <code>passed=true</code>
+replace the external test's observations.</p>
+<p>The included <code>window.__sceneExperience</code> is a specimen inspection/export hook. It is not a trusted
+verifier and is not a proposed global API for every app.</p>
+</main><footer><a href="../../docs/SCENE-GRAMMAR.md">Original Markdown</a> · See <a href="../../html/evidence/VALIDATION.html">validation boundaries</a>.</footer></html>

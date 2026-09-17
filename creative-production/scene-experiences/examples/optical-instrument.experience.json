@@ -1,0 +1,291 @@
+{
+  "schemaVersion": "1.0",
+  "id": "lumen-chamber",
+  "subject": "Lumen: a conceptual optical light instrument",
+  "task": "Explore construction and change aperture/finish; then retain or reset the chosen state.",
+  "concept": true,
+  "assets": [
+    {
+      "id": "lumen-optics",
+      "source": "recipes/blender/build_chamber.py",
+      "rights": "Original procedural concept; no commercial product specification."
+    },
+    {
+      "id": "lumen-vector",
+      "source": "specimen/draw.mjs",
+      "rights": "Original procedural SVG geometry, MIT."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "arrival",
+      "purpose": "Establish the chamber",
+      "range": [
+        0.0,
+        0.16666667
+      ],
+      "camera": {
+        "framing": "establishing",
+        "position": [
+          0,
+          0,
+          8
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "lighting": "low-key chamber",
+      "objects": [
+        "shell",
+        "iris",
+        "emitter",
+        "floor"
+      ],
+      "input": [
+        "scroll",
+        "scene-link",
+        "aperture",
+        "finish",
+        "section",
+        "pointer-light"
+      ],
+      "semantic": "A small suspended optical engine belongs to a larger room.",
+      "continuity": "Same shell/iris/emitter IDs and chosen aperture/finish across every beat.",
+      "fallback": "Immediate canonical scene cut plus semantic controls; text stays readable.",
+      "acceptance": [
+        "Direct and reverse entry preserve selection",
+        "Visible geometry matches observed state",
+        "Keyboard-accessible task remains available"
+      ]
+    },
+    {
+      "id": "approach",
+      "purpose": "Find the mechanism",
+      "range": [
+        0.16666667,
+        0.33333333
+      ],
+      "camera": {
+        "framing": "object",
+        "position": [
+          0,
+          0,
+          5
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "lighting": "rim and front fill",
+      "objects": [
+        "shell",
+        "iris",
+        "emitter",
+        "floor"
+      ],
+      "input": [
+        "scroll",
+        "scene-link",
+        "aperture",
+        "finish",
+        "section",
+        "pointer-light"
+      ],
+      "semantic": "The camera approaches a shared optical axis.",
+      "continuity": "Same shell/iris/emitter IDs and chosen aperture/finish across every beat.",
+      "fallback": "Immediate canonical scene cut plus semantic controls; text stays readable.",
+      "acceptance": [
+        "Direct and reverse entry preserve selection",
+        "Visible geometry matches observed state",
+        "Keyboard-accessible task remains available"
+      ]
+    },
+    {
+      "id": "construction",
+      "purpose": "Reveal the stack",
+      "range": [
+        0.33333333,
+        0.5
+      ],
+      "camera": {
+        "framing": "construction",
+        "position": [
+          0,
+          0,
+          4
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "lighting": "separated plane highlights",
+      "objects": [
+        "shell",
+        "iris",
+        "emitter",
+        "floor"
+      ],
+      "input": [
+        "scroll",
+        "scene-link",
+        "aperture",
+        "finish",
+        "section",
+        "pointer-light"
+      ],
+      "semantic": "Separate the shell, iris and light plane along their shared axis.",
+      "continuity": "Same shell/iris/emitter IDs and chosen aperture/finish across every beat.",
+      "fallback": "Immediate canonical scene cut plus semantic controls; text stays readable.",
+      "acceptance": [
+        "Direct and reverse entry preserve selection",
+        "Visible geometry matches observed state",
+        "Keyboard-accessible task remains available"
+      ]
+    },
+    {
+      "id": "participate",
+      "purpose": "Shape the beam",
+      "range": [
+        0.5,
+        0.66666667
+      ],
+      "camera": {
+        "framing": "interaction",
+        "position": [
+          0,
+          0,
+          4
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "lighting": "input-modulated beam",
+      "objects": [
+        "shell",
+        "iris",
+        "emitter",
+        "floor"
+      ],
+      "input": [
+        "scroll",
+        "scene-link",
+        "aperture",
+        "finish",
+        "section",
+        "pointer-light"
+      ],
+      "semantic": "Aperture input changes the opening, beam and environment.",
+      "continuity": "Same shell/iris/emitter IDs and chosen aperture/finish across every beat.",
+      "fallback": "Immediate canonical scene cut plus semantic controls; text stays readable.",
+      "acceptance": [
+        "Direct and reverse entry preserve selection",
+        "Visible geometry matches observed state",
+        "Keyboard-accessible task remains available"
+      ]
+    },
+    {
+      "id": "threshold",
+      "purpose": "Cross the frame",
+      "range": [
+        0.66666667,
+        0.83333333
+      ],
+      "camera": {
+        "framing": "macro/portal",
+        "position": [
+          0,
+          0,
+          1.2
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "lighting": "light fills the room",
+      "objects": [
+        "shell",
+        "iris",
+        "emitter",
+        "floor"
+      ],
+      "input": [
+        "scroll",
+        "scene-link",
+        "aperture",
+        "finish",
+        "section",
+        "pointer-light"
+      ],
+      "semantic": "The aperture grows past the viewport while its light becomes the environment.",
+      "continuity": "Same shell/iris/emitter IDs and chosen aperture/finish across every beat.",
+      "fallback": "Immediate canonical scene cut plus semantic controls; text stays readable.",
+      "acceptance": [
+        "Direct and reverse entry preserve selection",
+        "Visible geometry matches observed state",
+        "Keyboard-accessible task remains available"
+      ]
+    },
+    {
+      "id": "resolve",
+      "purpose": "Return to utility",
+      "range": [
+        0.83333333,
+        1.0
+      ],
+      "camera": {
+        "framing": "resolution",
+        "position": [
+          0,
+          0,
+          5
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ]
+      },
+      "lighting": "controlled studio",
+      "objects": [
+        "shell",
+        "iris",
+        "emitter",
+        "floor"
+      ],
+      "input": [
+        "scroll",
+        "scene-link",
+        "aperture",
+        "finish",
+        "section",
+        "pointer-light"
+      ],
+      "semantic": "The complete object returns with the chosen configuration intact.",
+      "continuity": "Same shell/iris/emitter IDs and chosen aperture/finish across every beat.",
+      "fallback": "Immediate canonical scene cut plus semantic controls; text stays readable.",
+      "acceptance": [
+        "Direct and reverse entry preserve selection",
+        "Visible geometry matches observed state",
+        "Keyboard-accessible task remains available"
+      ]
+    }
+  ],
+  "renditions": {
+    "full": "Native-scroll six-scene SVG/projected-geometry experience.",
+    "reducedMotion": "Discrete scene cuts, no pointer parallax or continuous camera travel; all controls retained.",
+    "static": "Semantic document, static diagram and explanatory text; no interactive qualification claimed."
+  },
+  "evidenceOwner": "existing-journeys-verifier"
+}

@@ -1,11 +1,11 @@
-# @kooshapari/phenotype-design-utils
+# @<REDACTED>/phenotype-design-utils
 
 Design utility functions for the Phenotype ecosystem. Color (OKLCH), responsive type scales, spacing, motion, and layout helpers.
 
 ## Installation
 
 ```bash
-npm install @kooshapari/phenotype-design-utils
+npm install @<REDACTED>/phenotype-design-utils
 ```
 
 ## Modules
@@ -13,7 +13,7 @@ npm install @kooshapari/phenotype-design-utils
 ### Color (OKLCH)
 
 ```ts
-import { hexToOKLCH, contrastRatio, meetsWCAG, mixOKLCH, generatePalette } from '@kooshapari/phenotype-design-utils/color';
+import { hexToOKLCH, contrastRatio, meetsWCAG, mixOKLCH, generatePalette } from '@<REDACTED>/phenotype-design-utils/color';
 
 // Parse hex to OKLCH
 const teal = hexToOKLCH('#7EBAB5');
@@ -34,7 +34,7 @@ const palette = generatePalette(teal); // 5-stop lightness ramp
 ### Type Scale
 
 ```ts
-import { phenoTypeScale, clampFluid, generateTypeScale } from '@kooshapari/phenotype-design-utils/type-scale';
+import { phenoTypeScale, clampFluid, generateTypeScale } from '@<REDACTED>/phenotype-design-utils/type-scale';
 
 // Use the canonical Phenotype scale
 phenoTypeScale['0'].clamp; // "clamp(0.96rem, 0.9rem + 0.25vw, 1.08rem)"
@@ -49,7 +49,7 @@ const custom = generateTypeScale({
 ### Spacing
 
 ```ts
-import { spacing, spacingPx, closestStep, fluidGutter } from '@kooshapari/phenotype-design-utils/spacing';
+import { spacing, spacingPx, closestStep, fluidGutter } from '@<REDACTED>/phenotype-design-utils/spacing';
 
 spacing(3);  // "1rem" (16px)
 spacingPx(5); // 36
@@ -60,7 +60,7 @@ fluidGutter();   // "clamp(1rem, 3vw, 3.75rem)"
 ### Motion
 
 ```ts
-import { fadeTransition, springGentle, staggerDelays } from '@kooshapari/phenotype-design-utils/motion';
+import { fadeTransition, springGentle, staggerDelays } from '@<REDACTED>/phenotype-design-utils/motion';
 
 // Predefined transitions
 fadeTransition.css;     // "160ms cubic-bezier(0.16, 1, 0.3, 1)"
@@ -74,7 +74,7 @@ const delays = staggerDelays(5, { baseDelayMs: 100, incrementMs: 60 });
 ### Layout
 
 ```ts
-import { minWidth, breakpoints, fluidGrid, measure } from '@kooshapari/phenotype-design-utils/layout';
+import { minWidth, breakpoints, fluidGrid, measure } from '@<REDACTED>/phenotype-design-utils/layout';
 
 minWidth('lg');  // "@media (min-width: 1024px)"
 minWidth(768);   // "@media (min-width: 768px)"

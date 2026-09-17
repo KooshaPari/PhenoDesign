@@ -1,11 +1,11 @@
-# @kooshapari/phenotype-assets
+# @<REDACTED>/phenotype-assets
 
 Shared SVG icons, patterns, and badges for the Phenotype ecosystem. All assets use currentColor for theming and follow the token system.
 
 ## Installation
 
 ```bash
-npm install @kooshapari/phenotype-assets
+npm install @<REDACTED>/phenotype-assets
 ```
 
 ## Available Assets
@@ -48,7 +48,7 @@ npm install @kooshapari/phenotype-assets
 
 ```html
 <!-- Import as component -->
-<img src="@kooshapari/phenotype-assets/icons/arrow-right.svg" alt="" aria-hidden="true">
+<img src="@<REDACTED>/phenotype-assets/icons/arrow-right.svg" alt="" aria-hidden="true">
 
 <!-- Or use inline for theming -->
 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -60,7 +60,7 @@ npm install @kooshapari/phenotype-assets
 
 ```css
 .section {
-  background-image: url('@kooshapari/phenotype-assets/patterns/grid-dots.svg');
+  background-image: url('@<REDACTED>/phenotype-assets/patterns/grid-dots.svg');
   background-repeat: repeat;
   background-size: 24px 24px;
 }

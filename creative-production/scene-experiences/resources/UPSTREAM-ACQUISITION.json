@@ -1,0 +1,21 @@
+{
+  "automatic_install": false,
+  "policy": "Inspect current official source, license, exact version/commit and installer behavior. Resolve existing installed skill conflicts. No floating bulk install.",
+  "sources": [
+    {
+      "resource": "R10",
+      "scope": "GSAP task-specific skills",
+      "destination": "existing canonical harness skills owner"
+    },
+    {
+      "resource": "R13",
+      "scope": "Remotion official skills",
+      "destination": "existing canonical harness skills owner"
+    },
+    {
+      "resource": "R17",
+      "scope": "Rive authoring route after local qualification",
+      "destination": "existing native/tool worker"
+    }
+  ]
+}

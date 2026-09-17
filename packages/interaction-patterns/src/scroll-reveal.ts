@@ -7,7 +7,7 @@
  *
  * @example
  * ```ts
- * import { initScrollReveal } from '@kooshapari/phenotype-interaction-patterns/scroll-reveal';
+ * import { initScrollReveal } from '@<REDACTED>/phenotype-interaction-patterns/scroll-reveal';
  *
  * const reveal = initScrollReveal();
  * // On SPA navigation:

@@ -1,0 +1,13 @@
+{
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "versions": {
+    "node": "v22.16.0",
+    "python": "Python 3.13.5",
+    "ffmpeg": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers",
+    "chromium": "Chromium 144.0.7559.96 built on Debian GNU/Linux 13 (trixie)"
+  },
+  "webgl2_available": false,
+  "browser_transport": "inline HTML fixture; HTTP attempt blocked",
+  "native_apps_executed": [],
+  "real_target_repository_modified": false
+}

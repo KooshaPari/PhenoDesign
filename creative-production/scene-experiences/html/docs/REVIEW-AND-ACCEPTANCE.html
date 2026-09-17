@@ -1,0 +1,117 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>REVIEW AND ACCEPTANCE · PhenoDesign</title><link rel="stylesheet" href="../../site.css"><header><a class="brand" href="../../index.html">PhenoDesign / Scene experiences</a><p>V3 · Source-backed working library</p></header><main><h1>Review the experience, not a screenshot count</h1>
+<h2>Critique rubric</h2>
+<p>Score each dimension 0–4 only when supported: 0 absent/broken, 1 demonstrable but weak,
+2 coherent baseline, 3 intentionally strong, 4 distinctive and well-supported. These are an
+internal creative rubric, not measured public quality claims. Missing observations are unknown,
+not zero and not an average-friendly blank. Hard failures cannot be averaged away.</p>
+<table>
+<thead>
+<tr>
+  <th>Dimension</th>
+  <th>Ask</th>
+  <th>Inspect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Subject specificity</td>
+  <td>Could this treatment belong to any unrelated product?</td>
+  <td>Premise, forms, material vocabulary, copy</td>
+</tr>
+<tr>
+  <td>Spatial coherence</td>
+  <td>Does the world remain the same place?</td>
+  <td>Contact, perspective, shadows, continuity</td>
+</tr>
+<tr>
+  <td>Dramatic structure</td>
+  <td>Does something become understood?</td>
+  <td>Establish/reveal/consequence/resolve sequence</td>
+</tr>
+<tr>
+  <td>Agency</td>
+  <td>Does visitor input change something meaningful?</td>
+  <td>Real input, state, downstream visual consequence</td>
+</tr>
+<tr>
+  <td>Material craft</td>
+  <td>Do surfaces and light communicate the subject?</td>
+  <td>Neutral frame, close-up, moving highlights</td>
+</tr>
+<tr>
+  <td>Camera/motion</td>
+  <td>Is attention directed without exhausting the viewer?</td>
+  <td>Full playback, fast/reverse seek, holds</td>
+</tr>
+<tr>
+  <td>Typography/content</td>
+  <td>Does text belong without becoming unreadable?</td>
+  <td>Placement, semantic counterpart, localization</td>
+</tr>
+<tr>
+  <td>Interface/scene boundary</td>
+  <td>Is overlap intentional and usable?</td>
+  <td>Protected controls, focus, pointer/touch cases</td>
+</tr>
+<tr>
+  <td>Technical behavior</td>
+  <td>Does the real consumer remain stable?</td>
+  <td>Errors, resource/disposal, loading and budgets</td>
+</tr>
+<tr>
+  <td>Inclusive rendition</td>
+  <td>Is the meaning and task preserved without the spectacle?</td>
+  <td>Reduced motion, keyboard, no-rich-media path</td>
+</tr>
+<tr>
+  <td>Editorial honesty</td>
+  <td>Are product claims and evidence true?</td>
+  <td>Source provenance, raw capture, labeled concepts</td>
+</tr>
+<tr>
+  <td>Finish</td>
+  <td>Are small seams resolved?</td>
+  <td>Edges, crop, timing, empty/error states</td>
+</tr>
+</tbody>
+</table>
+<p>A flagship approval requires no hard blocker, no missing mandatory observations and a written
+rationale for the weakest dimensions. Do not accept a new numeric threshold before calibrating
+reviewers with shared examples. Evaluate a full narrative and interactions, not just the hero.</p>
+<h2>Hard gates</h2>
+<p>Essential actions cannot be hidden by loading, camera travel or an inaccessible canvas. Pointer
+interactions need keyboard/touch equivalents. Respect reduced motion; provide a way to pause
+qualifying automatic motion. WCAG 2.2.2 is Level A under its stated conditions; 2.3.3 disabling
+nonessential interaction animation is Level AAA. This pack adopts a motion-off route as product
+policy without falsely calling every motion rule an AA requirement. Flash limits still apply. [R06]</p>
+<p>All exports require rights/source custody and unambiguous concept labeling. Missing native
+reopen, GPU output or real consumer verification stays unqualified. Do not use the app's own
+state dump as independent evidence that its pixels match or that its business task succeeded.</p>
+<h2>Initial budgets: proposals to measure, not industry guarantees</h2>
+<p>Keep critical semantic content available before rich media. Propose ≤500 KiB compressed initial
+critical application payload excluding explicitly justified image media, lazy rich assets, a
+small poster, and one active graphics context for the experience. Measure and revise with actual
+content rather than silently dropping the defining scene to hit an arbitrary number.</p>
+<p>Record transferred and decoded sizes separately. An RGBA8 1920×1080 frame occupies 8,294,400
+bytes before overhead; 180 decoded frames occupy about 1.39 GiB. Compressed download size
+is not decoded-memory cost. Use bounded windows/caches instead of pre-decoding an entire sequence.</p>
+<p>On selected target devices measure input-to-state/pixel latency, frame-time p50/p95/p99 during
+interaction, long tasks, layout shifts, CPU/GPU/memory, startup and dispose. Provisional budgets:
+16.7 ms frame budget at 60 Hz; a deliberately documented 33.3 ms alternative at 30 Hz where the
+experience tolerates it. These are refresh-period arithmetic, not measured device performance.
+Use actual device/browser baselines for release; headless software tests are not hardware results.</p>
+<p>Pause continuous work while hidden and suspend offscreen expensive renderers. Page Visibility
+reports hidden/visible state; it does not determine whether a canvas is in the viewport, so use
+an additional viewport observation. [R07] Preserve host gaming/DAW needs with bounded native
+worker concurrency, cancellation and owned-resource cleanup.</p>
+<h2>Required negative cases</h2>
+<p>Missing asset, corrupt model, decode failure, rejected native permission, unsupported backend,
+context loss, resize at a seam, history/deep-link entry, reverse across every boundary, extreme
+input, empty manifest, malformed schema, native source reopen failure, pause/resume, hidden-tab
+return, non-pointer use, process cancellation, staging collision and concurrent-job isolation.</p>
+<h2>Record the boundary</h2>
+<p>For every observation: artifact/build hash, environment, backend, actual input, expected and
+observed state, pixels/video, errors, timing, verdict and limitations. Label synthetic fixtures.
+Separate source validation, renderer output, served consumer, deployed consumer and target-device
+qualification. Carry observations in the existing evidence system, not a second self-certifying log.</p>
+</main><footer><a href="../../docs/REVIEW-AND-ACCEPTANCE.md">Original Markdown</a> · See <a href="../../html/evidence/VALIDATION.html">validation boundaries</a>.</footer></html>

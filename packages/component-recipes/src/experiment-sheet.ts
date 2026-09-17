@@ -6,7 +6,7 @@
  *
  * @example
  * ```ts
- * import { createExperimentSheet } from '@kooshapari/phenotype-component-recipes/experiment-sheet';
+ * import { createExperimentSheet } from '@<REDACTED>/phenotype-component-recipes/experiment-sheet';
  *
  * const sheet = createExperimentSheet({
  *   rows: [

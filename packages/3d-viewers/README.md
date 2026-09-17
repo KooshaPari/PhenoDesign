@@ -1,4 +1,4 @@
-# @kooshapari/phenotype-3d-viewers
+# @<REDACTED>/phenotype-3d-viewers
 
 Three.js GLB model viewer with orbit controls, auto-rotate, product lighting presets, and SPA-safe cleanup.
 Falls back to a poster image when WebGL is unavailable or reduced motion is preferred.
@@ -18,8 +18,8 @@ Falls back to a poster image when WebGL is unavailable or reduced motion is pref
 ## Usage
 
 ```ts
-import { createGlbViewer } from '@kooshapari/phenotype-3d-viewers/glb-viewer';
-import { LIGHTING_PRESETS } from '@kooshapari/phenotype-3d-viewers/lighting-presets';
+import { createGlbViewer } from '@<REDACTED>/phenotype-3d-viewers/glb-viewer';
+import { LIGHTING_PRESETS } from '@<REDACTED>/phenotype-3d-viewers/lighting-presets';
 
 const viewer = await createGlbViewer({
   containerId: 'product-viewer',
@@ -37,7 +37,7 @@ viewer.destroy();
 ## Lighting Presets
 
 ```ts
-import { LIGHTING_PRESETS } from '@kooshapari/phenotype-3d-viewers/lighting-presets';
+import { LIGHTING_PRESETS } from '@<REDACTED>/phenotype-3d-viewers/lighting-presets';
 
 // Available presets:
 LIGHTING_PRESETS.studio   // Clean product shot, neutral tones

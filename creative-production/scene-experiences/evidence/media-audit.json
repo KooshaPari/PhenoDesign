@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "source": "96 authored deterministic SVG scene frames from Chromium inline specimen, not recorded user actions",
+  "producer": "ffmpeg",
+  "remotion_executed": false,
+  "width": 960,
+  "height": 554,
+  "frames": 96,
+  "fps": 12,
+  "duration_seconds": 8,
+  "video_codec": "h264",
+  "pixel_format": "yuv420p",
+  "full_decode_exit_code": 0,
+  "sha256": "24cccac767839b092eb73b369b312b16107e1e5c6a1b06946fb3ab4760e8f61e"
+}

@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "passed": 6,
+  "checks": [
+    {
+      "name": "all generated catalog/document local links resolve",
+      "passed": true,
+      "links": 234
+    },
+    {
+      "name": "all 67 entries initially visible",
+      "passed": true
+    },
+    {
+      "name": "case-insensitive topic filtering narrows entries",
+      "passed": true
+    },
+    {
+      "name": "unknown query shows zero results",
+      "passed": true
+    },
+    {
+      "name": "390px catalog has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "no page errors",
+      "passed": true
+    }
+  ],
+  "transport": "inline with local stylesheet and preview image embedded; links resolved from filesystem, not navigated over HTTP"
+}

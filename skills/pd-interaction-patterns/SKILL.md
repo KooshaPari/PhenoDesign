@@ -31,14 +31,14 @@ Use this skill when adding motion, tilt, scroll-triggered animations, or interac
 ### 1. Install
 
 ```bash
-npm install @kooshapari/phenotype-interaction-patterns
+npm install @<REDACTED>/phenotype-interaction-patterns
 ```
 
 ### 2. Initialize Patterns
 
 ```ts
-import { initPerspectiveTilt } from '@kooshapari/phenotype-interaction-patterns/perspective-tilt';
-import { initScrollReveal } from '@kooshapari/phenotype-interaction-patterns/scroll-reveal';
+import { initPerspectiveTilt } from '@<REDACTED>/phenotype-interaction-patterns/perspective-tilt';
+import { initScrollReveal } from '@<REDACTED>/phenotype-interaction-patterns/scroll-reveal';
 
 // Attach to elements
 const cleanupTilt = initPerspectiveTilt('.project-card', {
@@ -82,7 +82,7 @@ initScrollReveal('.card', {
 ### 5. Lightbox
 
 ```ts
-import { initLightbox } from '@kooshapari/phenotype-interaction-patterns/lightbox';
+import { initLightbox } from '@<REDACTED>/phenotype-interaction-patterns/lightbox';
 
 const lightbox = initLightbox('.gallery-image', {
   zoom: true,

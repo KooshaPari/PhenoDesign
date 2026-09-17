@@ -32,15 +32,15 @@ Use this skill when building visual components that map to proven Phenotype patt
 ### 1. Install
 
 ```bash
-npm install @kooshapari/phenotype-component-recipes
+npm install @<REDACTED>/phenotype-component-recipes
 ```
 
 ### 2. Import the Recipe
 
 ```ts
-import { createArtifactCard } from '@kooshapari/phenotype-component-recipes/artifact-card';
-import { createSystemDiagram } from '@kooshapari/phenotype-component-recipes/system-diagram';
-import { createBadge } from '@kooshapari/phenotype-component-recipes/badge';
+import { createArtifactCard } from '@<REDACTED>/phenotype-component-recipes/artifact-card';
+import { createSystemDiagram } from '@<REDACTED>/phenotype-component-recipes/system-diagram';
+import { createBadge } from '@<REDACTED>/phenotype-component-recipes/badge';
 ```
 
 ### 3. Configure and Mount

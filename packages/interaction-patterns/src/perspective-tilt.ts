@@ -9,7 +9,7 @@
  *
  * @example
  * ```ts
- * import { initPerspectiveTilt } from '@kooshapari/phenotype-interaction-patterns/perspective-tilt';
+ * import { initPerspectiveTilt } from '@<REDACTED>/phenotype-interaction-patterns/perspective-tilt';
  *
  * const tilt = initPerspectiveTilt();
  * // On SPA navigation:

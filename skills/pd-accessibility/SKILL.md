@@ -29,7 +29,7 @@ Use this skill when building or auditing Phenotype components for accessibility.
 | Focus indicators | 3:1 | Against background |
 
 ```ts
-import { contrastRatio, meetsWCAG } from '@kooshapari/phenotype-design-utils/color';
+import { contrastRatio, meetsWCAG } from '@<REDACTED>/phenotype-design-utils/color';
 
 const ratio = contrastRatio('#F6F5F5', '#353A40');
 console.log(ratio); // 10.4:1 — passes AA

@@ -1,0 +1,97 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MEDIA ROUTING · PhenoDesign</title><link rel="stylesheet" href="../../site.css"><header><a class="brand" href="../../index.html">PhenoDesign / Scene experiences</a><p>V3 · Source-backed working library</p></header><main><h1>Choose the medium that preserves the experience</h1>
+<p>Do not confuse multidimensional design with mandatory real-time 3D. Compare the same scene
+and task using at least two routes, including the simplest credible route.</p>
+<table>
+<thead>
+<tr>
+  <th>Route</th>
+  <th>Prefer when</th>
+  <th>Limit / losing condition</th>
+  <th>Required proof</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Semantic DOM + CSS</td>
+  <td>Layout, type, masks, native controls and limited perspective carry the scene</td>
+  <td>Complex overlap/geometry turns into brittle transform stacks</td>
+  <td>Reading order, focus, motion preference, clipping, responsive behavior</td>
+</tr>
+<tr>
+  <td>SVG / layered 2.5D</td>
+  <td>Precise outlines, diagrams, cutouts, rigs, vector/material metaphors</td>
+  <td>Large filter areas, excessive DOM nodes or missing backs in camera travel</td>
+  <td>Painted bounds, hit areas, layer seams, source editability and seek</td>
+</tr>
+<tr>
+  <td>Canvas/Pixi-style 2D</td>
+  <td>Many sprites, particles or painted scene updates</td>
+  <td>Essential UI hidden in pixels, uncontrolled fill rate</td>
+  <td>Semantic parallel UI, batching, resolution/alpha and hit-state tests</td>
+</tr>
+<tr>
+  <td>Rive / stateful vector</td>
+  <td>Character/prop state machines and responsive vector art</td>
+  <td>Editor-only feature cannot be reproduced or exported on the qualified worker</td>
+  <td>Editable .riv, named inputs/events, runtime version and state coverage</td>
+</tr>
+<tr>
+  <td>Live mesh + Three.js/R3F</td>
+  <td>Free camera, physical occlusion, relighting, geometry-dependent input</td>
+  <td>Material budget or weak assets make it worse than a bake</td>
+  <td>Native source/GLB, render path, context loss, picking and target GPU</td>
+</tr>
+<tr>
+  <td>Pre-rendered video</td>
+  <td>Art-directed camera path, complex simulation or expensive materials with little free spatial agency</td>
+  <td>Seeking/compression breaks the interaction; visitor needs unseen views</td>
+  <td>Decode, seek latency, bounded preload, poster, exact dimensions/timing</td>
+</tr>
+<tr>
+  <td>Image sequence</td>
+  <td>Frame-precise scrub when video seek cannot meet the requirement</td>
+  <td>Decoded-memory/transfer costs exceed the device budget</td>
+  <td>Windowed frame cache, decoded bytes, deterministic frame index and fallback</td>
+</tr>
+<tr>
+  <td>Hybrid</td>
+  <td>A fixed beautiful plate plus limited live response gives the best result</td>
+  <td>Lighting, crop or timing seams expose incompatible layers</td>
+  <td>Matched transforms/exposure, layer alpha and input state continuity</td>
+</tr>
+<tr>
+  <td>Native engine / spatial delivery</td>
+  <td>A justified native/XR consumer needs it</td>
+  <td>A heavy engine is being used only to avoid learning ordinary web delivery</td>
+  <td>Real target build, permissions, tracking consent, interaction and fallback</td>
+</tr>
+</tbody>
+</table>
+<h2>Production routes for the reported tools</h2>
+<p>Illustrator owns editable paths, artboards and vector scene components. Photoshop owns layered
+composites, masks, textures and carefully managed image derivatives. Blender owns spatial
+geometry, materials, lighting and camera masters. Remotion/AE own intentionally time-based
+composition; FFmpeg/ffprobe provide derivative/decoding checks, not aesthetic direction.</p>
+<p>Qualify the installed tool/API before assuming unattended operation. Photoshop's supported
+mutation flow includes modal execution; an installed app is not the same thing as a safe worker.
+Native applications may need a dedicated signed-in host/session. [R11]</p>
+<p>For each route produce: source identity, dependency/rights manifest, placement size, parameters,
+render settings, export hashes, native reopen result, consumer tests and independent critique.
+Retain masks/layers/rigs and meaningful names. Avoid baking text that must remain accessible or
+localized into a background texture. Never distribute installed font binaries in this kit.</p>
+<h2>Shared recipe, not guaranteed visual identity</h2>
+<p>A normalized scene state can drive web, video and a Blender recipe. This does not guarantee
+bit-identical pixels across color management, render engines, type rasterization or physics.
+Record the accepted equivalence: composition, source object identity, key states, timing and
+material direction. Compare representative frames under documented tone mapping/exposure.</p>
+<h2>Challenge cards</h2>
+<p><strong>Alternative A: this should be static.</strong> Preserve content, assets and framing, remove motion.
+Does the moving version reveal a material, relation, task or point of view the static version loses?
+If not, prefer the simpler execution.</p>
+<p><strong>Alternative B: interaction is decorative.</strong> Replace drag with a clear button/state selector.
+Does drag communicate the mechanism or simply add friction? Keep both when each serves a role.</p>
+<p><strong>Alternative C: the asset, not the renderer, is weak.</strong> Compare a high-quality offline render
+and live scene with identical framing. Fix geometry, light or art direction before writing shaders.</p>
+<p><strong>Alternative D: the package boundary is premature.</strong> Implement once inside the consumer;
+extract only repeated stable logic. More reusable-looking folders do not establish reuse.</p>
+</main><footer><a href="../../docs/MEDIA-ROUTING.md">Original Markdown</a> · See <a href="../../html/evidence/VALIDATION.html">validation boundaries</a>.</footer></html>

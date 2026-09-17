@@ -1,5 +1,5 @@
 /**
- * @kooshapari/phenotype-design-tokens — public API.
+ * @<REDACTED>/phenotype-design-tokens — public API.
  *
  * Re-exports the full token set as typed TypeScript constants and the
  * Tailwind preset for downstream consumers.

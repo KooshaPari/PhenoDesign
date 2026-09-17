@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>README · PhenoDesign</title><link rel="stylesheet" href="../../site.css"><header><a class="brand" href="../../index.html">PhenoDesign / Scene experiences</a><p>V3 · Source-backed working library</p></header><main><h1>Additive installation</h1>
+<p>First reconcile actual PhenoDesign source/ownership and acquire its existing write lease.
+The default is a read-only plan. Target identity must be <code>@phenotype/design</code>.
+Source manifest hashes are checked. Symlinks, unsafe paths and differing destination files
+are refused before writing. An exclusive installer lock protects only other copies of this
+installer, not unrelated agents. The caller must coordinate the repository separately.</p>
+<pre><code class="language-sh">python integration/install.py --repo /path/to/PhenoDesign
+python integration/install.py --repo /path/to/PhenoDesign --apply
+# Optional project-local skill discovery copies, with conflict checks:
+python integration/install.py --repo /path/to/PhenoDesign --activate-skills both
+python integration/install.py --repo /path/to/PhenoDesign --activate-skills both --apply
+</code></pre>
+<p>A complete temporary file is published with a no-overwrite hard link in the same directory.
+A filesystem without that operation fails rather than falling back to destructive overwrite.
+On failure, only installer-created bytes that still match are removed. New external edits are
+preserved. Identical files make reapplying idempotent; changed files require deliberate reconciliation.
+This is a local convenience tool, not an adversarial filesystem security boundary.</p>
+<p>It copies this package into <code>creative-production/scene-experiences/</code>, including reference archives,
+without executing old installers. It never changes root exports, dependencies, Remotion, CI or
+AGENTS.md and makes no GitHub mutation. Skills reference the canonical installed subtree.
+The archives are preserved for reference only; do not activate their conflicting overlays blindly.</p>
+</main><footer><a href="../../integration/README.md">Original Markdown</a> · See <a href="../../html/evidence/VALIDATION.html">validation boundaries</a>.</footer></html>

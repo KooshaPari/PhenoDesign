@@ -1,4 +1,4 @@
-# @kooshapari/phenotype-design-tokens
+# @<REDACTED>/phenotype-design-tokens
 
 Shared design tokens for the Phenotype ecosystem. Anchored by four canonical seed colors from the Material Lab source packet.
 
@@ -14,7 +14,7 @@ Shared design tokens for the Phenotype ecosystem. Anchored by four canonical see
 ## Installation
 
 ```bash
-npm install @kooshapari/phenotype-design-tokens
+npm install @<REDACTED>/phenotype-design-tokens
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ npm install @kooshapari/phenotype-design-tokens
 ### CSS Import (recommended)
 
 ```css
-@import '@kooshapari/phenotype-design-tokens/tokens.css';
+@import '@<REDACTED>/phenotype-design-tokens/tokens.css';
 ```
 
 This exposes all tokens as CSS custom properties on `:root`, including dark mode overrides via `[data-theme="dark"]`.
@@ -30,7 +30,7 @@ This exposes all tokens as CSS custom properties on `:root`, including dark mode
 ### TypeScript
 
 ```ts
-import { seeds, spacing, motion } from '@kooshapari/phenotype-design-tokens';
+import { seeds, spacing, motion } from '@<REDACTED>/phenotype-design-tokens';
 
 const style = {
   color: seeds.teal,
@@ -43,7 +43,7 @@ const style = {
 
 ```js
 // tailwind.config.js
-import phenoPreset from '@kooshapari/phenotype-design-tokens/tailwind';
+import phenoPreset from '@<REDACTED>/phenotype-design-tokens/tailwind';
 
 export default {
   presets: [phenoPreset],

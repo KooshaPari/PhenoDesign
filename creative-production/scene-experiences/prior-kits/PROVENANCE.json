@@ -1,0 +1,17 @@
+{
+  "precedence": "V3 direction; installed repo reality; selectively reconcile newest creative-production v2 then useful alternate v2.",
+  "archives": [
+    {
+      "file": "prior-kits/phenodesign-creative-production-v2.zip",
+      "sha256": "b76f148761012505e4c7338a608f74177d5aa12d1339f31e3c65e37c4721c578",
+      "bytes": 6917233,
+      "automatic_install": false
+    },
+    {
+      "file": "prior-kits/phenoDesign-visual-production-v2.zip",
+      "sha256": "4916bbfbe7124631613dd4a07fef97d7fd35eee3ae35a3f84f2b4c2f4c23363f",
+      "bytes": 3321877,
+      "automatic_install": false
+    }
+  ]
+}

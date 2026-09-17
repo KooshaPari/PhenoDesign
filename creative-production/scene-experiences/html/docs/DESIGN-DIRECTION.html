@@ -1,0 +1,216 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DESIGN DIRECTION · PhenoDesign</title><link rel="stylesheet" href="../../site.css"><header><a class="brand" href="../../index.html">PhenoDesign / Scene experiences</a><p>V3 · Source-backed working library</p></header><main><h1>Scene-driven experience design</h1>
+<p><strong>Version:</strong> 3.0 · <strong>Status:</strong> implementation direction proposed for PhenoDesign.
+<strong>User authority:</strong> the request for dynamic, interactive, multidimensional, fourth-wall-aware
+web experiences resembling a life-size diorama. The product is the experience, not a framed poster.</p>
+<h2>1. North star</h2>
+<p>Design the world before the page. Decide what exists, how it is situated, what is revealed,
+what the visitor can change, and what they should understand afterward. Then select the
+least burdensome combination of native assets, web renderers and semantic UI that preserves
+that experience. The visitor can approach, inspect, alter, separate, reassemble or pass through
+parts of the world. The interface behaves like a view into a coherent place, not a row of
+independent marketing cards.</p>
+<p>“Life-size” is a scale impression, not a physical measurement from an uncalibrated browser.
+“Fourth-wall” means an authored relation between viewer, object and interface—not surveillance,
+fake browser dialogs or an inference that the page knows the visitor's emotions.
+“Over-engineered” describes visible craft and expressive capability, not wasted engineering.</p>
+<p>The spinning shoe is one prop behavior. It is not a sufficient experience architecture.
+A better sequence establishes the shoe's physical setting, makes ground contact and flex legible,
+shows what the material does, invites a relevant manipulation, changes scale to its construction,
+and brings that understanding back into a usable purchase/comparison flow. An orbit can appear
+within that sequence, but cannot substitute for it.</p>
+<h2>2. Five governing qualities</h2>
+<p><strong>Spatial continuity.</strong> Subjects have persistent identity, coherent scale cues and a relation to
+floor, environment, light and camera. Foreground occlusion, contact shadows and perspective
+must agree. A disconnected 3D ornament above a brochure is not enough.</p>
+<p><strong>Choreography.</strong> Changes have timing, focus and causality. Entry, hold, action, consequence,
+recovery and exit are deliberate. A quiet hold can be the right scene; mandatory constant motion
+would directly undermine this direction.</p>
+<p><strong>Agency.</strong> Interaction changes a meaningful state: construction, aperture, configuration,
+viewpoint, path or understanding. Cursor-following alone is a micro-response, not meaningful
+agency. Drag, keyboard and touch alternatives lead to equivalent outcomes.</p>
+<p><strong>Material specificity.</strong> Materials are not a universal glass preset. The subject's manufacturing,
+scale, use and environment determine roughness, thickness, refraction, texture, softness,
+weathering and lighting. An abstract world may use stylization, but must use it consistently.</p>
+<p><strong>Useful resolution.</strong> The visitor can finish the real task without performing the whole show.
+The scene can collapse into an ordinary, legible comparison, navigation, configuration or action.
+No cinematic entrance is worth hiding essential information or trapping someone in a scroll track.</p>
+<h2>3. The design unit is a scene</h2>
+<p>A scene record contains a purpose, subject, environment, camera/framing, lighting, state,
+trigger, visitor affordance, text role, continuity constraint, exit, and accessible/static rendition.
+Scenes may span multiple scroll sections or routes. A page is a delivery container; it is not
+necessarily the narrative boundary. Stable asset IDs and configuration survive the boundary.</p>
+<p>Compose three scales when the subject benefits: world scale, object scale and material/detail
+scale. A macro transition should explain a detail, not merely enlarge an image. Macro imagery,
+2.5D planes, real meshes and semantic text may coexist. A transition should preserve a visual
+anchor—shape, centerline, highlight, hand contact or color—not cut to an unrelated composition.</p>
+<p>Use camera motion sparingly. Test an object transform against a camera transform; they convey
+different meaning. A dolly changes perspective while an optical zoom does not. Simulated rack
+focus can direct attention, but cannot make mandatory labels unreadable. Keep an ordinary DOM
+version of information placed in the world.</p>
+<h2>4. Reference discipline</h2>
+<p>The reviewed Apple iPhone product page is a structure/material/detail reference. Its published
+content supports a progression through design, internals and camera capabilities; this package
+has not reverse-engineered or measured its live animation implementation. Do not claim Apple
+uses this package's chosen renderer. [R01]</p>
+<p>Makemepulse's Nomadic Tribe explicitly describes four interactive narrative chapters; it is a
+useful reference for a world that changes as the visitor participates, not just a product turntable.
+Nike Reactland is documented as a running-controlled <strong>physical installation</strong>. Borrow the
+relationship between bodily input and consequence, not its installation hardware as a web baseline.
+[R02, R03]</p>
+<p>Reference cards record what was actually inspected, the desired principle, the proposed transfer,
+and what must not be copied. Screenshots and Dribbble shots can suggest composition; they do not
+prove transitions, loading behavior, mobile usability, source editability or accessibility.</p>
+<h2>5. Formal requirements</h2>
+<table>
+<thead>
+<tr>
+  <th>ID</th>
+  <th>Requirement</th>
+  <th>Acceptance evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>DIR-01</td>
+  <td>Write a subject-specific dramatic premise and a real visitor task.</td>
+  <td>Treatment names both and connects each major beat to them.</td>
+</tr>
+<tr>
+  <td>DIR-02</td>
+  <td>Compare at least two plausible alternative executions.</td>
+  <td>Decision card includes why the chosen route wins and what would reverse it.</td>
+</tr>
+<tr>
+  <td>DIR-03</td>
+  <td>Keep important objects and configuration continuous between scenes.</td>
+  <td>Reverse and direct-entry tests preserve identity/state.</td>
+</tr>
+<tr>
+  <td>DIR-04</td>
+  <td>Define coherent world, object and detail scale where useful.</td>
+  <td>Board + captured transitions; no unexplained perspective/scale jump.</td>
+</tr>
+<tr>
+  <td>DIR-05</td>
+  <td>Give each conspicuous effect a narrative or functional purpose.</td>
+  <td>Remove the effect; document the lost information or experiential role.</td>
+</tr>
+<tr>
+  <td>DIR-06</td>
+  <td>Provide at least one meaningful input-consequence loop in the flagship specimen.</td>
+  <td>Real pointer/touch/keyboard input changes state and visible output.</td>
+</tr>
+<tr>
+  <td>DIR-07</td>
+  <td>Do not force an interaction in every scene.</td>
+  <td>Holds, exposition and task completion remain viable.</td>
+</tr>
+<tr>
+  <td>DIR-08</td>
+  <td>Preserve editable, named, rights-cleared source masters.</td>
+  <td>Native cold reopen, dependency inventory and export recipe.</td>
+</tr>
+<tr>
+  <td>DIR-09</td>
+  <td>Pick the medium per scene and support hybrid composition.</td>
+  <td>Renderer decision, transition seams and consumer checks.</td>
+</tr>
+<tr>
+  <td>DIR-10</td>
+  <td>Make time/scroll/interaction ownership explicit.</td>
+  <td>One evaluator or bounded mixer; no simultaneous competing writers.</td>
+</tr>
+<tr>
+  <td>DIR-11</td>
+  <td>Respect reverse, seek, refresh, resize and route transitions.</td>
+  <td>Boundary/restore tests on a served consuming surface.</td>
+</tr>
+<tr>
+  <td>DIR-12</td>
+  <td>Keep mandatory content and actions semantic.</td>
+  <td>DOM reading order, focus, labels and no-JS/static view.</td>
+</tr>
+<tr>
+  <td>DIR-13</td>
+  <td>Provide reduced-motion and constrained-device renditions.</td>
+  <td>Same conclusions and actions without continuous camera motion.</td>
+</tr>
+<tr>
+  <td>DIR-14</td>
+  <td>Preserve native scroll and offer direct scene/task access.</td>
+  <td>No wheel interception, scroll trap, unskippable loader or hidden CTA.</td>
+</tr>
+<tr>
+  <td>DIR-15</td>
+  <td>Treat interface/scene overlap intentionally.</td>
+  <td>Protected focus/controls and legible type at all tested sizes.</td>
+</tr>
+<tr>
+  <td>DIR-16</td>
+  <td>Keep viewer awareness local, explicit and bounded.</td>
+  <td>No covert sensors, emotion inference, hidden tracking or deceptive chrome.</td>
+</tr>
+<tr>
+  <td>DIR-17</td>
+  <td>Budget actual client and authoring resources.</td>
+  <td>Transfer, frame-time, memory, hidden/offscreen behavior and worker limits.</td>
+</tr>
+<tr>
+  <td>DIR-18</td>
+  <td>Validate the real renderer separately from fallback.</td>
+  <td>Report backend/device; fallback success cannot satisfy GPU qualification.</td>
+</tr>
+<tr>
+  <td>DIR-19</td>
+  <td>Separate authored presentation from captured evidence.</td>
+  <td>Raw masters immutable; edits, crop and time mapping recorded.</td>
+</tr>
+<tr>
+  <td>DIR-20</td>
+  <td>Complete source-to-consumer validation before capability acceptance.</td>
+  <td>Source reopen, export, import, behavior/pixels and actual consumer result.</td>
+</tr>
+<tr>
+  <td>DIR-21</td>
+  <td>Preserve existing repo contracts and ownership.</td>
+  <td>Explicit integration map; no duplicated evidence registry/runtime owner.</td>
+</tr>
+<tr>
+  <td>DIR-22</td>
+  <td>Review visual quality independently of structural tests.</td>
+  <td>Critique names problems and links corrected frames; no score substitutes for judgment.</td>
+</tr>
+<tr>
+  <td>DIR-23</td>
+  <td>Retain accepted brand direction without universalizing one look.</td>
+  <td>Subject treatment names token inheritance and deliberate exceptions.</td>
+</tr>
+<tr>
+  <td>DIR-24</td>
+  <td>Let the visitor leave, reset and reach utility.</td>
+  <td>Accessible exit/reset/task link, no forced gesture or sound.</td>
+</tr>
+</tbody>
+</table>
+<h2>6. Non-goals and corrections</h2>
+<p>This direction does not ban editorial layouts, poster art, ordinary controls, component libraries,
+static media or commercial CTAs. Those remain important capabilities. It rejects using their
+composition model as the unexamined default for this particular flagship experience.</p>
+<p>Not every project needs 3D. A layered illustration, a tactile vector mechanism or a carefully
+composited sequence may create a more convincing world at lower cost. Conversely, a static
+poster is not an adequate fallback for a task that needs configuration or spatial inspection;
+preserve the task through a semantic alternate interface.</p>
+<p>Do not build a new engine just to demonstrate ownership. Reuse existing Three.js/R3F, DOM/SVG,
+Rive, GSAP, native scroll or time-based renderers when justified. A pure state evaluator can
+coordinate them; it should not become a universal scene language before two real consumers
+prove the common abstraction. [R04–R10]</p>
+<h2>7. Definition of done</h2>
+<p>A scene experience is accepted only when the intended task and dramatic premise survive actual
+use, source editing and export, target-device constraints and fallbacks. Passing code checks
+is necessary but does not establish art direction. A visually impressive recording does not
+establish interaction. A working inline specimen does not establish deployment. Keep these
+observations separate and link them through the existing journeys/evidence system.</p>
+<p>The first complete slice should be small enough to critique as a whole and rich enough to
+falsify the weak interpretation: environment, multiple related objects/layers, change of scale,
+meaningful input, continuity and a useful exit—not another isolated rotating mesh.</p>
+</main><footer><a href="../../docs/DESIGN-DIRECTION.md">Original Markdown</a> · See <a href="../../html/evidence/VALIDATION.html">validation boundaries</a>.</footer></html>

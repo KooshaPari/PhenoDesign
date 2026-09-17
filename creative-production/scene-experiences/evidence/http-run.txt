@@ -1,0 +1,8 @@
+{
+  "transport": "http",
+  "scope": "isolated browser fixture; not framework integration, deployed page or physical GPU",
+  "page_errors": [],
+  "browser": "144.0.7559.96",
+  "status": "BLOCKED_ENV",
+  "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:41875/specimen/index.html\nCall log:\n  - navigating to \"http://127.0.0.1:41875/specimen/index.html\", waiting until \"load\"\n"
+}

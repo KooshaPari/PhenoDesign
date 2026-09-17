@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "type": "python_syntax",
+      "file": "integration/install.py",
+      "passed": true
+    },
+    {
+      "type": "python_syntax",
+      "file": "recipes/blender/build_chamber.py",
+      "passed": true
+    },
+    {
+      "type": "python_syntax",
+      "file": "scripts/browser_check.py",
+      "passed": true
+    },
+    {
+      "type": "python_syntax",
+      "file": "scripts/build_specimen.py",
+      "passed": true
+    },
+    {
+      "type": "python_syntax",
+      "file": "scripts/check_catalog.py",
+      "passed": true
+    },
+    {
+      "type": "python_syntax",
+      "file": "scripts/render_film.py",
+      "passed": true
+    },
+    {
+      "type": "python_syntax",
+      "file": "scripts/validate_experience.py",
+      "passed": true
+    },
+    {
+      "type": "python_syntax",
+      "file": "tests/test_contracts.py",
+      "passed": true
+    },
+    {
+      "type": "python_syntax",
+      "file": "tests/test_install.py",
+      "passed": true
+    },
+    {
+      "type": "javascript_syntax",
+      "file": "runtime/scene-core.mjs",
+      "passed": true
+    },
+    {
+      "type": "javascript_syntax",
+      "file": "specimen/controller.js",
+      "passed": true
+    },
+    {
+      "type": "javascript_syntax",
+      "file": "specimen/draw.mjs",
+      "passed": true
+    },
+    {
+      "type": "javascript_syntax",
+      "file": "tests/scene-core.test.mjs",
+      "passed": true
+    },
+    {
+      "type": "python_syntax",
+      "file": "scripts/build_catalog.py",
+      "passed": true
+    }
+  ],
+  "json_files_parse": true,
+  "prior_archives_sha256_match": true,
+  "retained_archives_font_check": "No font binaries found",
+  "film_reproduction_byte_match": true,
+  "note": "Syntax checks do not execute Blender or Remotion; TSX renderer not qualified."
+}

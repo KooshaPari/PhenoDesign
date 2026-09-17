@@ -4,7 +4,7 @@ This contract defines the binding rules for all visual and interaction work acro
 
 ## 1. Token Authority
 
-All colors, typography, spacing, and motion values MUST come from `@kooshapari/phenotype-design-tokens`. No exceptions.
+All colors, typography, spacing, and motion values MUST come from `@<REDACTED>/phenotype-design-tokens`. No exceptions.
 
 ### Seed Colors (Immutable)
 

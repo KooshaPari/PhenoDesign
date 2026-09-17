@@ -1,0 +1,292 @@
+TAP version 13
+# Subtest: six distinct narrative scenes
+ok 1 - six distinct narrative scenes
+  ---
+  duration_ms: 0.971594
+  type: 'test'
+  ...
+# Subtest: clamp normal bounds
+ok 2 - clamp normal bounds
+  ---
+  duration_ms: 0.122192
+  type: 'test'
+  ...
+# Subtest: reject nonfinite/type NaN
+ok 3 - reject nonfinite/type NaN
+  ---
+  duration_ms: 0.291248
+  type: 'test'
+  ...
+# Subtest: reject nonfinite/type Infinity
+ok 4 - reject nonfinite/type Infinity
+  ---
+  duration_ms: 0.089596
+  type: 'test'
+  ...
+# Subtest: reject nonfinite/type -Infinity
+ok 5 - reject nonfinite/type -Infinity
+  ---
+  duration_ms: 0.074287
+  type: 'test'
+  ...
+# Subtest: reject nonfinite/type 1
+ok 6 - reject nonfinite/type 1
+  ---
+  duration_ms: 0.066072
+  type: 'test'
+  ...
+# Subtest: reject nonfinite/type null
+ok 7 - reject nonfinite/type null
+  ---
+  duration_ms: 0.101937
+  type: 'test'
+  ...
+# Subtest: reject nonfinite/type undefined
+ok 8 - reject nonfinite/type undefined
+  ---
+  duration_ms: 0.1902
+  type: 'test'
+  ...
+# Subtest: smoothstep endpoints and midpoint
+ok 9 - smoothstep endpoints and midpoint
+  ---
+  duration_ms: 0.261859
+  type: 'test'
+  ...
+# Subtest: mix is affine
+ok 10 - mix is affine
+  ---
+  duration_ms: 0.338649
+  type: 'test'
+  ...
+# Subtest: fresh initial state is not shared mutable state
+ok 11 - fresh initial state is not shared mutable state
+  ---
+  duration_ms: 0.146046
+  type: 'test'
+  ...
+# Subtest: reducer does not mutate
+ok 12 - reducer does not mutate
+  ---
+  duration_ms: 0.660866
+  type: 'test'
+  ...
+# Subtest: aperture clamped
+ok 13 - aperture clamped
+  ---
+  duration_ms: 0.069751
+  type: 'test'
+  ...
+# Subtest: finish persists through every scene
+ok 14 - finish persists through every scene
+  ---
+  duration_ms: 0.43047
+  type: 'test'
+  ...
+# Subtest: invalid finish fails
+ok 15 - invalid finish fails
+  ---
+  duration_ms: 0.078832
+  type: 'test'
+  ...
+# Subtest: section requires boolean
+ok 16 - section requires boolean
+  ---
+  duration_ms: 0.051029
+  type: 'test'
+  ...
+# Subtest: pointer bounded
+ok 17 - pointer bounded
+  ---
+  duration_ms: 0.050278
+  type: 'test'
+  ...
+# Subtest: pointer nonfinite fails
+ok 18 - pointer nonfinite fails
+  ---
+  duration_ms: 0.148648
+  type: 'test'
+  ...
+# Subtest: unknown action fails
+ok 19 - unknown action fails
+  ---
+  duration_ms: 0.067731
+  type: 'test'
+  ...
+# Subtest: missing action fails
+ok 20 - missing action fails
+  ---
+  duration_ms: 0.048384
+  type: 'test'
+  ...
+# Subtest: reset recovers initial configuration
+ok 21 - reset recovers initial configuration
+  ---
+  duration_ms: 0.050203
+  type: 'test'
+  ...
+# Subtest: scene final index stays in range
+ok 22 - scene final index stays in range
+  ---
+  duration_ms: 0.038286
+  type: 'test'
+  ...
+# Subtest: negative/outside progress clamps
+ok 23 - negative/outside progress clamps
+  ---
+  duration_ms: 0.036679
+  type: 'test'
+  ...
+# Subtest: frame first last and one-frame mapping
+ok 24 - frame first last and one-frame mapping
+  ---
+  duration_ms: 0.063482
+  type: 'test'
+  ...
+# Subtest: invalid frame 0/0
+ok 25 - invalid frame 0/0
+  ---
+  duration_ms: 0.048906
+  type: 'test'
+  ...
+# Subtest: invalid frame -1/4
+ok 26 - invalid frame -1/4
+  ---
+  duration_ms: 0.042853
+  type: 'test'
+  ...
+# Subtest: invalid frame 4/4
+ok 27 - invalid frame 4/4
+  ---
+  duration_ms: 0.034957
+  type: 'test'
+  ...
+# Subtest: invalid frame 0.5/4
+ok 28 - invalid frame 0.5/4
+  ---
+  duration_ms: 0.031147
+  type: 'test'
+  ...
+# Subtest: invalid frame 0/2.5
+ok 29 - invalid frame 0/2.5
+  ---
+  duration_ms: 0.032633
+  type: 'test'
+  ...
+# Subtest: invalid frame Infinity/4
+ok 30 - invalid frame Infinity/4
+  ---
+  duration_ms: 0.033728
+  type: 'test'
+  ...
+# Subtest: evaluator deterministic
+ok 31 - evaluator deterministic
+  ---
+  duration_ms: 0.101169
+  type: 'test'
+  ...
+# Subtest: reverse seek returns identical state
+ok 32 - reverse seek returns identical state
+  ---
+  duration_ms: 0.060732
+  type: 'test'
+  ...
+# Subtest: pose finite throughout entire story
+ok 33 - pose finite throughout entire story
+  ---
+  duration_ms: 4.814793
+  type: 'test'
+  ...
+# Subtest: ordinary scene boundaries are spatially continuous
+ok 34 - ordinary scene boundaries are spatially continuous
+  ---
+  duration_ms: 0.158549
+  type: 'test'
+  ...
+# Subtest: reduced motion eliminates pointer and in-scene camera travel
+ok 35 - reduced motion eliminates pointer and in-scene camera travel
+  ---
+  duration_ms: 0.151785
+  type: 'test'
+  ...
+# Subtest: section retains assembly separation
+ok 36 - section retains assembly separation
+  ---
+  duration_ms: 0.075101
+  type: 'test'
+  ...
+# Subtest: SVG is deterministic
+ok 37 - SVG is deterministic
+  ---
+  duration_ms: 1.180526
+  type: 'test'
+  ...
+# Subtest: SVG has no external reference or executable markup
+ok 38 - SVG has no external reference or executable markup
+  ---
+  duration_ms: 0.348194
+  type: 'test'
+  ...
+# Subtest: aperture changes visible geometry
+ok 39 - aperture changes visible geometry
+  ---
+  duration_ms: 0.628071
+  type: 'test'
+  ...
+# Subtest: finish changes surface markup
+ok 40 - finish changes surface markup
+  ---
+  duration_ms: 0.462598
+  type: 'test'
+  ...
+# Subtest: portal is substantially larger than establishing object
+ok 41 - portal is substantially larger than establishing object
+  ---
+  duration_ms: 0.123691
+  type: 'test'
+  ...
+# Subtest: XML escaping
+ok 42 - XML escaping
+  ---
+  duration_ms: 0.07386
+  type: 'test'
+  ...
+# Subtest: invalid SVG dimensions 0/400
+ok 43 - invalid SVG dimensions 0/400
+  ---
+  duration_ms: 0.071707
+  type: 'test'
+  ...
+# Subtest: invalid SVG dimensions 400/0
+ok 44 - invalid SVG dimensions 400/0
+  ---
+  duration_ms: 0.049501
+  type: 'test'
+  ...
+# Subtest: invalid SVG dimensions Infinity/400
+ok 45 - invalid SVG dimensions Infinity/400
+  ---
+  duration_ms: 0.042237
+  type: 'test'
+  ...
+# Subtest: invalid SVG dimensions 17000/400
+ok 46 - invalid SVG dimensions 17000/400
+  ---
+  duration_ms: 0.336021
+  type: 'test'
+  ...
+# Subtest: invalid SVG dimensions -1/400
+ok 47 - invalid SVG dimensions -1/400
+  ---
+  duration_ms: 0.067095
+  type: 'test'
+  ...
+1..47
+# tests 47
+# suites 0
+# pass 47
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 86.002956

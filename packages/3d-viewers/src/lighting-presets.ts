@@ -7,7 +7,7 @@
  *
  * @example
  * ```ts
- * import { LIGHTING_PRESETS, applyLighting } from '@kooshapari/phenotype-3d-viewers/lighting-presets';
+ * import { LIGHTING_PRESETS, applyLighting } from '@<REDACTED>/phenotype-3d-viewers/lighting-presets';
  * import * as THREE from 'three';
  *
  * const scene = new THREE.Scene();

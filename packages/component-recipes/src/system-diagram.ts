@@ -6,7 +6,7 @@
  *
  * @example
  * ```ts
- * import { renderDiagram } from '@kooshapari/phenotype-component-recipes/system-diagram';
+ * import { renderDiagram } from '@<REDACTED>/phenotype-component-recipes/system-diagram';
  *
  * const figure = renderDiagram({
  *   title: 'Request flow',

@@ -10,7 +10,7 @@
  *
  * @example
  * ```ts
- * import { initParallaxDepth } from '@kooshapari/phenotype-interaction-patterns/parallax-depth';
+ * import { initParallaxDepth } from '@<REDACTED>/phenotype-interaction-patterns/parallax-depth';
  *
  * const parallax = initParallaxDepth();
  * // On SPA navigation:

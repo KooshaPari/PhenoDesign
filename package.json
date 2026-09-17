@@ -31,7 +31,7 @@
   ],
   "scripts": {
     "build": "tsc && cp -R css dist/css",
-    "build:packages": "bun --filter '@kooshapari/*' run build",
+    "build:packages": "bun --filter '@<REDACTED>/*' run build",
     "dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",

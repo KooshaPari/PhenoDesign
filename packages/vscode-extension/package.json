@@ -3,7 +3,7 @@
   "displayName": "phenoDesign",
   "description": "Design tokens, component recipes, and interaction patterns for the Phenotype ecosystem",
   "version": "0.1.0",
-  "publisher": "kooshapari",
+  "publisher": "<REDACTED>",
   "license": "MIT",
   "engines": {
     "vscode": "^1.85.0"

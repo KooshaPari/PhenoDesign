@@ -2,7 +2,7 @@
   "createBadge": {
     "prefix": "pd-badge",
     "body": [
-      "import { createBadge } from '@kooshapari/phenotype-component-recipes/badge';",
+      "import { createBadge } from '@<REDACTED>/phenotype-component-recipes/badge';",
       "",
       "const badge = createBadge({",
       "  label: '${1:Label}',",
@@ -16,7 +16,7 @@
   "createStatusBadge": {
     "prefix": "pd-status-badge",
     "body": [
-      "import { createStatusBadge } from '@kooshapari/phenotype-component-recipes/badge';",
+      "import { createStatusBadge } from '@<REDACTED>/phenotype-component-recipes/badge';",
       "",
       "const badge = createStatusBadge('${1|shipped,building,failed,researching,deploying|}');"
     ],
@@ -25,7 +25,7 @@
   "createTechBadge": {
     "prefix": "pd-tech-badge",
     "body": [
-      "import { createTechBadge } from '@kooshapari/phenotype-component-recipes/badge';",
+      "import { createTechBadge } from '@<REDACTED>/phenotype-component-recipes/badge';",
       "",
       "const badge = createTechBadge('${1:TypeScript}');"
     ],
@@ -34,7 +34,7 @@
   "createArtifactCard": {
     "prefix": "pd-artifact-card",
     "body": [
-      "import { createArtifactCard } from '@kooshapari/phenotype-component-recipes/artifact-card';",
+      "import { createArtifactCard } from '@<REDACTED>/phenotype-component-recipes/artifact-card';",
       "",
       "const card = createArtifactCard({",
       "  title: '${1:Project Name}',",
@@ -49,7 +49,7 @@
   "createMetricCallout": {
     "prefix": "pd-metric",
     "body": [
-      "import { createMetricCallout } from '@kooshapari/phenotype-component-recipes/evidence';",
+      "import { createMetricCallout } from '@<REDACTED>/phenotype-component-recipes/evidence';",
       "",
       "const metric = createMetricCallout({",
       "  value: '${1:99%}',",
@@ -61,7 +61,7 @@
   "createEvidenceLabel": {
     "prefix": "pd-evidence",
     "body": [
-      "import { createEvidenceLabel } from '@kooshapari/phenotype-component-recipes/evidence';",
+      "import { createEvidenceLabel } from '@<REDACTED>/phenotype-component-recipes/evidence';",
       "",
       "const label = createEvidenceLabel({",
       "  text: '${1:Evidence}',",
@@ -73,7 +73,7 @@
   "initScrollReveal": {
     "prefix": "pd-scroll-reveal",
     "body": [
-      "import { initScrollReveal } from '@kooshapari/phenotype-interaction-patterns/scroll-reveal';",
+      "import { initScrollReveal } from '@<REDACTED>/phenotype-interaction-patterns/scroll-reveal';",
       "",
       "// Add data-reveal=\"${1|up,down,left,right,fade,blur,scale|}\" to HTML elements",
       "const reveal = initScrollReveal({",
@@ -86,7 +86,7 @@
   "createLightbox": {
     "prefix": "pd-lightbox",
     "body": [
-      "import { createLightbox } from '@kooshapari/phenotype-interaction-patterns/lightbox';",
+      "import { createLightbox } from '@<REDACTED>/phenotype-interaction-patterns/lightbox';",
       "",
       "const lightbox = createLightbox();",
       "lightbox.open('${1:image.jpg}', '${2:Alt text}', '${3:Caption}');"
@@ -96,7 +96,7 @@
   "animateCounter": {
     "prefix": "pd-counter",
     "body": [
-      "import { initCounterAnimate } from '@kooshapari/phenotype-interaction-patterns/counter-animate';",
+      "import { initCounterAnimate } from '@<REDACTED>/phenotype-interaction-patterns/counter-animate';",
       "",
       "// Add data-counter=\"${1:100}\" to HTML elements",
       "const counter = initCounterAnimate();"

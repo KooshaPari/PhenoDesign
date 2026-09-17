@@ -1,4 +1,4 @@
-# Architecture Decision Records -- @kooshapari/design
+# Architecture Decision Records -- @<REDACTED>/design
 
 **Last Updated:** 2026-04-04  
 **Status:** Active Document

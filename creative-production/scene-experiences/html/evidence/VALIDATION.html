@@ -1,0 +1,100 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VALIDATION · PhenoDesign</title><link rel="stylesheet" href="../../site.css"><header><a class="brand" href="../../index.html">PhenoDesign / Scene experiences</a><p>V3 · Source-backed working library</p></header><main><h1>Validation observations</h1>
+<h2>Executed in the preparation environment</h2>
+<table>
+<thead>
+<tr>
+  <th>Layer</th>
+  <th>Observation</th>
+  <th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Pure scene state, frame mapping and SVG geometry</td>
+  <td><strong>47 Node tests passed; 0 failed</strong></td>
+  <td><code>node-tests.txt</code></td>
+</tr>
+<tr>
+  <td>Scene contract, capability metadata and guarded installer</td>
+  <td><strong>30 Python tests passed; 0 failed</strong></td>
+  <td><code>python-tests.txt</code></td>
+</tr>
+<tr>
+  <td>Exact self-contained HTML, Chromium inline fixture</td>
+  <td><strong>41 checks passed</strong></td>
+  <td><code>browser/results.json</code>, screenshots and <code>browser-run.txt</code></td>
+</tr>
+<tr>
+  <td>Offline catalog</td>
+  <td><strong>6 checks passed; 234 local links resolved</strong></td>
+  <td><code>catalog/results.json</code></td>
+</tr>
+<tr>
+  <td>Source sanity</td>
+  <td><strong>14 Python/JS syntax checks; JSON parse and archive checks passed</strong></td>
+  <td><code>source-checks.json</code></td>
+</tr>
+<tr>
+  <td>Served local URL</td>
+  <td><strong>BLOCKED_ENV</strong>: <code>ERR_BLOCKED_BY_ADMINISTRATOR</code></td>
+  <td><code>http/results.json</code>, <code>http-run.txt</code></td>
+</tr>
+<tr>
+  <td>Authored image sequence → video</td>
+  <td><strong>96 frames; 960 × 554; 12 fps; 8 seconds; full decode passed</strong></td>
+  <td><code>media-audit.json</code>, <code>media-probe.json</code>, encode/decode logs</td>
+</tr>
+<tr>
+  <td>Source archives</td>
+  <td>Both earlier v2 archives preserved byte-for-byte</td>
+  <td><code>../prior-kits/PROVENANCE.json</code> and package checksums</td>
+</tr>
+</tbody>
+</table>
+<p>The browser run exercised chapter selection, keyboard aperture adjustment, finish
+selection, section mode, native scroll, hold/resume, reset, motion preference and
+state persistence. It compared actual screenshots, including the floor-light region,
+rather than treating displayed state text as sufficient evidence. It checked 390 px
+and 320 px mobile layouts, disabled JavaScript, page errors, outbound requests and
+idle render behavior. Chromium was <strong>144.0.7559.96</strong>; WebGL2 was unavailable.</p>
+<p>The inline fixture contains the actual generated HTML/JS/SVG/CSS. It does not exercise
+HTTP headers, module delivery, caching, framework mounting, a deployment, or a target
+product route. The HTTP attempt is retained as blocked; no fallback pass is substituted
+for it. A separate offline catalog check, when recorded in <code>catalog/results.json</code>, is
+navigation/UI validation for this package's documentation, not a product E2E test.</p>
+<p>The media film is an authored deterministic presentation captured from explicit scene
+positions. It is not raw journey evidence and was not rendered by Remotion. The full
+PNG sequence remains available so the derivative is reproducible and inspectable.</p>
+<h2>Not executed or not established</h2>
+<ul>
+<li>Adobe Illustrator/Photoshop/After Effects host execution, license/session probing,
+native editable save and cold reopen on the user's devices.</li>
+<li>Blender execution of the included recipe, <code>.blend</code> cold reopen, generated GLB import,
+WebGL/WebGPU scene rendering or physical GPU/device performance.</li>
+<li>Remotion composition bundling, video rendering or a real documentation-player embed.</li>
+<li>PhenoDesign workspace build, target repo integration, current installed journey
+recorder/verifier behavior or production-browser/device matrix.</li>
+<li>Accessibility conformance certification, screen-reader testing or measured target
+hardware frame-time/memory/thermal budgets.</li>
+<li>Photoreal material/art-direction acceptance. This specimen proves spatial blocking
+and behavior; it does not meet a finished iPhone-launch campaign quality bar by itself.</li>
+</ul>
+<p>The packaged film recipe was separately rerun and produced a byte-identical MP4 in
+this environment. That is a bounded reproducibility observation, not a promise of
+bit-identical output across browser/encoder versions or machines.</p>
+<p>No remote repository was modified, pushed or merged. Native tools are user-reported
+resources to qualify, not capabilities confirmed from this environment. The JSON
+contract and review rubric describe acceptance; they do not declare all 30 families
+implemented or independently verified.</p>
+<h2>Reproduction</h2>
+<pre><code class="language-sh">node --test tests/*.test.mjs
+python -m unittest discover -s tests -p 'test_*.py' -v
+python scripts/build_specimen.py
+python scripts/browser_check.py --transport inline --out evidence/local-browser
+python scripts/browser_check.py --transport http --out evidence/local-http
+</code></pre>
+<p>For the film, run the browser script with <code>--film</code>, then encode the frames using the
+recipe in <code>../scripts/render_film.py</code>. No script installs dependencies automatically.
+The installer tests use synthetic temporary target repositories; their pass does not
+mean the real PhenoDesign checkout was updated.</p>
+</main><footer><a href="../../evidence/VALIDATION.md">Original Markdown</a> · See <a href="../../html/evidence/VALIDATION.html">validation boundaries</a>.</footer></html>

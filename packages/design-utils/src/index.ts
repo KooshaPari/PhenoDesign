@@ -1,5 +1,5 @@
 /**
- * @kooshapari/phenotype-design-utils — public API.
+ * @<REDACTED>/phenotype-design-utils — public API.
  *
  * Color (OKLCH), type scale, spacing, motion, and layout utilities
  * for the Phenotype design system.

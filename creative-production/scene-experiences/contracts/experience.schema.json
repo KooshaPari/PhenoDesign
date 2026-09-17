@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PhenoDesign authored scene experience extension",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "subject",
+    "task",
+    "concept",
+    "assets",
+    "scenes",
+    "renditions",
+    "evidenceOwner"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "subject": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "task": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "concept": {
+      "type": "boolean"
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "source",
+          "rights"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "rights": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "purpose",
+          "range",
+          "camera",
+          "lighting",
+          "objects",
+          "input",
+          "semantic",
+          "continuity",
+          "fallback",
+          "acceptance"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,63}$"
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "range": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "camera": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "framing",
+              "position",
+              "target"
+            ],
+            "properties": {
+              "framing": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "position": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 3,
+                "maxItems": 3
+              },
+              "target": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 3,
+                "maxItems": 3
+              }
+            }
+          },
+          "lighting": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "objects": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "input": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "scroll",
+                "scene-link",
+                "aperture",
+                "finish",
+                "section",
+                "pointer-light",
+                "none"
+              ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "semantic": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "continuity": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "fallback": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "acceptance": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 1
+          }
+        }
+      },
+      "minItems": 1,
+      "maxItems": 24
+    },
+    "renditions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "full",
+        "reducedMotion",
+        "static"
+      ],
+      "properties": {
+        "full": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "reducedMotion": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "static": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      }
+    },
+    "evidenceOwner": {
+      "const": "existing-journeys-verifier"
+    }
+  }
+}

@@ -42,7 +42,7 @@ Use this skill when embedding interactive 3D model viewers in Phenotype projects
 ### 1. Install
 
 ```bash
-npm install @kooshapari/phenotype-3d-viewers three
+npm install @<REDACTED>/phenotype-3d-viewers three
 ```
 
 ### 2. Add Import Map (if no bundler)
@@ -61,8 +61,8 @@ npm install @kooshapari/phenotype-3d-viewers three
 ### 3. Mount Viewer
 
 ```ts
-import { createGLBViewer } from '@kooshapari/phenotype-3d-viewers/glb-viewer';
-import { lightingPresets } from '@kooshapari/phenotype-3d-viewers/lighting-presets';
+import { createGLBViewer } from '@<REDACTED>/phenotype-3d-viewers/glb-viewer';
+import { lightingPresets } from '@<REDACTED>/phenotype-3d-viewers/lighting-presets';
 
 const viewer = createGLBViewer({
   container: '#model-viewer',

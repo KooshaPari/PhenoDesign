@@ -1,0 +1,154 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CHOREOGRAPHY AND PRIMITIVES · PhenoDesign</title><link rel="stylesheet" href="../../site.css"><header><a class="brand" href="../../index.html">PhenoDesign / Scene experiences</a><p>V3 · Source-backed working library</p></header><main><h1>Choreography and scene primitives</h1>
+<p>Primitives are compositional tools, not effects to place everywhere. Combine a small set around
+one dramatic premise. In the default specimen, light changes from distant object to manipulable
+mechanism to surrounding environment; the visitor's aperture choice survives the whole passage.</p>
+<table>
+<thead>
+<tr>
+  <th>Primitive</th>
+  <th>Dramatic purpose</th>
+  <th>Composition / input</th>
+  <th>Failure to reject</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Establishing chamber</td>
+  <td>Situate subject and viewer</td>
+  <td>Ground plane, horizon, restrained camera</td>
+  <td>Floating object with no scale/contact cues</td>
+</tr>
+<tr>
+  <td>Threshold / portal</td>
+  <td>Cross a boundary rather than swap cards</td>
+  <td>Expand an aperture past the viewport; maintain anchor</td>
+  <td>Arbitrary zoom obscures all navigation</td>
+</tr>
+<tr>
+  <td>Suspended mechanism</td>
+  <td>Show relations between parts</td>
+  <td>Shared axis, named mounting points and shadows</td>
+  <td>Parts float randomly without construction logic</td>
+</tr>
+<tr>
+  <td>Exploded construction</td>
+  <td>Explain assembly</td>
+  <td>Separate along a real assembly axis; toggle/scroll</td>
+  <td>A spectacle of unrelated components</td>
+</tr>
+<tr>
+  <td>Cutaway / sectional peel</td>
+  <td>Reveal interior without losing shell context</td>
+  <td>Clipping, transparent section, matching silhouette</td>
+  <td>Inaccurate product internals presented as fact</td>
+</tr>
+<tr>
+  <td>Material chamber</td>
+  <td>Make finish respond to light</td>
+  <td>Relight/material selector plus real response</td>
+  <td>Flat color button pretends to change material</td>
+</tr>
+<tr>
+  <td>Macro passage</td>
+  <td>Transition from object to material scale</td>
+  <td>Match curve/pattern into enlarged detail</td>
+  <td>Scaled poster without new information</td>
+</tr>
+<tr>
+  <td>Diegetic dial</td>
+  <td>Put an understandable control in the scene</td>
+  <td>Visible mechanism, keyboard range counterpart</td>
+  <td>Discoverability or accessibility sacrificed</td>
+</tr>
+<tr>
+  <td>Foreground transgression</td>
+  <td>Let a prop escape its apparent frame</td>
+  <td>Controlled overlap of decorative frame/type</td>
+  <td>Focus rings, CTA or text covered</td>
+</tr>
+<tr>
+  <td>Viewer-reactive light</td>
+  <td>Acknowledge deliberate input</td>
+  <td>Local pointer/drag response, bounded gain</td>
+  <td>Covert presence tracking or constant jitter</td>
+</tr>
+<tr>
+  <td>Tactile resistance</td>
+  <td>Communicate weight or mechanical limits</td>
+  <td>Damped motion with explicit bounds and reset</td>
+  <td>Motion tied to unbounded frame time</td>
+</tr>
+<tr>
+  <td>Assembly handoff</td>
+  <td>Carry identity across cuts/routes</td>
+  <td>Shared object/variant ID, matched anchor</td>
+  <td>New route silently resets choices</td>
+</tr>
+<tr>
+  <td>Environmental consequence</td>
+  <td>Make a small action affect the whole world</td>
+  <td>Aperture changes beam/wall/floor illumination</td>
+  <td>Control changes only a numeric label</td>
+</tr>
+<tr>
+  <td>Technical overlay</td>
+  <td>Explain a real relationship</td>
+  <td>World/projected anchors + semantic counterpart</td>
+  <td>Fake metrics or labels unrelated to geometry</td>
+</tr>
+<tr>
+  <td>Held moment</td>
+  <td>Give attention and reading time</td>
+  <td>Stable state, no unnecessary auto drift</td>
+  <td>Every surface competes for motion</td>
+</tr>
+<tr>
+  <td>Match cut / occluder</td>
+  <td>Hide renderer boundary without deceit</td>
+  <td>Same silhouette or intentional foreground wipe</td>
+  <td>Loader disguised as unavoidable cinematic pause</td>
+</tr>
+<tr>
+  <td>Perspective typography</td>
+  <td>Make type part of a staged plane</td>
+  <td>Selectable/semantic equivalent; bounded distortion</td>
+  <td>Essential copy exists only in illegible pixels</td>
+</tr>
+<tr>
+  <td>Time slice</td>
+  <td>Inspect a captured/simulated phase</td>
+  <td>Cached state or deterministic seek</td>
+  <td>Variable-step simulation breaks reverse/seek</td>
+</tr>
+<tr>
+  <td>Branch and return</td>
+  <td>Offer agency without losing orientation</td>
+  <td>Named branch, state retention, explicit return</td>
+  <td>Hidden exit or infinite scene navigation</td>
+</tr>
+<tr>
+  <td>Resolve to utility</td>
+  <td>End the show in a usable task surface</td>
+  <td>Direct link/action, all conclusions retained</td>
+  <td>A theatrical finale with no useful next step</td>
+</tr>
+</tbody>
+</table>
+<h2>Timing language</h2>
+<p>Storyboard the attention curve, not only durations. <strong>Anticipation</strong> establishes the change;
+<strong>action</strong> communicates it; <strong>settle</strong> confirms the resulting state; <strong>hold</strong> permits understanding.
+Do not attach spring/overshoot to every property. Material, scale and context determine the motion.
+An extremely small machined dial should not bounce like rubber unless intentionally stylized.</p>
+<p>Scroll distance is not time. Visitors can pause, reverse or skip. Define normalized state under
+arbitrary seek, not a fragile sequence of <code>onEnter</code> callbacks. An auto film is a separate driver
+and requires user control. Native scroll-linked CSS and GSAP are available routes; their existence
+does not excuse unmeasured scroll traps. [R04, R05]</p>
+<h2>Lighting and camera review</h2>
+<p>Use motivated key/fill/rim/reflection sources. Preserve a stable tonal hierarchy as the camera
+moves. Avoid crushed blacks hiding the product silhouette and blown highlights erasing material
+information. Test a neutral render before adding bloom. In 2.5D, moving the light too far can
+expose baked shadows; constrain motion honestly or use a new plate.</p>
+<p>A lens/camera path has framing, focal behavior, near/far planes and collision/occlusion constraints.
+The browser viewport has unknown physical size; author multiple compositions, not one huge
+scene cropped into mobile. Mobile may use a closer cut, fewer depth layers and direct selectors.</p>
+</main><footer><a href="../../docs/CHOREOGRAPHY-AND-PRIMITIVES.md">Original Markdown</a> · See <a href="../../html/evidence/VALIDATION.html">validation boundaries</a>.</footer></html>

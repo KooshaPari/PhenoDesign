@@ -1,6 +1,6 @@
-# Specification Overview -- @kooshapari/design
+# Specification Overview -- @<REDACTED>/design
 
-**Package:** `@kooshapari/design`  
+**Package:** `@<REDACTED>/design`  
 **Version:** 1.0.1  
 **Repository:** https://github.com/KooshaPari/phenotype-design  
 **Worktree:** `spec-docs` (branch: `chore/spec-docs`)  
@@ -38,7 +38,7 @@
 
 ### 1.1 Mission Statement
 
-`@kooshapari/design` is the shared design-token and theme library for the Phenotype ecosystem. It provides the Keycap color palette (teal-dark aesthetic), CSS custom properties, framework-agnostic component styles, a full VitePress theme integration, and a W3C DTCG JSON token source so every Phenotype project achieves visual consistency without coupling to a UI framework.
+`@<REDACTED>/design` is the shared design-token and theme library for the Phenotype ecosystem. It provides the Keycap color palette (teal-dark aesthetic), CSS custom properties, framework-agnostic component styles, a full VitePress theme integration, and a W3C DTCG JSON token source so every Phenotype project achieves visual consistency without coupling to a UI framework.
 
 ### 1.2 Design Philosophy
 
@@ -985,16 +985,16 @@ export const vitepressConfig = {
 
 ```bash
 # Using bun (recommended)
-bun add @kooshapari/design
+bun add @<REDACTED>/design
 
 # Using npm
-npm install @kooshapari/design
+npm install @<REDACTED>/design
 
 # Using yarn
-yarn add @kooshapari/design
+yarn add @<REDACTED>/design
 
 # Using pnpm
-pnpm add @kooshapari/design
+pnpm add @<REDACTED>/design
 ```
 
 ---
@@ -1160,7 +1160,7 @@ Animation respects reduced motion preferences:
 #### Main Export
 
 ```typescript
-import { keycap, type KeycapTokens } from '@kooshapari/design';
+import { keycap, type KeycapTokens } from '@<REDACTED>/design';
 
 // Access tokens
 console.log(keycap.color.accent);        // '#7ebab5'
@@ -1172,7 +1172,7 @@ console.log(keycap.font.mono);           // monospace font stack
 #### Tokens Export
 
 ```typescript
-import { keycap, type KeycapTokens } from '@kooshapari/design/tokens';
+import { keycap, type KeycapTokens } from '@<REDACTED>/design/tokens';
 
 // Same as main export
 ```
@@ -1180,7 +1180,7 @@ import { keycap, type KeycapTokens } from '@kooshapari/design/tokens';
 #### VitePress Export
 
 ```typescript
-import { vitepressConfig, vitepressMarkdownTheme } from '@kooshapari/design/vitepress';
+import { vitepressConfig, vitepressMarkdownTheme } from '@<REDACTED>/design/vitepress';
 
 // Use in .vitepress/config.ts
 export default defineConfig({
@@ -1195,7 +1195,7 @@ export default defineConfig({
 
 ```css
 /* Import in your CSS */
-@import '@kooshapari/design/css/keycap-palette.css';
+@import '@<REDACTED>/design/css/keycap-palette.css';
 
 /* Use tokens */
 .my-component {
@@ -1208,7 +1208,7 @@ export default defineConfig({
 #### Components
 
 ```css
-@import '@kooshapari/design/css/components.css';
+@import '@<REDACTED>/design/css/components.css';
 
 /* Use layer badges */
 <span class="layer-badge layer-2">Layer 2</span>
@@ -1225,7 +1225,7 @@ import { defineConfig } from 'vitepress';
 
 export default defineConfig({
   head: [
-    ['link', { rel: 'stylesheet', href: '@kooshapari/design/css/vitepress-theme.css' }]
+    ['link', { rel: 'stylesheet', href: '@<REDACTED>/design/css/vitepress-theme.css' }]
   ]
 });
 ```
@@ -1233,7 +1233,7 @@ export default defineConfig({
 ### 14.3 JSON API
 
 ```javascript
-import keycapTokens from '@kooshapari/design/tokens/keycap.json';
+import keycapTokens from '@<REDACTED>/design/tokens/keycap.json';
 
 // Access raw tokens
 console.log(keycapTokens.keycap.color.accent.$value);  // '#7ebab5'
@@ -1248,7 +1248,7 @@ console.log(keycapTokens.keycap.color.accent.$value);  // '#7ebab5'
 ```typescript
 // .vitepress/config.ts
 import { defineConfig } from 'vitepress';
-import { vitepressConfig, vitepressMarkdownTheme } from '@kooshapari/design/vitepress';
+import { vitepressConfig, vitepressMarkdownTheme } from '@<REDACTED>/design/vitepress';
 
 export default defineConfig({
   ...vitepressConfig,
@@ -1275,7 +1275,7 @@ export default defineConfig({
 
 ```css
 /* .vitepress/theme/style.css */
-@import '@kooshapari/design/css/vitepress-theme.css';
+@import '@<REDACTED>/design/css/vitepress-theme.css';
 
 /* Custom overrides */
 .VPHero .name {
@@ -1287,8 +1287,8 @@ export default defineConfig({
 
 ```jsx
 // App.jsx
-import '@kooshapari/design/css/keycap-palette.css';
-import { keycap } from '@kooshapari/design';
+import '@<REDACTED>/design/css/keycap-palette.css';
+import { keycap } from '@<REDACTED>/design';
 
 function App() {
   return (
@@ -1330,8 +1330,8 @@ function App() {
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@kooshapari/design/css/keycap-palette.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@kooshapari/design/css/components.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@<REDACTED>/design/css/keycap-palette.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@<REDACTED>/design/css/components.css">
   <style>
     body {
       background: var(--kc-bg);
@@ -1402,7 +1402,7 @@ If you were using the pre-1.0 version:
    import { tokens } from '@phenotype/design';
    
    // New
-   import { keycap } from '@kooshapari/design';
+   import { keycap } from '@<REDACTED>/design';
    ```
 
 2. Update CSS imports:
@@ -1411,7 +1411,7 @@ If you were using the pre-1.0 version:
    @import '@phenotype/design/theme.css';
    
    /* New */
-   @import '@kooshapari/design/css/vitepress-theme.css';
+   @import '@<REDACTED>/design/css/vitepress-theme.css';
    ```
 
 3. Update token references:
@@ -1520,7 +1520,7 @@ color: var(--kc-text-1);
 ### 19.3 Repository Links
 
 - Source: https://github.com/KooshaPari/phenotype-design
-- npm: https://www.npmjs.com/package/@kooshapari/design
+- npm: https://www.npmjs.com/package/@<REDACTED>/design
 - Issues: https://github.com/KooshaPari/phenotype-design/issues
 
 ---
@@ -2235,7 +2235,7 @@ Best practices for optimal rendering:
 ```html
 <!-- Long-term cache CSS files -->
 <link rel="stylesheet" 
-      href="@kooshapari/design/css/keycap-palette.css" 
+      href="@<REDACTED>/design/css/keycap-palette.css" 
       crossorigin="anonymous">
 ```
 

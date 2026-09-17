@@ -1,0 +1,198 @@
+{
+  "reviewed_at": "2026-09-15",
+  "policy": "References and original annotations; no third-party asset or font redistribution. A link is not an installed capability.",
+  "resources": [
+    {
+      "id": "R01",
+      "title": "Apple iPhone 17 Pro product narrative",
+      "url": "https://www.apple.com/il/iphone-17-pro/",
+      "kind": "official-product-page",
+      "inspection": "Page text inspected; live motion/backend not instrumented",
+      "use": "Study product/inside/detail progression, not asset copying."
+    },
+    {
+      "id": "R02",
+      "title": "Nomadic Tribe creator case study",
+      "url": "https://www.makemepulse.com/case-study/nomadic-tribe",
+      "kind": "creator-case-study",
+      "inspection": "Text inspected",
+      "use": "Four interactive narrative chapters; world/visitor relationship."
+    },
+    {
+      "id": "R03",
+      "title": "Nike Reactland creator case study",
+      "url": "https://www.wk.com/work/nike-react-reactland/",
+      "kind": "creator-case-study",
+      "inspection": "Text inspected; physical installation, not website",
+      "use": "Tie meaningful action to product consequence."
+    },
+    {
+      "id": "R04",
+      "title": "GSAP ScrollTrigger",
+      "url": "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+      "kind": "official-docs",
+      "inspection": "Documentation inspected",
+      "use": "Scroll/pin/scrub route; measure actual experience and reverse."
+    },
+    {
+      "id": "R05",
+      "title": "CSS scroll-driven animations",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations",
+      "kind": "platform-docs",
+      "inspection": "Documentation inspected",
+      "use": "Native scroll timelines; probe support and keep semantic fallback."
+    },
+    {
+      "id": "R06",
+      "title": "WCAG 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "standard",
+      "inspection": "Relevant motion criteria inspected",
+      "use": "Separate Level A pause requirements and AAA interaction-motion control; apply product policy explicitly."
+    },
+    {
+      "id": "R07",
+      "title": "Page Visibility API",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API",
+      "kind": "platform-docs",
+      "inspection": "Documentation inspected",
+      "use": "Suspend hidden work; viewport intersection needs a separate check."
+    },
+    {
+      "id": "R08",
+      "title": "Remotion useCurrentFrame",
+      "url": "https://www.remotion.dev/docs/use-current-frame",
+      "kind": "official-docs",
+      "inspection": "Documentation inspected",
+      "use": "Frame-relative time and explicit scene timing."
+    },
+    {
+      "id": "R09",
+      "title": "Remotion flickering/determinism",
+      "url": "https://www.remotion.dev/docs/flickering",
+      "kind": "official-docs",
+      "inspection": "Documentation inspected",
+      "use": "No wall-clock-dependent authoring in frame renders."
+    },
+    {
+      "id": "R10",
+      "title": "Official GSAP agent skills",
+      "url": "https://github.com/greensock/gsap-skills",
+      "kind": "official-repository",
+      "inspection": "Repository landing page inspected; not vendored",
+      "use": "Acquire named task skills through approved pinned workflow; inspect licenses and changes."
+    },
+    {
+      "id": "R11",
+      "title": "Photoshop executeAsModal",
+      "url": "https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/executeasmodal",
+      "kind": "official-docs",
+      "inspection": "Documentation inspected",
+      "use": "Native host/modal ownership, cancellation and safe mutation."
+    },
+    {
+      "id": "R12",
+      "title": "Active Theory",
+      "url": "https://activetheory.net/",
+      "kind": "creator-portfolio",
+      "inspection": "Resolved but parser insufficient; live study still needed",
+      "use": "Queue camera/interaction study, no implementation assertions."
+    },
+    {
+      "id": "R13",
+      "title": "Remotion agent skills",
+      "url": "https://www.remotion.dev/docs/ai/skills",
+      "kind": "official-docs",
+      "inspection": "Documentation inspected; not vendored",
+      "use": "Acquire official upstream workflows separately from runtime libraries."
+    },
+    {
+      "id": "R14",
+      "title": "Three.js scene documentation",
+      "url": "https://threejs.org/docs/pages/Scene.html",
+      "kind": "official-docs",
+      "inspection": "Documentation inspected",
+      "use": "Meshes/lights/camera scene assembly; native source and GPU qualification remain separate."
+    },
+    {
+      "id": "R15",
+      "title": "GSAP matchMedia",
+      "url": "https://gsap.com/docs/v3/GSAP/gsap.matchMedia()/",
+      "kind": "official-docs",
+      "inspection": "Documentation inspected",
+      "use": "Responsive/reduced-motion setup and cleanup."
+    },
+    {
+      "id": "R16",
+      "title": "Blender command-line arguments",
+      "url": "https://docs.blender.org/manual/en/latest/advanced/command_line/arguments.html",
+      "kind": "official-docs",
+      "inspection": "Fetch failed in this run; reference retained for local verification",
+      "use": "Verify exact installed version, background/render arguments and device."
+    },
+    {
+      "id": "R17",
+      "title": "Rive agent authoring",
+      "url": "https://rive.app/docs/cli/agents",
+      "kind": "official-docs",
+      "inspection": "Fetch failed in this run; reference retained for local verification",
+      "use": "Qualify on-device authoring and runtime rather than assume .riv generation."
+    },
+    {
+      "id": "R18",
+      "title": "Three.js rendering on demand",
+      "url": "https://threejs.org/manual/en/rendering-on-demand.html",
+      "kind": "official-docs",
+      "inspection": "Specific page fetch failed; verify locally",
+      "use": "Demand rendering and lifecycle; do not use this entry as a current tested implementation."
+    },
+    {
+      "id": "R19",
+      "title": "Dribbble discovery",
+      "url": "https://dribbble.com",
+      "kind": "discovery-only",
+      "inspection": "Not audited",
+      "use": "Composition/motion leads only; seek original live work."
+    },
+    {
+      "id": "R20",
+      "title": "Awwwards discovery",
+      "url": "https://www.awwwards.com",
+      "kind": "discovery-only",
+      "inspection": "Not audited",
+      "use": "Find creator/live examples; awards are not E2E evidence."
+    },
+    {
+      "id": "R21",
+      "title": "The FWA discovery",
+      "url": "https://thefwa.com",
+      "kind": "discovery-only",
+      "inspection": "Not audited",
+      "use": "Discover world/interaction concepts; independently inspect behaviors."
+    },
+    {
+      "id": "R22",
+      "title": "Codrops discovery",
+      "url": "https://tympanus.net/codrops/",
+      "kind": "discovery-only",
+      "inspection": "Not audited in detail",
+      "use": "Prefer original creator technical case studies and inspect licenses."
+    },
+    {
+      "id": "R23",
+      "title": "Three.js official library documentation",
+      "url": "https://threejs.org/docs/",
+      "kind": "official-docs",
+      "inspection": "Index inspected",
+      "use": "Check actual installed renderer APIs; keep WebGPU/WebGL/fallback lanes distinct."
+    },
+    {
+      "id": "R24",
+      "title": "PhenoDesign journeys migration #87",
+      "url": "https://github.com/KooshaPari/PhenoDesign/pull/87",
+      "kind": "connected-repository",
+      "inspection": "Metadata refreshed through GitHub connector: open/unmerged",
+      "use": "Reconcile current migration before integration; no remote changes made."
+    }
+  ]
+}

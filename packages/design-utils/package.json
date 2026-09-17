@@ -1,5 +1,5 @@
 {
-  "name": "@kooshapari/phenotype-design-utils",
+  "name": "@<REDACTED>/phenotype-design-utils",
   "version": "0.1.0",
   "description": "Shared design utilities for Phenotype projects: color, typography, spacing, motion, and layout",
   "type": "module",

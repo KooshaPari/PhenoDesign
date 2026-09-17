@@ -1,0 +1,130 @@
+{
+  "owner": "existing PhenoDesign work system; import tasks rather than create competing tracker",
+  "milestones": [
+    {
+      "id": "M0",
+      "title": "Reconcile current PhenoDesign and historical kits",
+      "depends_on": [],
+      "acceptance": [
+        "Read current owners, migration heads and installed work",
+        "Choose one implementation per adapter; retain newer changes"
+      ],
+      "failure_case": "Do not run both v2 overlays or rename root directories.",
+      "status": "proposed"
+    },
+    {
+      "id": "M1",
+      "title": "Approve treatment and scene contract",
+      "depends_on": [
+        "M0"
+      ],
+      "acceptance": [
+        "Real subject/task, alternatives and source provenance",
+        "Scene board with direct/reverse/fallback behavior"
+      ],
+      "failure_case": "Do not equate a rotating asset with a world.",
+      "status": "proposed"
+    },
+    {
+      "id": "M2",
+      "title": "Author and reopen native masters",
+      "depends_on": [
+        "M1"
+      ],
+      "acceptance": [
+        "Illustrator/Photoshop owned native canaries",
+        "Blender named optical/material source saved and cold-reopened"
+      ],
+      "failure_case": "Installed app or generated script is not source reopen proof.",
+      "status": "proposed"
+    },
+    {
+      "id": "M3",
+      "title": "Integrate one actual scene consumer",
+      "depends_on": [
+        "M1"
+      ],
+      "acceptance": [
+        "Use accepted tokens and semantic UI",
+        "Real pointer/keyboard/touch affect scene and environment",
+        "Reverse/resize/direct-entry preserve selection"
+      ],
+      "failure_case": "Inline fixture cannot pass served-product gate.",
+      "status": "proposed"
+    },
+    {
+      "id": "M4",
+      "title": "Complete Remotion cross-media path",
+      "depends_on": [
+        "M2",
+        "M3"
+      ],
+      "acceptance": [
+        "Same state/timing drives real render",
+        "Decoded frames and annotation crop timing verified",
+        "Actual docs/player consumer exercised"
+      ],
+      "failure_case": "Authored film is not raw journey evidence.",
+      "status": "proposed"
+    },
+    {
+      "id": "M5",
+      "title": "Extend existing journey validation",
+      "depends_on": [
+        "M3"
+      ],
+      "acceptance": [
+        "Capture actual states and pixels; retain errors",
+        "No-JS/motion-off/rich-render-failed cases tested"
+      ],
+      "failure_case": "No new proof registry or app self-PASS authority.",
+      "status": "proposed"
+    },
+    {
+      "id": "M6",
+      "title": "Qualify real devices and native isolation",
+      "depends_on": [
+        "M2",
+        "M4",
+        "M5"
+      ],
+      "acceptance": [
+        "Target Windows/NVIDIA and Mac/mobile browser results",
+        "No focus theft or shared-native-document collisions",
+        "Measure budgets, hidden/offscreen, disposal and cancellation"
+      ],
+      "failure_case": "Headless/software results are not hardware qualification.",
+      "status": "proposed"
+    },
+    {
+      "id": "M7",
+      "title": "Critique and refine the entire sequence",
+      "depends_on": [
+        "M3",
+        "M5"
+      ],
+      "acceptance": [
+        "Inspect full motion and placement-sized frames",
+        "Repair weakest craft dimension with evidence",
+        "Compare simpler alternate rendition"
+      ],
+      "failure_case": "No score average hides a mandatory failure.",
+      "status": "proposed"
+    },
+    {
+      "id": "M8",
+      "title": "Prove second consumer and extract only common logic",
+      "depends_on": [
+        "M6",
+        "M7"
+      ],
+      "acceptance": [
+        "Two independent real consumers use accepted shared source",
+        "No duplicate source/worker/evidence ownership",
+        "Version/public exports and migration documented"
+      ],
+      "failure_case": "Do not publish an abstract engine before shared needs exist.",
+      "status": "proposed"
+    }
+  ]
+}

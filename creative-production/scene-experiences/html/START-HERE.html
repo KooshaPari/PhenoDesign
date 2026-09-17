@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>START HERE · PhenoDesign</title><link rel="stylesheet" href="../site.css"><header><a class="brand" href="../index.html">PhenoDesign / Scene experiences</a><p>V3 · Source-backed working library</p></header><main><h1>PhenoDesign · Scene Experiences v3</h1>
+<p><strong>Direction:</strong> authored, spatial, interactive experiences—not posters with animation attached.
+<strong>Destination:</strong> the existing <code><REDACTED>/PhenoDesign</code>. <strong>Delivery:</strong> a repo-ready local package; no remote changes.</p>
+<p>Begin with <code>docs/DESIGN-DIRECTION.md</code>, then <code>docs/CAPABILITY-MATRIX.md</code> and <code>docs/REPO-INTEGRATION.md</code>.
+The executable teaching specimen is <code>specimen/index.html</code>; its source is beside it.
+<code>index.html</code> is the offline document/resource browser. <code>AGENT-HANDOFF.md</code> is the execution instruction.</p>
+<h2>What is new</h2>
+<p>This package adds the scene-oriented direction, formal requirements, scene/state contract,
+capability matrix, choreography vocabulary, creative review rubric, 18 task-specific skills,
+a six-scene interactive optical-instrument specimen, native Blender recipe, Remotion adapter,
+reference research, test fixtures and a guarded additive installer.</p>
+<p>The specimen is <strong>spatial blocking and interaction architecture</strong>, using projected geometry and
+SVG/DOM, not a claim of Apple-level photoreal art direction. Native assets and production renderers
+remain separately qualified. Read <code>evidence/VALIDATION.md</code> before repeating a test claim.</p>
+<h2>One authoritative continuation, not competing v2 packages</h2>
+<p>Two different v2 archives were delivered earlier. Both are preserved byte-for-byte under
+<code>prior-kits/</code>; neither is automatically applied. V3 governs the scene direction. The most recent
+<code>phenodesign-creative-production-v2.zip</code> is the default historical implementation reference;
+<code>phenoDesign-visual-production-v2.zip</code> contains additional alternatives, not a second runtime owner.
+Reconcile useful code against the actual repo. Never run both old overlays indiscriminately.
+Neither archive's old tests are counted as new validation. No fonts or proprietary software are added.</p>
+<h2>Execute locally</h2>
+<pre><code class="language-sh">node --test tests/*.test.mjs
+python -m unittest discover -s tests -p 'test_*.py' -v
+python scripts/build_specimen.py
+python scripts/browser_check.py --transport inline --out evidence/local-browser
+# On a host that permits local navigation, use the actual served consumer:
+python scripts/browser_check.py --transport http --out evidence/local-http
+python integration/install.py --repo /path/to/PhenoDesign
+# Read the plan, acquire the repo write lease, then explicitly apply:
+python integration/install.py --repo /path/to/PhenoDesign --apply
+</code></pre>
+<p>Node and Python are needed for checks; the Python contract suite needs jsonschema.
+Browser checks additionally need Playwright, Pillow and a qualified Chromium binary.
+<code>requirements-checks.txt</code> records the versions used here; reuse an approved environment
+or create a project-local virtual environment. Python dependencies and browser binaries
+are deliberately not bundled.
+No dependency is installed by these commands. The installer adds only its own scene-experience
+subdirectory; it does not alter existing Remotion, tokens, public exports, policy or CI.</p>
+<p>The retained film frames and old archives are handoff/evidence material, not production
+runtime dependencies. The additive installer stages this complete handoff for reconciliation;
+follow existing repository/artifact retention policy rather than committing all historical
+archives and PNG frames indiscriminately. Keep only the chosen live implementations in the
+production dependency graph. Browser launch flags in the local fixture are not a recommended
+security policy for browsing untrusted sites.</p>
+</main><footer><a href="../START-HERE.md">Original Markdown</a> · See <a href="../html/evidence/VALIDATION.html">validation boundaries</a>.</footer></html>

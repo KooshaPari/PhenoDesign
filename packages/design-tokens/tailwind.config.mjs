@@ -4,7 +4,7 @@
  * Maps the canonical design tokens to Tailwind utility classes.
  * Usage:
  *   // tailwind.config.js
- *   import phenoPreset from '@kooshapari/phenotype-design-tokens/tailwind';
+ *   import phenoPreset from '@<REDACTED>/phenotype-design-tokens/tailwind';
  *   export default { presets: [phenoPreset], content: [...] }
  *
  * @type {import('tailwindcss').Config}

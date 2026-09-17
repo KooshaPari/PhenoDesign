@@ -1,0 +1,222 @@
+{
+  "transport": "inline",
+  "scope": "isolated browser fixture; not framework integration, deployed page or physical GPU",
+  "checks": [
+    {
+      "name": "enhancement initialized from actual built artifact",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "six semantic scene sections exist",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "tested backend explicitly SVG projection",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "chapter input reaches arrival",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "chapter input reaches approach",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "chapter input reaches construction",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "chapter input reaches participate",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "chapter input reaches threshold",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "chapter input reaches resolve",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "all chapter output pixels differ",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "keyboard closes aperture",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "keyboard opens aperture",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "aperture changes actual rendered pixels",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "aperture affects environment not only control label",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "finish input reaches selected state",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "finish changes visible surface",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section input separates layers",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "section changes pixels",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "reverse scene navigation retains configuration",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "native wheel advances narrative",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "hold freezes narrative while native scroll can continue",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "hold does not disable useful controls",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "resume follows current narrative position",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "explicit motion-off route",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "motion-off keeps camera fixed within scene",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "motion-off disables pointer parallax",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "reset restores product configuration",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no uncontrolled idle render loop",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "mobile 390 has no horizontal overflow",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "mobile controls within viewport",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "mobile 320 has no horizontal overflow",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "mobile 320 control bounds",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "mobile keyboard task still works",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no nonfinite geometry",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "OS reduced motion honored at initial load",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no-JS retains static authored diagram",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no-JS retains all explanatory chapters",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no-JS does not pretend controls are operative",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "dispose removes input handlers",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no browser page errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "standalone makes no network requests",
+      "passed": true,
+      "details": []
+    }
+  ],
+  "page_errors": [],
+  "browser": "144.0.7559.96",
+  "webgl2_available": false,
+  "authored_film_frames": {
+    "count": 96,
+    "source": "Explicit deterministic seek + screenshots; not a user-journey recording",
+    "path": "film-frames"
+  },
+  "requests": [],
+  "status": "PASS",
+  "passed": 41
+}

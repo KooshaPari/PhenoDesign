@@ -1,4 +1,4 @@
-# @kooshapari/phenotype-interaction-patterns
+# @<REDACTED>/phenotype-interaction-patterns
 
 Reusable, accessible interaction patterns extracted from proven Phenotype implementations.
 Each pattern respects `prefers-reduced-motion` and provides cleanup for SPA routing.
@@ -16,8 +16,8 @@ Each pattern respects `prefers-reduced-motion` and provides cleanup for SPA rout
 ## Usage
 
 ```ts
-import { initPerspectiveTilt } from '@kooshapari/phenotype-interaction-patterns/perspective-tilt';
-import { initScrollReveal } from '@kooshapari/phenotype-interaction-patterns/scroll-reveal';
+import { initPerspectiveTilt } from '@<REDACTED>/phenotype-interaction-patterns/perspective-tilt';
+import { initScrollReveal } from '@<REDACTED>/phenotype-interaction-patterns/scroll-reveal';
 
 // Initialize on page load
 const tilt = initPerspectiveTilt();

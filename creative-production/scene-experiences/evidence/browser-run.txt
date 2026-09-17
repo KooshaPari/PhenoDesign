@@ -1,0 +1,14 @@
+{
+  "transport": "inline",
+  "scope": "isolated browser fixture; not framework integration, deployed page or physical GPU",
+  "page_errors": [],
+  "browser": "144.0.7559.96",
+  "webgl2_available": false,
+  "authored_film_frames": {
+    "count": 96,
+    "source": "Explicit deterministic seek + screenshots; not a user-journey recording",
+    "path": "film-frames"
+  },
+  "status": "PASS",
+  "passed": 41
+}

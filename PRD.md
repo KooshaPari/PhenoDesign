@@ -1,13 +1,13 @@
-# Product Requirements Document -- @kooshapari/design
+# Product Requirements Document -- @<REDACTED>/design
 
-**Package:** `@kooshapari/design`
+**Package:** `@<REDACTED>/design`
 **Version:** 1.0.1
 **Repository:** https://github.com/KooshaPari/phenotype-design
 **Last Updated:** 2026-03-26
 
 ## Product Vision
 
-`@kooshapari/design` is the shared design-token and theme library for the Phenotype ecosystem.
+`@<REDACTED>/design` is the shared design-token and theme library for the Phenotype ecosystem.
 It provides the Keycap color palette (teal-dark aesthetic), CSS custom properties, framework-
 agnostic component styles, a full VitePress theme integration, and a W3C DTCG JSON token source
 so every Phenotype project achieves visual consistency without coupling to a UI framework.

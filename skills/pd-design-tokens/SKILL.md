@@ -39,18 +39,18 @@ Four source-of-truth colors from the Material Lab. Never derive directly from th
 ### 1. Install
 
 ```bash
-npm install @kooshapari/phenotype-design-tokens
+npm install @<REDACTED>/phenotype-design-tokens
 ```
 
 ### 2. Apply CSS Tokens
 
 ```html
-<link rel="stylesheet" href="@kooshapari/phenotype-design-tokens/tokens.css">
+<link rel="stylesheet" href="@<REDACTED>/phenotype-design-tokens/tokens.css">
 ```
 
 Or import in JS:
 ```ts
-import '@kooshapari/phenotype-design-tokens/tokens.css';
+import '@<REDACTED>/phenotype-design-tokens/tokens.css';
 ```
 
 ### 3. Use in Components
@@ -79,7 +79,7 @@ When adding new tokens:
 
 ```js
 // tailwind.config.js
-const phenotypePreset = require('@kooshapari/phenotype-design-tokens/tailwind-preset');
+const phenotypePreset = require('@<REDACTED>/phenotype-design-tokens/tailwind-preset');
 
 module.exports = {
   presets: [phenotypePreset],

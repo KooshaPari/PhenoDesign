@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>002 one state many renderers · PhenoDesign</title><link rel="stylesheet" href="../../../site.css"><header><a class="brand" href="../../../index.html">PhenoDesign / Scene experiences</a><p>V3 · Source-backed working library</p></header><main><h1>One narrative state; multiple renderers</h1>
+<p>Status: proposed for the receiving repository.</p>
+<h2>Decision</h2>
+<p>Use a pure, bounded state evaluator with separate interaction and rendition inputs. Adapt output to DOM/SVG/live 3D/frame-based renderers.</p>
+<h2>Rationale and alternatives</h2>
+<p>Independent clocks and transform writers drift; a single universal renderer would constrain media quality.</p>
+<h2>Consequences</h2>
+<p>Evaluate seams, arbitrary seek and state retention. Renderer equivalence is semantic/compositional, not necessarily pixel identical.</p>
+</main><footer><a href="../../../docs/adr/002-one-state-many-renderers.md">Original Markdown</a> · See <a href="../../../html/evidence/VALIDATION.html">validation boundaries</a>.</footer></html>
