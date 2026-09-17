@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useCallback } from 'react'
+import React, { useRef, useEffect, useState, useCallback, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import Scene from './Scene'
 import HUD from './HUD'
@@ -67,12 +67,14 @@ export default function App() {
           camera={{ fov: 35, near: 0.1, far: 100, position: [0, 1.2, 6] }}
           style={{ background: '#08080f' }}
         >
-          <Scene
-            progress={progress}
-            aperture={aperture}
-            beat={beat}
-            reducedMotion={reducedMotion}
-          />
+          <Suspense fallback={null}>
+            <Scene
+              progress={progress}
+              aperture={aperture}
+              beat={beat}
+              reducedMotion={reducedMotion}
+            />
+          </Suspense>
         </Canvas>
       </div>
 
