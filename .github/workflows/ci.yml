@@ -185,7 +185,7 @@ jobs:
           # commit explicitly; the synthetic merge ref is not the SHA it scans.
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: gitleaks
-        uses: gitleaks/gitleaks-action@v2
+        uses: gitleaks/gitleaks-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
