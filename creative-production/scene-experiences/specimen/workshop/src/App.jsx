@@ -4,6 +4,7 @@ import Scene from './Scene'
 import HUD from './HUD'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import * as THREE from 'three'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -61,7 +62,7 @@ export default function App() {
       {/* 3D Canvas — fixed behind scroll */}
       <div className="canvas-wrap">
         <Canvas
-          shadows
+          shadows={{ type: THREE.PCFShadowMap }}
           dpr={[1, 2]}
           gl={{ antialias: true, alpha: false, powerPreference: 'high-performance' }}
           camera={{ fov: 35, near: 0.1, far: 100, position: [0, 1.2, 6] }}

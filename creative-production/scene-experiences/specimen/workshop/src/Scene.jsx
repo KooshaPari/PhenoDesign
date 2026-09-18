@@ -465,13 +465,13 @@ export default function Scene({ progress, aperture, beat, reducedMotion }) {
           <Pedestal position={[0, -0.35, 0]} />
           <Pedestal position={[2.05, -0.35, 0]} />
 
-          <group position={[-2.05, -0.08, 0]} onPointerDown={pick('keycap')}>
+          <group position={[-2.05, -0.27, 0]} onPointerDown={pick('keycap')}>
             <Keycap aperture={aperture} />
           </group>
           <group position={[0, -0.35, 0]} onPointerDown={pick('glass')}>
             <GlassSpecimen aperture={aperture} />
           </group>
-          <group position={[2.05, 0.09, 0]} onPointerDown={pick('neumorphism')}>
+          <group position={[2.05, -0.23, 0]} onPointerDown={pick('neumorphism')}>
             <NeumorphismBlock aperture={aperture} />
           </group>
         </>

@@ -75,12 +75,35 @@ const sizes = []
 sizes.push(['beat-01-establish', await shot('beat-01-establish')])
 
 const beats = ['approach', 'reveal', 'participate', 'scale', 'resolve']
+const BEAT_TITLES = [
+  'A room with samples.', 'Focus on the glass.', 'Light passes through.',
+  'One control. Every material.', 'Inside the token.', 'Your configuration.',
+]
+
+// Poll until the HUD title matches the expected beat, so SwiftShader's slow
+// software-GL scrub animation has visibly caught up before capture.
+async function waitForBeat(title, timeoutMs = 12000) {
+  const deadline = Date.now() + timeoutMs
+  let last = null
+  while (Date.now() < deadline) {
+    last = await page.evaluate(() => document.querySelector('.hud-title')?.textContent ?? null)
+    if (last === title) return true
+    await page.waitForTimeout(400)
+  }
+  console.error(`WARN: beat title never matched "${title}" (last: "${last}")`)
+  return false
+}
+
 for (let i = 0; i < beats.length; i++) {
   await page.evaluate((idx) => {
     const total = document.documentElement.scrollHeight - window.innerHeight
-    window.scrollTo({ top: (total * (idx + 0.5)) / 6, behavior: 'instant' })
+    // Scroll to just inside the beat: CameraRig sets t=0 at local=0, so the
+    // camera sits exactly at this beat's preset (it blends toward the next
+    // preset as local grows, so mid-beat captures catch transitional views).
+    window.scrollTo({ top: (total * (idx + 0.05)) / 6, behavior: 'instant' })
   }, i + 1)
-  await page.waitForTimeout(1500)
+  await waitForBeat(BEAT_TITLES[i + 1])
+  await page.waitForTimeout(800)
   sizes.push([`beat-0${i + 2}-${beats[i]}`, await shot(`beat-0${i + 2}-${beats[i]}`)])
 }
 

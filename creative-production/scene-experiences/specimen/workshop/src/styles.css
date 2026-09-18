@@ -6,7 +6,7 @@ html, body {
   background: #08080f;
   color: #c8c8e0;
   font-family: 'Inter', system-ui, sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 #root { width: 100%; height: 100%; }
