@@ -64,5 +64,5 @@ bun run package
 
 ### From Marketplace
 ```bash
-code --install-extension <REDACTED>.phenodesign
+code --install-extension kooshapari.phenodesign
 ```

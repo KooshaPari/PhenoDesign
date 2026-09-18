@@ -1,5 +1,5 @@
 {
-  "name": "@<REDACTED>/phenotype-3d-viewers",
+  "name": "@kooshapari/phenotype-3d-viewers",
   "version": "0.1.0",
   "description": "Three.js GLB viewer with orbit controls, auto-rotate, and product lighting presets for Phenotype projects",
   "type": "module",

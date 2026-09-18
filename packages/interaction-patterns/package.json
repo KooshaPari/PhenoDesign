@@ -1,5 +1,5 @@
 {
-  "name": "@<REDACTED>/phenotype-interaction-patterns",
+  "name": "@kooshapari/phenotype-interaction-patterns",
   "version": "0.1.0",
   "description": "Reusable interaction patterns for Phenotype projects: perspective tilt, scroll reveal, lightbox, counter animation, and parallax depth",
   "type": "module",

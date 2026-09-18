@@ -7,7 +7,7 @@
  *
  * @example
  * ```ts
- * import { initCounterAnimate } from '@<REDACTED>/phenotype-interaction-patterns/counter-animate';
+ * import { initCounterAnimate } from '@kooshapari/phenotype-interaction-patterns/counter-animate';
  *
  * const counter = initCounterAnimate();
  * // On SPA navigation:

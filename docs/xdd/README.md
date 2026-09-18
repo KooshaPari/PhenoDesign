@@ -1,7 +1,7 @@
 # xDD Methodologies Compendium
 
-[![Release](https://img.shields.io/github/v/release/<REDACTED>/phenoXdd?include_prereleases&sort=semver)](https://github.com/KooshaPari/phenoXdd/releases)
-[![License](https://img.shields.io/github/license/<REDACTED>/phenoXdd)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/kooshapari/phenoXdd?include_prereleases&sort=semver)](https://github.com/KooshaPari/phenoXdd/releases)
+[![License](https://img.shields.io/github/license/kooshapari/phenoXdd)](LICENSE)
 [![Phenotype](https://img.shields.io/badge/Phenotype-org-blueviolet)](https://github.com/KooshaPari)
 
 

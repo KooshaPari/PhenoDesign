@@ -6,7 +6,7 @@
  *
  * @example
  * ```ts
- * import { createEvidenceLabel, createMetricCallout } from '@<REDACTED>/phenotype-component-recipes/evidence';
+ * import { createEvidenceLabel, createMetricCallout } from '@kooshapari/phenotype-component-recipes/evidence';
  *
  * const label = createEvidenceLabel({
  *   type: 'engineering',

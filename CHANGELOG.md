@@ -33,7 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Package name SSOT restored to `@phenotype/design` after interim `@<REDACTED>/design`
+- Package name SSOT restored to `@phenotype/design` after interim `@kooshapari/design`
   rename (supersedes git tag `v2.0.0`, which was never published to npm).
 
 [Unreleased]: https://github.com/KooshaPari/phenoDesign/compare/v2.0.1...HEAD

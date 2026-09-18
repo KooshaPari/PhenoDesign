@@ -1,5 +1,5 @@
 {
-  "name": "@<REDACTED>/phenotype-component-recipes",
+  "name": "@kooshapari/phenotype-component-recipes",
   "version": "0.1.0",
   "description": "Reusable, parameterized visual component recipes for Phenotype projects: artifact cards, system diagrams, experiment sheets, physical plates, evidence annotations, and badges",
   "type": "module",

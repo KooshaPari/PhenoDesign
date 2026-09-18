@@ -7,7 +7,7 @@
  *
  * @example
  * ```ts
- * import { createLightbox } from '@<REDACTED>/phenotype-interaction-patterns/lightbox';
+ * import { createLightbox } from '@kooshapari/phenotype-interaction-patterns/lightbox';
  *
  * const lightbox = createLightbox();
  * lightbox.open('/images/photo.jpg', 'Description');

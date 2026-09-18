@@ -7,7 +7,7 @@
  *
  * @example
  * ```ts
- * import { createBadge } from '@<REDACTED>/phenotype-component-recipes/badge';
+ * import { createBadge } from '@kooshapari/phenotype-component-recipes/badge';
  *
  * const badge = createBadge({
  *   label: 'Shipped',

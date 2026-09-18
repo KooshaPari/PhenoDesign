@@ -10,7 +10,7 @@
  *
  * @example
  * ```ts
- * import { createGlbViewer } from '@<REDACTED>/phenotype-3d-viewers/glb-viewer';
+ * import { createGlbViewer } from '@kooshapari/phenotype-3d-viewers/glb-viewer';
  *
  * const viewer = await createGlbViewer({
  *   containerId: 'product-viewer',

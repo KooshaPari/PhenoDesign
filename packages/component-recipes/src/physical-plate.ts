@@ -7,7 +7,7 @@
  *
  * @example
  * ```ts
- * import { createPhysicalPlate } from '@<REDACTED>/phenotype-component-recipes/physical-plate';
+ * import { createPhysicalPlate } from '@kooshapari/phenotype-component-recipes/physical-plate';
  *
  * const plate = createPhysicalPlate({
  *   title: 'WITF Board',

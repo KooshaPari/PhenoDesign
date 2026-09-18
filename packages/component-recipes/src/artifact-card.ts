@@ -7,7 +7,7 @@
  *
  * @example
  * ```ts
- * import { createArtifactCard } from '@<REDACTED>/phenotype-component-recipes/artifact-card';
+ * import { createArtifactCard } from '@kooshapari/phenotype-component-recipes/artifact-card';
  *
  * const card = createArtifactCard({
  *   title: 'OmniRoute',

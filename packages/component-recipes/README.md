@@ -1,4 +1,4 @@
-# @<REDACTED>/phenotype-component-recipes
+# @kooshapari/phenotype-component-recipes
 
 Reusable, parameterized visual component recipes extracted from proven Phenotype implementations.
 Agents can compose these without re-engineering from scratch.
@@ -17,9 +17,9 @@ Agents can compose these without re-engineering from scratch.
 ## Usage
 
 ```ts
-import { createArtifactCard } from '@<REDACTED>/phenotype-component-recipes/artifact-card';
-import { renderDiagram } from '@<REDACTED>/phenotype-component-recipes/system-diagram';
-import { createBadge } from '@<REDACTED>/phenotype-component-recipes/badge';
+import { createArtifactCard } from '@kooshapari/phenotype-component-recipes/artifact-card';
+import { renderDiagram } from '@kooshapari/phenotype-component-recipes/system-diagram';
+import { createBadge } from '@kooshapari/phenotype-component-recipes/badge';
 
 const card = createArtifactCard({
   title: 'OmniRoute',
@@ -35,7 +35,7 @@ document.body.appendChild(card);
 ## All exports
 
 ```ts
-import * as Recipes from '@<REDACTED>/phenotype-component-recipes';
+import * as Recipes from '@kooshapari/phenotype-component-recipes';
 ```
 
 ## Conventions
