@@ -115,7 +115,7 @@
       "priority": "medium",
       "status": "pending",
       "gate": "G4",
-      "description": "Lighthouse audit on <REDACTED>.com.",
+      "description": "Lighthouse audit on kooshapari.com.",
       "effort": "30m",
       "dependencies": ["PDV-009"],
       "category": "quality",

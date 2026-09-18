@@ -1,4 +1,4 @@
-# Functional Requirements -- @<REDACTED>/design
+# Functional Requirements -- @kooshapari/design
 
 **Last Updated:** 2026-03-26
 
@@ -65,7 +65,7 @@ structural typing without a separate interface declaration.
 
 ### FR-TOK-010: Index Re-export
 `src/index.ts` SHALL re-export `{ keycap }` and `type { KeycapTokens }` from `./tokens`
-so the root package import (`@<REDACTED>/design`) exposes both symbols.
+so the root package import (`@kooshapari/design`) exposes both symbols.
 **File:** `src/index.ts`
 **Traces to:** E1.3
 

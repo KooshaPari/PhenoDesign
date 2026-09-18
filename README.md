@@ -7,7 +7,7 @@
 
 ## Description
 
-Design system: tokens, components, and UX standards for all Phenotype surfaces. This repo is the creativity/design/UX spine (LIVE since un-archival 2026-06-08, absorption reversal 2026-07-20). It provides the `@phenotype/design` NPM package with keycap palette, VitePress theme, glass recipes, and style guide. Primary consumers should install from this repo, not from phenodocs mirrors. The asset-engine split (`<REDACTED>/asset-engine`) handles design-tokens-to-code rendering.
+Design system: tokens, components, and UX standards for all Phenotype surfaces. This repo is the creativity/design/UX spine (LIVE since un-archival 2026-06-08, absorption reversal 2026-07-20). It provides the `@phenotype/design` NPM package with keycap palette, VitePress theme, glass recipes, and style guide. Primary consumers should install from this repo, not from phenodocs mirrors. The asset-engine split (`kooshapari/asset-engine`) handles design-tokens-to-code rendering.
 
 ## Quick Start
 

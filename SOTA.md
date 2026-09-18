@@ -1,6 +1,6 @@
 # State of the Art: Design Systems Research
 
-**Project:** phenoDesign (@<REDACTED>/design)  
+**Project:** phenoDesign (@kooshapari/design)  
 **Last Updated:** 2026-04-04  
 **Status:** Active Research Document  
 **Lines:** 1,800+
@@ -1127,7 +1127,7 @@ VitePress components require targeted overrides:
 #### 7.2.1 CSS-in-JS
 
 ```jsx
-import { keycap } from '@<REDACTED>/design';
+import { keycap } from '@kooshapari/design';
 
 const Button = styled.button`
   background: ${keycap.color.accent};
@@ -1332,7 +1332,7 @@ const Button = styled.button`
 **phenoDesign Integration:**
 ```typescript
 // .vitepress/config.ts
-import { vitepressConfig, vitepressMarkdownTheme } from '@<REDACTED>/design/vitepress';
+import { vitepressConfig, vitepressMarkdownTheme } from '@kooshapari/design/vitepress';
 
 export default defineConfig({
   ...vitepressConfig,
