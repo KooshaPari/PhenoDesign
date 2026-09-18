@@ -39,5 +39,6 @@
   },
   "devDependencies": {
     "typescript": "latest"
-  }
+  },
+  "license": "MIT"
 }
