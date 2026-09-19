@@ -7,7 +7,7 @@
 
 ## Description
 
-Design system: tokens, components, and UX standards for all Phenotype surfaces. This repo is the creativity/design/UX spine (LIVE since un-archival 2026-06-08, absorption reversal 2026-07-20). It provides the `@phenotype/design` NPM package with keycap palette, VitePress theme, glass recipes, and style guide. Primary consumers should install from this repo, not from phenodocs mirrors. The asset-engine split (`kooshapari/asset-engine`) handles design-tokens-to-code rendering.
+Design system for all Phenotype surfaces. It publishes `@phenotype/design`: the keycap palette, VitePress theme, glass recipes, and style guide, shipped as CSS, TypeScript, and W3C DTCG JSON tokens. This repo is the creativity/design/UX spine (LIVE since un-archival 2026-06-08; absorption reversal 2026-07-20); primary consumers install from this repo, not from phenodocs mirrors. Design-tokens-to-code rendering lives in the separate `kooshapari/asset-engine`.
 
 ## Quick Start
 
@@ -75,7 +75,6 @@ Exports:
 ## GitHub
 
 - **GitHub:** [KooshaPari/phenoDesign](https://github.com/KooshaPari/phenoDesign)
-- **Description:** Design system: tokens, components, and UX standards for all Phenotype surfaces
 - **Topics:** design, docs, maintained, meta
 - **License:** MIT
 - **Language:** TypeScript + Rust
@@ -88,16 +87,15 @@ Exports:
 | `ARCHIVED.md` | **LIVE** — creativity/design/UX spine, un-archived 2026-06-08, absorption reversed 2026-07-20 | Per `DECLARE_SPINE` registry entry |
 | `STATUS.md` | Un-archived 2026-06-08; package name corrected to `@phenotype/design` | Last-updated 2026-06-08 |
 | `PLAN.md` | Active; 4-phase token → components → VitePress → quality plan | Phase 1–3 work landed |
-| `README.md` (banner) | **STALE** — says ARCHIVED 2026-07-29, conflicts with live status | Fix: update banner to reflect LIVE status |
-
-The README banner saying "ARCHIVED 2026-07-29" is stale: the audit's `ARCHIVED.md` records the 2026-07-17 archive + 2026-07-20 absorption reversal. All other authority documents and the live consumer base confirm LIVE status.
 
 ## Repository Structure
 
 ```
-├── packages/                   # NPM workspace packages
-│   ├── @phenotype/design-tokens  # Tailwind palette (sky #0ea5e9 vs teal #7ebab5)
-│   └── design-utils            # Design utility functions
+├── packages/                   # NPM workspace packages, all @kooshapari/phenotype-*
+│   ├── design-tokens/          # Tailwind palette (sky #0ea5e9 vs teal #7ebab5)
+│   ├── design-utils/           # Design utility functions
+│   └── …                       # plus 3d-viewers, component-recipes,
+│                               #      interaction-patterns, ui, vscode-extension
 ├── src/                        # Source code
 ├── css/                        # Design system CSS
 ├── tokens/                     # Design tokens (JSON, keycap palette)
@@ -107,5 +105,6 @@ The README banner saying "ARCHIVED 2026-07-29" is stale: the audit's `ARCHIVED.m
 ├── playwright.config.ts        # Visual test config
 ├── package.json                # NPM workspace + @phenotype/design
 ├── tsconfig.json               # TypeScript config
-├── bun.lockb                   # Bun lockfile
+├── bun.lock                    # Bun lockfile
 └── ARCHIVED.md                # Archive history (2026-03-25 → 2026-07-20 reversal)
+```

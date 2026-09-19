@@ -1,6 +1,6 @@
 # phenoDesign VS Code Extension
 
-Design tokens, component recipes, and interaction patterns for the Phenotype ecosystem.
+VS Code extension for the Phenotype design system: token autocomplete plus snippets for component recipes and interaction patterns.
 
 ## Features
 

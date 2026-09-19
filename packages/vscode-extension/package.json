@@ -1,7 +1,7 @@
 {
   "name": "phenoDesign",
   "displayName": "phenoDesign",
-  "description": "Design tokens, component recipes, and interaction patterns for the Phenotype ecosystem",
+  "description": "VS Code extension: token autocomplete and snippets for phenoDesign design tokens, component recipes, and interaction patterns",
   "version": "0.1.0",
   "publisher": "kooshapari",
   "license": "MIT",
