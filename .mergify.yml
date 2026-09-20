@@ -49,17 +49,7 @@ pull_request_rules:
       merge:
         method: squash
 
-  # Add reviewers based on changed paths
-  - name: Request review from team
-    conditions:
-      - -closed
-      - -draft
-    actions:
-      request_reviews:
-        teams:
-          - phenotype/core
-        users:
-          - KooshaPari
+  # PhenoDesign is a personal repo — no team reviewers configured.
 
   # Label PRs based on changed files
   - name: Label Python changes
