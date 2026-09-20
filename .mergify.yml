@@ -58,7 +58,7 @@ pull_request_rules:
       request_reviews:
         teams:
           - phenotype/core
-        github_accounts:
+        users:
           - KooshaPari
 
   # Label PRs based on changed files
@@ -99,7 +99,7 @@ pull_request_rules:
     conditions:
       - -closed
       - -draft
-      - age>=30d
+      - updated-at < 30 days ago
       - "#review-requested=0"
     actions:
       comment:
