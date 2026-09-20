@@ -155,20 +155,19 @@ jobs:
     continue-on-error: true
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: "20"
-          cache: "npm"
-      - run: npm ci --no-audit --no-fund || npm install --no-audit --no-fund
+          bun-version: latest
+      - run: bun install --frozen-lockfile
       - name: lint
         run: |
           if [ -f package.json ] && grep -q '"lint"' package.json; then
-            npm run lint 2>&1 || echo "::warning::lint issues (advisory)"
+            bun run lint 2>&1 || echo "::warning::lint issues (advisory)"
           fi
       - name: test
         run: |
           if [ -f package.json ] && grep -q '"test"' package.json; then
-            npm test 2>&1 || echo "::warning::test failures (advisory)"
+            bun test 2>&1 || echo "::warning::test failures (advisory)"
           fi
 
   security:
