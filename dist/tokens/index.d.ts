@@ -1,9 +1,9 @@
-export { keycap, type KeycapTokens } from './keycap';
-export { glass, type GlassTokens } from './glass';
-export { typography, type TypographyTokens } from './typography';
-export { MATERIALS, type Materials } from './materials';
-export { POLYGONS, type PolygonLayer, type PolygonPreset, type Polygons } from './polygons';
-export { NEUMORPHISM, type Neumorphism } from './neumorphism';
+export { keycap, type KeycapTokens } from './keycap.js';
+export { glass, type GlassTokens } from './glass.js';
+export { typography, type TypographyTokens } from './typography.js';
+export { MATERIALS, type Materials } from './materials.js';
+export { POLYGONS, type PolygonLayer, type PolygonPreset, type Polygons } from './polygons.js';
+export { NEUMORPHISM, type Neumorphism } from './neumorphism.js';
 export declare const designTokens: {
     readonly keycap: {
         readonly accent: "#7ebab5";

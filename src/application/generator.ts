@@ -6,7 +6,7 @@ import type {
   Renderer,
   Result,
   Validator,
-} from '../domain/types'
+} from '../domain/types.js'
 
 export interface GeneratorDeps {
   renderer: Renderer

@@ -1,4 +1,4 @@
-import type { Composer, DesignError, DesignSpec, GeneratedDesign, Renderer, Result, Validator } from '../domain/types';
+import type { Composer, DesignError, DesignSpec, GeneratedDesign, Renderer, Result, Validator } from '../domain/types.js';
 export interface GeneratorDeps {
     renderer: Renderer;
     composer: Composer;

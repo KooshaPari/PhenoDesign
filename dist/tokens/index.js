@@ -1,15 +1,15 @@
-import { keycap } from './keycap';
-import { glass } from './glass';
-import { typography } from './typography';
-import { MATERIALS } from './materials';
-import { POLYGONS } from './polygons';
-import { NEUMORPHISM } from './neumorphism';
-export { keycap } from './keycap';
-export { glass } from './glass';
-export { typography } from './typography';
-export { MATERIALS } from './materials';
-export { POLYGONS } from './polygons';
-export { NEUMORPHISM } from './neumorphism';
+import { keycap } from './keycap.js';
+import { glass } from './glass.js';
+import { typography } from './typography.js';
+import { MATERIALS } from './materials.js';
+import { POLYGONS } from './polygons.js';
+import { NEUMORPHISM } from './neumorphism.js';
+export { keycap } from './keycap.js';
+export { glass } from './glass.js';
+export { typography } from './typography.js';
+export { MATERIALS } from './materials.js';
+export { POLYGONS } from './polygons.js';
+export { NEUMORPHISM } from './neumorphism.js';
 export const designTokens = {
     keycap,
     glass,

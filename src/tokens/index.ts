@@ -1,16 +1,16 @@
-import { keycap } from './keycap'
-import { glass } from './glass'
-import { typography } from './typography'
-import { MATERIALS } from './materials'
-import { POLYGONS } from './polygons'
-import { NEUMORPHISM } from './neumorphism'
+import { keycap } from './keycap.js'
+import { glass } from './glass.js'
+import { typography } from './typography.js'
+import { MATERIALS } from './materials.js'
+import { POLYGONS } from './polygons.js'
+import { NEUMORPHISM } from './neumorphism.js'
 
-export { keycap, type KeycapTokens } from './keycap'
-export { glass, type GlassTokens } from './glass'
-export { typography, type TypographyTokens } from './typography'
-export { MATERIALS, type Materials } from './materials'
-export { POLYGONS, type PolygonLayer, type PolygonPreset, type Polygons } from './polygons'
-export { NEUMORPHISM, type Neumorphism } from './neumorphism'
+export { keycap, type KeycapTokens } from './keycap.js'
+export { glass, type GlassTokens } from './glass.js'
+export { typography, type TypographyTokens } from './typography.js'
+export { MATERIALS, type Materials } from './materials.js'
+export { POLYGONS, type PolygonLayer, type PolygonPreset, type Polygons } from './polygons.js'
+export { NEUMORPHISM, type Neumorphism } from './neumorphism.js'
 
 export const designTokens = {
   keycap,
