@@ -17,7 +17,7 @@ This document records **what currently consumes `@phenotype/design`** and **whic
 | `PLAN.md` | Active; 4-phase token → components → VitePress → quality plan | Phase 1–3 work landed |
 | `README.md` (banner) | "ARCHIVED 2026-07-29" | **STALE** — conflicts with the three documents above and with the live consumer base below |
 | `package.json` | `"name": "@phenotype/design"`, publishes `css/`, `dist/`, `tokens/`, `docs/guide/glass-recipe.md` | Real `npm publish` target |
-| `package.json` (workspace) | `@<REDACTED>/phenotype-design-tokens` workspace subpackage with its **own** Tailwind palette (`#0ea5e9` sky vs `#7ebab5` teal) | See §3 below — drift, not duplication |
+| `package.json` (workspace) | `@kooshapari/phenotype-design-tokens` workspace subpackage, Tailwind preset now re-keyed to canonical (2026-10-17) | See §3 below |
 
 ### Open question for the owner (not resolved here)
 
@@ -67,19 +67,86 @@ The following workspaces ship `keycap-palette.css` / `vitepress-theme.css` refer
 
 ---
 
-## 3. Drift between `@phenotype/design` and `@<REDACTED>/phenotype-design-tokens`
+## 3. Drift between `@phenotype/design` and `@kooshapari/phenotype-design-tokens`
 
-The workspace subpackage `packages/design-tokens/` ships a Tailwind config that uses **a different palette** than the canonical keycap:
+### 3.1 Status: PARTIALLY RESOLVED 2026-10-17
 
-| Token | `@phenotype/design` (canonical) | `@<REDACTED>/phenotype-design-tokens` (workspace) |
-|-------|---------------------------------|--------------------------------------------------|
-| Primary | `#7ebab5` (teal, keycap.accent) | `#0ea5e9` (sky-500) |
-| Dark | `#090a0c` (keycap.dark.bg) | `#0f172a` (slate-900) |
-| Surface | `#f8f9fa` (keycap.light.bg) | `#f8fafc` (slate-50) |
+The workspace subpackage `packages/design-tokens/` ships a Tailwind config. Its
+palette **was** fully independent of the canonical keycap. As of 2026-10-17 the
+tokens that have a canonical equivalent have been re-keyed to match
+`tokens/keycap.json`, and each value in `tailwind.config.mjs` now carries an
+inline `[canonical]` (with its DTCG path) or `[subpackage]` marker.
 
-The workspace package's `package.json` description says: "Shared CSS and Tailwind tokens for Phenotype landing pages (canonical home: phenoDesign)". That claim is **partially true**: the package re-exports `tokens.css` and a `tailwind.config.mjs`, but the Tailwind config defines **its own** palette that does not derive from the canonical keycap. It is currently not wired into any consumer's `package.json` (no direct `@<REDACTED>/phenotype-design-tokens` dependency was found).
+| Token | `@phenotype/design` (canonical) | `design-tokens` tailwind preset (before) | (after) |
+|-------|---------------------------------|------------------------------------------|---------|
+| Primary / accent | `#7ebab5` (`keycap.color.accent`) | `#0ea5e9` sky → then `#3f8795` | `#7ebab5` `[canonical]` |
+| Dark surface | `#090a0c` (`keycap.dark.bg`) | `#0f172a` → then `#0F1012` | `#090a0c` `[canonical]` |
+| Light surface | `#f8f9fa` (`keycap.light.bg`) | `#f8fafc` → then `#f3f0e8` | `#f8f9fa` `[canonical]` |
 
-**This is documented drift, not a regression.** A future cleanup task may unify the two palettes or formally retire the workspace subpackage; both are out of scope for this fix.
+### 3.2 Consumers (re-verified 2026-10-17, not the 2026-09-08 snapshot)
+
+The earlier audit claimed *zero* consumers. That is **no longer accurate**.
+A workspace-wide search for `phenotype-design-tokens` now finds **two**:
+
+| Consumer | Pin | Real usage? | Evidence |
+|----------|-----|-------------|----------|
+| `pheno/packages/ui` | `"@kooshapari/phenotype-design-tokens": "workspace:*"` | **None.** Declared in `dependencies` but zero source imports; `packages/ui` contains only `package.json` matching the token name. | `pheno/packages/ui/package.json:21` |
+| `pheno/packages/site-base` | `"@phenotype/design-tokens": "github:KooshaPari/phenoDesign"` | **Yes, and broken.** `packages/site-base/src/pages/index.astro:3` imports `@phenotype/design-tokens/css`, but the subpackage publishes as `@kooshapari/phenotype-design-tokens` and the root `@phenotype/design` exports no `./css` subpath. The import cannot resolve. | `pheno/packages/site-base/package.json:19`, `.../src/pages/index.astro:3` |
+
+Neither consumer imports the **Tailwind preset** (`/tailwind`). The preset's only
+in-repo reference is documentation: `skills/pd-design-tokens/SKILL.md`.
+
+Two consequences worth flagging:
+
+1. `pheno/packages/site-base` is a **pre-existing broken pin**, not drift caused
+   by this repo. It points at a package name that has never existed on the
+   `@phenotype/design` root exports map. Fixing it requires editing a file
+   outside this repo, which is out of scope here.
+2. `pheno/`, `PhenoInfra/`, and `PhenoApps/archive/PhenoInfra/` each hold a
+   **copy** of `packages/design-tokens/` (plus an `ARCHIVED.md` noting
+   `@phenotype/design-tokens` "Moved"). Copies drift from this repo
+   independently; the re-key applied here does not propagate to them.
+
+### 3.3 Remaining non-canonical surface (documented, not fixed)
+
+These preset entries have **no** canonical equivalent in `tokens/keycap.json`
+and are intentionally left alone. They are landing-page utility classes, not
+keycap tokens:
+
+- `colors.graphite`, `colors.paper`, `colors.concrete`, `colors.olive`,
+  `colors.arch`, `colors.acid` — derived landing families.
+- `colors.seed.ceramic`, `colors.surface.ceramic` — no keycap counterpart.
+- `colors.paper.*` — these shadow the canonical light surface; note that
+  `paper.100` (`#f3f0e8`) does **not** match `keycap.light.bg` (`#f8f9fa`).
+- `fontFamily.display` (Space Grotesk) — `keycap.font` defines only
+  `family-base` and `family-mono`. The Mac-first fallback chains on `reading`
+  and `meta` are also subpackage-local.
+- `spacing`, `fontSize`, `borderRadius`, `boxShadow`, `zIndex`,
+  `transitionDuration`, `transitionTimingFunction`, `maxWidth` — no canonical
+  scale exists in the keycap store.
+- `colors.family.*` — per-product brand colors, intentionally outside keycap.
+
+### 3.4 Deprecation plan (NOT yet triggered)
+
+Formal retirement (Option B) was **evaluated and rejected** for now: with only
+two consumers, neither of which uses the Tailwind preset, there is nothing to
+migrate and no 4+ consumer blast radius. The subpackage stays, re-keyed.
+
+Retirement becomes the right call when any of these happen:
+
+- A consumer actually imports `/tailwind` from `@kooshapari/phenotype-design-tokens`.
+- Landing pages adopt it, making it the only Tailwind preset in the workspace.
+- `@phenotype/design` grows its own Tailwind preset export (see §3.5).
+
+### 3.5 Proposed follow-up: Tailwind preset on the root package
+
+The natural end state is for `@phenotype/design` to export a preset generated
+**from** `tokens/keycap.json`, so there is one source of truth rather than a
+hand-maintained transcription. Not done here because it changes the root
+package's public exports map — an authority change. Also note
+`skills/pd-design-tokens/SKILL.md:82` documents a `/tailwind-preset` subpath
+that the package **does not** actually export (it exports `/tailwind`); that doc
+is stale.
 
 ---
 

@@ -1,7 +1,17 @@
 /**
  * Phenotype Tailwind CSS preset.
  *
- * Maps the canonical design tokens to Tailwind utility classes.
+ * CANONICAL TOKEN HOME: `@phenotype/design` (repo root, v2.0.1+).
+ * The DTCG store of record is `tokens/keycap.json`; the CSS projection is
+ * `css/keycap-palette.css`. This preset is a *Tailwind-shaped projection* of
+ * that store -- it is not an independent palette.
+ *
+ * DTCG keycap paths marked [canonical] below are transcribed verbatim from
+ * `tokens/keycap.json` (verified 2026-10-17). Any change to those values must
+ * land in `tokens/keycap.json` FIRST, then be mirrored here. Paths marked
+ * [subpackage] have no canonical equivalent yet and are NOT governed by the
+ * keycap store -- see CONSUMERS.md section 3.
+ *
  * Usage:
  *   // tailwind.config.js
  *   import phenoPreset from '@kooshapari/phenotype-design-tokens/tailwind';
@@ -13,34 +23,53 @@ export default {
   theme: {
     extend: {
       // --- Seed & surface colors -------------------------------------------
+      // [canonical] values transcribed from tokens/keycap.json
       colors: {
         seed: {
-          obsidian: '#0F1012',
-          slate: '#353A40',
+          // keycap.dark.bg = #090a0c
+          obsidian: '#090a0c',
+          // keycap.color.slate = #353a40
+          slate: '#353a40',
+          // [subpackage] no canonical keycap equivalent
           ceramic: '#F6F5F5',
-          teal: '#7EBAB5',
+          // keycap.color.accent = #7ebab5
+          teal: '#7ebab5',
         },
         surface: {
-          DEFAULT: '#f3f0e8',
-          raised: '#faf7ef',
-          inset: '#e2dfd8',
-          obsidian: '#0F1012',
-          slate: '#353A40',
+          // keycap.light.bg = #f8f9fa
+          DEFAULT: '#f8f9fa',
+          // keycap.light.bg-alt = #f0f1f3
+          raised: '#f0f1f3',
+          // keycap.light.bg-soft = #e8eaed
+          inset: '#e8eaed',
+          // keycap.dark.bg = #090a0c
+          obsidian: '#090a0c',
+          // keycap.color.slate = #353a40
+          slate: '#353a40',
+          // [subpackage] no canonical keycap equivalent
           ceramic: '#F6F5F5',
-          teal: '#7EBAB5',
+          // keycap.color.accent = #7ebab5
+          teal: '#7ebab5',
         },
         ink: {
-          DEFAULT: '#171a18',
-          muted: '#3d4239',
+          // keycap.light.text-1 = #1a1c1e
+          DEFAULT: '#1a1c1e',
+          // keycap.light.text-2 = #4a4f57
+          muted: '#4a4f57',
         },
 
         // --- Derived families -----------------------------------------------
+        // [subpackage] no canonical keycap equivalent. Retained for landing-page
+        // utility classes; NOT part of the keycap store. Do not treat these as
+        // canonical -- see CONSUMERS.md section 3.
         graphite: {
           950: '#171a18',
           900: '#20231f',
           800: '#30332e',
         },
         paper: {
+          // [subpackage] retained as-is; the canonical light surface is
+          // surface.DEFAULT (#f8f9fa), which these shadowing shades do not match.
           100: '#f3f0e8',
           200: '#e8e3d8',
         },
@@ -61,10 +90,13 @@ export default {
         },
 
         // --- Semantic accents -----------------------------------------------
+        // [canonical] accent.DEFAULT = keycap.color.accent
         accent: {
-          DEFAULT: '#3f8795',
-          engineering: '#3f8795',
-          product: '#737c4c',
+          DEFAULT: '#7ebab5',
+          // [canonical] engineering = keycap.color.accent
+          engineering: '#7ebab5',
+          // [canonical] product = keycap.color.accent-dim (#569691)
+          product: '#569691',
         },
 
         // --- Family accent colors -------------------------------------------
@@ -85,6 +117,12 @@ export default {
       },
 
       // --- Typography -------------------------------------------------------
+      // [subpackage] PARTIAL overlap only. tokens/keycap.json keycap.font
+      // defines exactly two families: family-base (Inter stack) and
+      // family-mono (JetBrains Mono stack). The Mac-first fallback chains
+      // below are the subpackage's own; `display` (Space Grotesk) has no
+      // canonical keycap equivalent. Left as-is pending a keycap.font
+      // expansion -- see CONSUMERS.md section 3.
       fontFamily: {
         display: ['"Space Grotesk"', '"Avenir Next"', '"Helvetica Neue"', 'sans-serif'],
         reading: ['"Inter"', '"Avenir Next"', '"Helvetica Neue"', 'sans-serif'],
