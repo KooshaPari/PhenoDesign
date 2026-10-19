@@ -38,7 +38,7 @@ jobs:
           # Run audit in JSON mode. Pillars for enterprise-only infrastructure
           # (k8s, helm, terraform, VPN, DR, ...) are excluded because they do not
           # apply to this repo class - see ENTERPRISE_EXCLUDE in the script.
-          python scripts/scorecard_ci.py . --output json --exclude-enterprise > scorecard-report.json 2> scorecard-stderr.txt || EXIT_CODE=$?
+          python scripts/scorecard_ci.py . --output json --exclude-enterprise --min-percent "$THRESHOLD" --fail-on-drop > scorecard-report.json 2> scorecard-stderr.txt || EXIT_CODE=$?
 
           # Extract score
           SCORE=$(python -c "import json; r=json.load(open('scorecard-report.json')); print(r['score'])")

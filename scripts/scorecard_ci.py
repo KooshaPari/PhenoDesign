@@ -175,8 +175,10 @@ def audit_repo(repo_path, exclude=None):
 def main():
     parser = argparse.ArgumentParser(description="88-Pillar Scorecard Audit v2")
     parser.add_argument("path", help="Path to repository")
-    parser.add_argument("--threshold", type=int, default=45,
-                        help="Minimum score to pass (default: 45 out of active pillars)")
+    parser.add_argument("--threshold", type=int, default=0,
+                        help="Minimum absolute score to pass (0 = disabled)")
+    parser.add_argument("--min-percent", type=float, default=0.0,
+                        help="Minimum percentage of applicable pillars to pass (0 = disabled)")
     parser.add_argument("--output", choices=["text","json","markdown"], default="text")
     parser.add_argument("--fail-on-drop", action="store_true")
     parser.add_argument("--exclude", nargs="*", default=[],
@@ -191,6 +193,11 @@ def main():
 
     try:
         report = audit_repo(args.path, exclude=exclude)
+
+        def passed():
+            return (report["score"] >= args.threshold
+                    and report["percentage"] >= args.min_percent)
+
         if args.output == "json":
             print(json.dumps(report, indent=2))
         elif args.output == "markdown":
@@ -198,8 +205,8 @@ def main():
             print(f"**Score:** {report['score']}/{report['total']} ({report['percentage']:.1f}%)\n")
             if report['skipped']:
                 print(f"**Skipped:** {report['skipped']} enterprise pillars (excluded)\n")
-            print(f"**Threshold:** {args.threshold}\n")
-            print(f"**Status:** {'PASS' if report['score'] >= args.threshold else 'FAIL'}\n")
+            print(f"**Threshold:** {args.threshold} pillars / {args.min_percent}%\n")
+            print(f"**Status:** {'PASS' if passed() else 'FAIL'}\n")
             print("## Results\n| ID | Pillar | Status |\n|---|--------|--------|")
             for r in report["results"]:
                 if r.get("excluded"):
@@ -210,13 +217,13 @@ def main():
             print(f"Scorecard v2: {report['score']}/{report['total']} ({report['percentage']:.1f}%)")
             if report['skipped']:
                 print(f"Excluded: {report['skipped']} enterprise pillars")
-            print(f"Threshold: {args.threshold}")
-            if report['score'] >= args.threshold:
+            print(f"Threshold: {args.threshold} pillars / {args.min_percent}%")
+            if passed():
                 print("Status: PASS")
             else:
                 failed = [r['name'] for r in report['results'] if not r.get('excluded') and not r['passed']]
                 print(f"Status: FAIL\nFailed: {', '.join(failed)}")
-        if args.fail_on_drop and report['score'] < args.threshold:
+        if args.fail_on_drop and not passed():
             sys.exit(1)
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)
