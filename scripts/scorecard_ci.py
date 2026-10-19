@@ -7,6 +7,34 @@ Supports --exclude for enterprise-only pillars that don't apply to library/CLI r
 import os, sys, json, argparse
 from pathlib import Path
 
+
+def _pkg_script(path, name):
+    """True when package.json declares a script with this name."""
+    f = path / "package.json"
+    if not f.exists():
+        return False
+    try:
+        data = json.loads(f.read_text())
+    except Exception:
+        return False
+    return name in (data.get("scripts") or {})
+
+
+def _workflow_has_job(path, job_name):
+    """True when any workflow file declares a job with this display name."""
+    wf = path / ".github" / "workflows"
+    if not wf.is_dir():
+        return False
+    for f in wf.glob("*.yml"):
+        try:
+            text = f.read_text()
+        except Exception:
+            continue
+        if f"name: {job_name}" in text:
+            return True
+    return False
+
+
 PILLARS = [
     {"id":1,"name":"README","check":lambda p:(p/"README.md").exists() or (p/"readme.md").exists()},
     {"id":2,"name":"LICENSE","check":lambda p:any(p.glob("LICENSE*"))},
@@ -20,7 +48,7 @@ PILLARS = [
     {"id":10,"name":"DOCKERFILE","check":lambda p:(p/"Dockerfile").exists()},
     {"id":11,"name":"DOCKER_COMPOSE","check":lambda p:(p/"docker-compose.yml").exists() or (p/"docker-compose.yaml").exists()},
     {"id":12,"name":"MAKEFILE","check":lambda p:(p/"Makefile").exists()},
-    {"id":13,"name":"JUSTFILE","check":lambda p:(p/"Justfile").exists()},
+    {"id":13,"name":"JUSTFILE","check":lambda p:(p/"Justfile").exists() or (p/"justfile").exists() or (p/"Taskfile.yml").exists() or (p/"Taskfile.yaml").exists()},
     {"id":14,"name":"PACKAGE_JSON","check":lambda p:(p/"package.json").exists() or any(p.glob("**/package.json"))},
     {"id":15,"name":"PYPROJECT_TOML","check":lambda p:(p/"pyproject.toml").exists()},
     {"id":16,"name":"CARGO_TOML","check":lambda p:(p/"Cargo.toml").exists() or any(p.glob("**/Cargo.toml"))},
@@ -38,9 +66,9 @@ PILLARS = [
     {"id":28,"name":"INTEGRATION_TESTS","check":lambda p:(p/"tests"/"integration").exists() or (p/"test"/"integration").exists()},
     {"id":29,"name":"E2E_TESTS","check":lambda p:(p/"tests"/"e2e").exists() or (p/"e2e").exists()},
     {"id":30,"name":"CODE_COVERAGE","check":lambda p:(p/".coveragerc").exists() or (p/"codecov.yml").exists()},
-    {"id":31,"name":"LINTING","check":lambda p:(p/".eslintrc.js").exists() or (p/"ruff.toml").exists() or (p/".clippy.toml").exists() or (p/"clippy.toml").exists()},
-    {"id":32,"name":"FORMATTING","check":lambda p:(p/".prettierrc").exists() or (p/"rustfmt.toml").exists()},
-    {"id":33,"name":"SECURITY_SCANNING","check":lambda p:(p/".github/workflows"/"codeql.yml").exists() or (p/".github/workflows"/"security.yml").exists() or (p/".github/workflows"/"trivy.yml").exists() or any((p/".github/workflows").glob("*secur*.yml")) if (p/".github/workflows").exists() else False},
+    {"id":31,"name":"LINTING","check":lambda p:any(p.glob(".eslintrc*")) or any(p.glob("eslint.config.*")) or (p/"ruff.toml").exists() or (p/".clippy.toml").exists() or (p/"clippy.toml").exists() or (p/".oxlintrc.json").exists() or (p/"biome.json").exists() or any(p.glob(".golangci*.yml")) or (p/"rubocop.yml").exists() or _pkg_script(p,"lint")},
+    {"id":32,"name":"FORMATTING","check":lambda p:any(p.glob(".prettierrc*")) or any(p.glob("prettier.config.*")) or (p/"rustfmt.toml").exists() or (p/"biome.json").exists() or (p/".oxfmtrc.json").exists() or (p/".oxfmtrc").exists() or _pkg_script(p,"format") or _pkg_script(p,"fmt")},
+    {"id":33,"name":"SECURITY_SCANNING","check":lambda p:(p/"gitleaks.toml").exists() or (p/".gitleaks.toml").exists() or (p/"trufflehog.yml").exists() or (p/".semgrep.yml").exists() or (p/"semgrep.yml").exists() or any(p.glob(".github/workflows/*secur*.yml")) or any(p.glob(".github/workflows/codeql*.yml")) or any(p.glob(".github/workflows/trivy*.yml")) or any(p.glob(".github/workflows/scorecard*.yml")) or _workflow_has_job(p,"Security Scan")},
     {"id":34,"name":"DEPENDENCY_AUDIT","check":lambda p:(p/".snyk").exists() or (p/"audit-ci.json").exists() or (p/"deny.toml").exists()},
     {"id":35,"name":"OPENAPI_SPEC","check":lambda p:any(p.glob("**/openapi.json")) or any(p.glob("**/openapi.yaml")) or any(p.glob("**/swagger.json"))},
     {"id":36,"name":"DOCS_SITE","check":lambda p:(p/"docs").exists() or (p/"website").exists()},
@@ -61,7 +89,7 @@ PILLARS = [
     {"id":51,"name":"RBAC","check":lambda p:any(p.glob("**/*rbac*"))},
     {"id":52,"name":"AUDIT_LOGS","check":lambda p:any(p.glob("**/*audit*log*"))},
     {"id":53,"name":"DATABASE_MIGRATIONS","check":lambda p:(p/"migrations").exists() or (p/"migrate").exists()},
-    {"id":54,"name":"ENV_VARS","check":lambda p:(p/".env").exists() or (p/".env.local").exists()},
+    {"id":54,"name":"ENV_VARS","check":lambda p:(p/".env.example").exists() or (p/".env.template").exists() or (p/".env.sample").exists() or (p/".env.defaults").exists() or (p/".env").exists() or (p/".env.local").exists()},
     {"id":55,"name":"KUBERNETES","check":lambda p:any(p.glob("**/k8s/*.yml")) or any(p.glob("**/kubernetes/*.yml"))},
     {"id":56,"name":"HELM","check":lambda p:(p/"Chart.yaml").exists()},
     {"id":57,"name":"TERRAFORM","check":lambda p:any(p.glob("**/*.tf"))},
