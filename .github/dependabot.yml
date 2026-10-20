@@ -4,7 +4,17 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-  - package-ecosystem: "npm"
+  # The repository is Bun-managed (root package.json declares
+  # "packageManager": "bun" and ships bun.lock). Dependabot's npm
+  # ecosystem cannot update bun.lock and aborts the whole update job with:
+  #   "This project has a `bun.lock` file but no `package-lock.json`,
+  #    `yarn.lock` or `pnpm-lock.yaml` ... Set package-ecosystem: "bun""
+  - package-ecosystem: "bun"
     directory: "/"
+    schedule:
+      interval: "weekly"
+  # docs/ is a standalone Bun project (docs/bun.lock, no package-lock.json).
+  - package-ecosystem: "bun"
+    directory: "/docs"
     schedule:
       interval: "weekly"
