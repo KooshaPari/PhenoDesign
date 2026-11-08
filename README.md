@@ -149,5 +149,5 @@ Tokens used in rendering (Blender):
 ## See Also
 
 - **Design Tokens**: `../tokens/` (Keycap Palette, typography, shadows, spacing)
-- **VitePress Theme**: `../src/` (@kooshapari/design VitePress integration)
+- **VitePress Theme**: `../src/` (@<REDACTED>/design VitePress integration)
 - **phenotype-journeys**: Parent reference (asset playbooks, example workflows)

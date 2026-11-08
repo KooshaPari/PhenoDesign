@@ -6,16 +6,16 @@
 
 | Field | Value |
 |-------|-------|
-| **GitHub** | `KooshaPari/asset-engine` |
+| **GitHub** | `<REDACTED>/asset-engine` |
 | **Boundary** | Asset pipeline / render orchestration |
-| **Spine peer** | [`KooshaPari/phenoDesign`](https://github.com/KooshaPari/phenoDesign) — creativity / design / UX spine |
+| **Spine peer** | [`<REDACTED>/phenoDesign`](https://github.com/KooshaPari/phenoDesign) — creativity / design / UX spine |
 | **Migrated from** | `phenoDesign/engine/` (2026-07-20) |
 
 ## Migration note
 
 This repository was **extracted** from [`phenoDesign/engine/`](https://github.com/KooshaPari/phenoDesign/tree/main/engine) on 2026-07-20. The `engine/` tree in phenoDesign remains as a **compatibility submodule pointer** until consumers repoint; canonical development happens here.
 
-Historical git history for the engine subtree lives in `KooshaPari/phenoDesign` commits touching `engine/**`.
+Historical git history for the engine subtree lives in `<REDACTED>/phenoDesign` commits touching `engine/**`.
 
 ## Quick start
 
