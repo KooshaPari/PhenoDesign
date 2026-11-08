@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Guarded additive installer. Never overwrites differing files; defaults to dry-run."""
 from __future__ import annotations
-import argparse, hashlib, json, os, re, sys, tempfile
+import argparse, difflib, hashlib, json, os, re, sys, tempfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 DEST=Path('creative-production/scene-experiences')
@@ -23,7 +23,9 @@ def safe_rel(text:str)->Path:
     if not text or p.is_absolute() or '..' in p.parts or '\\' in text or ':' in text:raise Conflict(f'Unsafe relative path: {text}')
     return p
 
-def verify_manifest(root:Path)->dict[str,str]:
+def read_manifest(root:Path)->dict[str,str]:
+    # Parse only. Deliberately performs no integrity check so a drifted tree can be
+    # repaired; verify_manifest() layers the integrity check on top of this.
     manifest=root/'MANIFEST.sha256'
     if not manifest.is_file():raise Conflict('Missing source MANIFEST.sha256; build/verify package first')
     entries={}
@@ -31,17 +33,32 @@ def verify_manifest(root:Path)->dict[str,str]:
         if not line:continue
         match=re.fullmatch(r'([0-9a-f]{64})  (.+)',line)
         if not match:raise Conflict('Invalid manifest line')
-        sha,text=match.groups();rel=safe_rel(text);p=root/rel;no_symlink(p)
+        sha,text=match.groups();safe_rel(text)
         if text in entries:raise Conflict('Duplicate manifest path')
-        if not p.is_file() or digest(p)!=sha:raise Conflict(f'Source integrity failed: {rel}')
         entries[text]=sha
     if not entries:raise Conflict('Empty manifest')
     return entries
+
+def verify_manifest(root:Path)->dict[str,str]:
+    entries=read_manifest(root)
+    for text,sha in entries.items():
+        rel=safe_rel(text);p=root/rel;no_symlink(p)
+        if not p.is_file() or digest(p)!=sha:raise Conflict(f'Source integrity failed: {rel}')
+    return entries
+
+def guard_self_install(repo:Path,root:Path)->None:
+    # Refuse a self-install instead of letting src_root==dst_root turn --apply into a
+    # silent 0-write no-op. Runs before the identity and integrity gates so the
+    # diagnostic names the real cause rather than a downstream symptom.
+    src=root.absolute();dst=(repo/DEST).absolute()
+    if dst==src:raise Conflict('Self-install refused: src_root == dst_root; --apply would write nothing. Pass --repo pointing at the PhenoDesign repository root.')
+    if dst.is_relative_to(src):raise Conflict(f'Self-install refused: destination {dst} is nested inside the source package {src}. Pass --repo pointing at the PhenoDesign repository root.')
 
 def plan(repo:Path,root:Path=ROOT,activate:str='none')->list[dict]:
     no_symlink(repo)
     repo=repo.absolute()
     if not repo.is_dir():raise Conflict('Target repository directory does not exist')
+    guard_self_install(repo,root)
     no_symlink(repo/'package.json')
     try: package=json.loads((repo/'package.json').read_text())
     except (OSError,ValueError) as e:raise Conflict('Cannot read target package.json') from e
@@ -114,10 +131,52 @@ def apply(repo:Path,root:Path=ROOT,activate:str='none')->dict:
         except OSError:pass
         lock.unlink(missing_ok=True)
 
+def regenerate(root:Path,confirm:bool=False)->dict:
+    # Never implicit: only reachable from the explicit --regenerate-manifest flag.
+    # Rewrites digests for the manifest's own path set. It does not add, drop or
+    # reorder entries, so a regenerated manifest stays comparable to the reviewed
+    # file list that shipped it.
+    manifest=root/'MANIFEST.sha256'
+    entries=read_manifest(root)
+    current=[];changed=[];missing=[]
+    for text in entries:
+        rel=safe_rel(text);p=root/rel;no_symlink(p)
+        if not p.is_file():missing.append(text);continue
+        actual=digest(p);current.append(f'{actual}  {text}')
+        if actual!=entries[text]:changed.append(text)
+    if missing:raise Conflict(f'Cannot regenerate; manifest lists {len(missing)} missing path(s): {missing[0]}')
+    new_text='\n'.join(current)+'\n'
+    old_text=manifest.read_text()
+    diff=''.join(difflib.unified_diff(old_text.splitlines(True),new_text.splitlines(True),fromfile=f'a/{manifest.name}',tofile=f'b/{manifest.name}'))
+    if not diff:return {'regenerated':False,'entries':len(entries),'changed':[],'diff':''}
+    if not confirm:return {'regenerated':False,'entries':len(entries),'changed':changed,'diff':diff}
+    # Write atomically: a partial manifest would silently disarm the integrity gate.
+    tf=None
+    try:
+        with tempfile.NamedTemporaryFile(dir=manifest.parent,prefix='.manifest-',delete=False) as f:
+            tf=Path(f.name);f.write(new_text.encode());f.flush();os.fsync(f.fileno())
+        os.replace(tf,manifest);tf=None
+    finally:
+        if tf is not None:tf.unlink(missing_ok=True)
+    return {'regenerated':True,'entries':len(entries),'changed':changed,'diff':diff}
+
 def main()->int:
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--repo',type=Path,required=True);p.add_argument('--apply',action='store_true');p.add_argument('--activate-skills',choices=['none','codex','forge','both'],default='none')
+    p.add_argument('--regenerate-manifest',action='store_true',help='Recompute MANIFEST.sha256 digests from on-disk content. Requires --repo to be the PhenoDesign root; prints a unified diff before writing.')
+    p.add_argument('--confirm-regenerate',action='store_true',help='Acknowledge the printed diff and actually write MANIFEST.sha256. Without this, --regenerate-manifest only reports.')
     a=p.parse_args()
     try:
+        if a.regenerate_manifest:
+            # No guard_self_install here: --repo is unused by this branch (regeneration
+            # only ever writes ROOT/MANIFEST.sha256, never into the target repo), and the
+            # only copy of this package on disk IS the phenoDesign root subtree. The
+            # self-install hazard belongs to install/apply, which plan() guards.
+            result=regenerate(ROOT,confirm=a.confirm_regenerate)
+            if not a.confirm_regenerate and result['changed']:print(result['diff'],end='')
+            result={k:v for k,v in result.items() if k!='diff'}
+            result['mode']='DRY_RUN' if not a.confirm_regenerate else 'WRITTEN'
+            if not a.confirm_regenerate and result['changed']:result['hint']='Re-run with --confirm-regenerate to write'
+            print(json.dumps(result,indent=2));return 0
         if a.apply:result=apply(a.repo.absolute(),activate=a.activate_skills)
         else:
             operations=plan(a.repo.absolute(),activate=a.activate_skills)
